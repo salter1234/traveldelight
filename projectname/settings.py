@@ -104,6 +104,12 @@ DATABASES = {
         'PASSWORD': 'v5jnro60ihstypom', 
         'HOST': 'jsk3f4rbvp8ayd7w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 
         'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+            'use_unicode': True,
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'collation': 'utf8mb4_unicode_ci',
+        },
         # 'OPTIONS': {
         #     'ssl': False,
         #     # 'ssl': {'ca': '/path/to/ca-cert.pem'},
