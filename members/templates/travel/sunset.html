@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小琉球落日亭 - 日落美景的絕佳地點</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">小琉球落日亭：日落美景的絕佳地點</h2>
+
+            <img src="https://www.msvilla.com.tw/upload/spot_b/be2df1a406e36c524f0dc18f18ae6686.jpg" alt="小琉球落日亭" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>落日亭是小琉球欣賞日落的絕佳地點之一，這裡的景色壯麗，特別是在黃昏時分，金色的陽光映照在海面上，形成一幅如詩如畫的景象。</p>
+
+                <h3>落日亭的特色</h3>
+                <ul>
+                    <li><strong>壯麗日落</strong>：落日亭以其絕佳的地理位置，提供了觀賞日落的最佳視角。無論是晴天還是雲層輕覆，夕陽西下的景色總是令人陶醉。</li>
+                    <li><strong>觀景平台</strong>：設有觀景平台，方便遊客拍照留念，享受海風吹拂的舒適感。</li>
+                    <li><strong>寧靜氛圍</strong>：這裡遠離市區的喧囂，是享受靜謐時光的理想場所。</li>
+                </ul>
+
+                <h3>旅遊資訊</h3>
+                <p>交通方式：</p>
+                <ul>
+                    <li>從小琉球市區租借機車或自行車，沿著環島道路行駛即可到達落日亭。</li>
+                </ul>
+                <p>建議時間：</p>
+                <ul>
+                    <li>建議在傍晚時分抵達，以便找到理想的觀景位置，並提前享受黃昏前的自然美景。</li>
+                </ul>
+                <p>注意事項：</p>
+                <ul>
+                    <li>帶上輕便的外套，海邊傍晚可能會有些涼意。</li>
+                    <li>請保持環境清潔，攜帶走所有垃圾。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#小琉球落日亭</span>
+                    <span class="spot-tag">#日落美景</span>
+                    <span class="spot-tag">#觀景平台</span>
+                    <span class="spot-tag">#寧靜氛圍</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

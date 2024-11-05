@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬祖鐵堡</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">馬祖鐵堡</h2>
+
+            <img src="https://www.matsu-nsa.gov.tw/UserFiles/image/specialplan/%E9%90%B5%E5%A0%A11-min.jpg" alt="馬祖鐵堡" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>馬祖鐵堡位於馬祖南竿島，是一座具有重要歷史意義的軍事遺跡。這座堡壘是冷戰時期的重要防禦工事，現在已成為遊客了解馬祖軍事歷史的熱門景點。</p>
+
+                <h3>鐵堡的特色</h3>
+                <ul>
+                    <li><strong>軍事歷史</strong>：鐵堡建於1970年代，當時用於防禦和觀察敵情。其堅固的結構和戰略位置展示了當時的軍事防禦思想。</li>
+                    <li><strong>結構設計</strong>：堡內設有多個觀察口和射擊孔，並有地下通道和掩體設施，讓遊客體驗到真實的軍事防禦環境。</li>
+                    <li><strong>觀光體驗</strong>：遊客可以進入堡內參觀，了解其設計和用途，並欣賞堡壘周邊的海景。</li>
+                </ul>
+
+                <h3>旅遊資訊</h3>
+                <ul>
+                    <li><strong>交通方式</strong>：從南竿福澳港或馬祖機場搭乘當地交通工具，或租借汽車、機車前往鐵堡。</li>
+                    <li><strong>開放時間</strong>：鐵堡的開放時間可能會有所變動，建議提前查詢當地旅遊資訊中心或官網。</li>
+                    <li><strong>導覽服務</strong>：參加導覽活動可以獲得更豐富的歷史背景介紹，專業導遊會提供詳細的解說。</li>
+                </ul>
+
+                <p>馬祖鐵堡不僅是軍事歷史愛好者的必訪之地，也是對一般遊客了解馬祖地區戰略地位和歷史發展的良好機會。希望您在馬祖鐵堡的參觀中能有所收穫！</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

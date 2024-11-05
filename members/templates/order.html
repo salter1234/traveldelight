@@ -1,0 +1,64 @@
+{% extends 'header.html' %}
+
+{% block title %}旅遊行程訂購頁面{% endblock %}
+
+{% block content %}
+{% load custom_filters %}
+<section>
+    <div class="container">
+        {% if error_message %}
+            <div class="alert alert-danger">{{ error_message }}</div>
+        {% endif %}
+        <form class="row" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="row">              
+                    <table class="table table-bordered caption-top" border="1">
+                        <caption><h2>請確認您的旅遊行程</h2></caption>
+                        <tr class="text-center">
+                            <th><h5>您選擇的旅遊行程</h5></th>
+                            <th><h5>旅遊公司</h5></th>
+                            <th><h5>行程目的地</h5></th>
+                            <th><h5>可出發地點</h5></th>
+                            <th><h5>旅遊天數</h5></th>
+                            <th><h5>價位</h5></th>
+                            <th><h5>您希望的出團日期</h5></th>
+                        </tr>            
+                        <tr class="text-center table-warning">
+                            <td><h5>{{ tour.tourname }}</h5></td>
+                            <td>{{ tour.company }}</td>
+                            <td>{{ tour.toursite }}</td>
+                            <td>
+                                <select class="form-select" name="gosite" aria-label="Default select example" id="gosite" required>
+                                    <option value="" disabled selected>出發地點</option>
+                                    {% for site in tour.gosite.all %}
+                                        <option value="{{ site }}">{{ site }}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                            <td>{{ tour.tourday }}</td>
+                            <td>{{ tour.price }}</td>
+                            <td>
+                                <select class="form-select" name="godate" aria-label="Default select example" id="godate" required>
+                                    <option value="" disabled selected>出團日期</option>
+                                    {% for godate in godates %}
+                                        {% if godate|now %}
+                                            
+                                        {% else %}
+                                            <option value="{{ godate }}">{{ godate|weekday|date:"Y-m-d D" }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </td>
+                        </tr>            
+                    </table> 
+                </div>   
+            </div>    
+            <div class="d-flex justify-content-evenly">
+                <button type="submit" class="btn btn-success">確認訂單</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% include 'footer.html' %}
+{% endblock %}

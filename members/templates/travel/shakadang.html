@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>砂卡礑步道 - 探索太魯閣的靜謐之美</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">砂卡礑步道：探索太魯閣的靜謐之美</h2>
+
+            <img src="https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_8_6.jpg" alt="砂卡礑步道" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>砂卡礑步道位於太魯閣國家公園內，是一條以自然景觀和文化歷史聞名的步道。這裡的步道沿著清澈的砂卡礑溪蜿蜒，是享受大自然寧靜的理想去處。</p>
+
+                <h3>歷史與發展</h3>
+                <p>砂卡礑步道原為日治時期的運材路，後來被開發為觀光步道。步道全長約4.5公里，沿途景觀優美，適合全家大小輕鬆漫步。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>砂卡礑橋</strong>：步道的起點，從這裡可以開始探索整條步道的美麗景色。</li>
+                    <li><strong>溪谷景觀</strong>：沿途可欣賞砂卡礑溪的清澈溪水和兩岸的峭壁。</li>
+                    <li><strong>天然岩洞</strong>：步道上有多處天然岩洞，提供了獨特的地質景觀。</li>
+                    <li><strong>觀景平台</strong>：設有數個觀景平台，可以停下來休息，欣賞周圍的自然美景。</li>
+                </ul>
+
+                <h3>教育與保育</h3>
+                <p>砂卡礑步道也是了解地質和生態的好地方。沿途設有解說牌，介紹當地的地質特徵和生態系統，讓遊客在欣賞自然美景的同時，也能學習到相關知識。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘公車</strong>：從花蓮市區搭乘公車至太魯閣，再步行至步道入口。</li>
+                    <li><strong>自行開車</strong>：沿著台8線行駛，依指示牌前往砂卡礑步道入口。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#砂卡礑步道</span>
+                    <span class="spot-tag">#自然景觀</span>
+                    <span class="spot-tag">#步道健行</span>
+                    <span class="spot-tag">#太魯閣國家公園</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

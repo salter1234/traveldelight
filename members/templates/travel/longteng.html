@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龍騰斷橋 - 歷史與自然的見證</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">龍騰斷橋：歷史與自然的見證</h2>
+
+            <img src="https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_C100_342_8.jpg&sizetype=3" alt="龍騰斷橋" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>龍騰斷橋位於台灣苗栗縣三義鄉，是一座具有歷史意義的鐵路橋遺址。這座橋原名「魚藤坪斷橋」，建於1906年，原為縱貫鐵路的一部分，因1935年的大地震而受損，後來因1963年的颱風再次崩塌，成為今日的斷橋景觀。</p>
+
+                <h3>景點特色</h3>
+                <ul>
+                    <li><strong>歷史遺跡</strong>：龍騰斷橋是台灣早期鐵路工程的代表之一，見證了台灣鐵路發展的歷史。</li>
+                    <li><strong>自然景觀</strong>：斷橋周圍環境優美，四周綠意盎然，是拍攝和散步的好地方。</li>
+                    <li><strong>文化氛圍</strong>：附近有許多與鐵道文化相關的景點，如三義木雕博物館和勝興車站，適合安排一日文化之旅。</li>
+                </ul>
+
+                <h3>必訪活動</h3>
+                <ul>
+                    <li><strong>拍照打卡</strong>：以斷橋為背景，拍攝獨特的照片，留下難忘的回憶。</li>
+                    <li><strong>散步健行</strong>：在斷橋周圍的步道上散步，享受大自然的寧靜與美麗。</li>
+                    <li><strong>探索鐵道文化</strong>：參觀附近的鐵道文化景點，了解更多關於台灣鐵路的歷史。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘火車</strong>：從台北或台中搭乘火車至三義站，然後轉乘計程車或公車即可抵達。</li>
+                    <li><strong>自行開車</strong>：從台北出發，沿國道1號或3號至三義交流道下，依指示牌行駛即可抵達。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#龍騰斷橋</span>
+                    <span class="spot-tag">#歷史遺跡</span>
+                    <span class="spot-tag">#自然景觀</span>
+                    <span class="spot-tag">#鐵道文化</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

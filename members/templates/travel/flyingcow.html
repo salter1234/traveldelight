@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飛牛牧場 - 親近自然的休閒天堂</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">飛牛牧場：親近自然的休閒天堂</h2>
+
+            <img src="https://image.everfuntravel.com/_data/i/upload/2021/02/24/20210224112802-e6fe3a82-xl.png" alt="飛牛牧場" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>飛牛牧場位於台灣苗栗縣通霄鎮，是一個結合農業生產與觀光旅遊的牧場，提供豐富的自然體驗和農牧活動。這裡是家庭旅遊的理想選擇，讓遊客在享受大自然的同時，學習農牧知識。</p>
+
+                <h3>牧場特色</h3>
+                <ul>
+                    <li><strong>動物互動</strong>：牧場飼養了多種動物，如乳牛、羊、馬和兔子，遊客可以親自餵食，並與動物們親密接觸。</li>
+                    <li><strong>DIY活動</strong>：牧場提供多種DIY活動，如製作乳酪、冰淇淋等，讓遊客親自體驗農產品的製作過程。</li>
+                    <li><strong>自然環境</strong>：廣闊的草原和森林步道適合散步和騎自行車，是遠離城市喧囂、放鬆心情的好地方。</li>
+                </ul>
+
+                <h3>必玩活動</h3>
+                <ul>
+                    <li><strong>擠牛奶體驗</strong>：在工作人員的指導下，親手擠牛奶，了解乳製品的生產過程。</li>
+                    <li><strong>手作乳酪</strong>：參加乳酪DIY課程，學習如何製作美味的乳酪。</li>
+                    <li><strong>動物餵食</strong>：與家人一起餵食可愛的羊和兔子，享受與動物互動的樂趣。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘火車或公車</strong>：從台北或台中搭乘火車至苗栗或通霄站，再轉乘計程車或接駁公車即可到達。</li>
+                    <li><strong>自行開車</strong>：從台北出發，沿國道1號至通霄交流道下，依指示牌行駛即可抵達。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#飛牛牧場</span>
+                    <span class="spot-tag">#親子活動</span>
+                    <span class="spot-tag">#農牧體驗</span>
+                    <span class="spot-tag">#自然休閒</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雲林旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">雲林：中部農業的綠色寶庫</h2>
+
+            <img src="{% static 'pictures/county/Yunlin.jpg' %}" alt="雲林城市風景" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>雲林位於台灣的中部西側，是一個以農業為主的縣市，擁有豐富的自然資源和獨特的文化魅力。這裡的生活節奏較為悠閒，適合喜愛鄉村風光和傳統文化的旅人。</p>
+
+                <h3>自然與農業</h3>
+                <p>雲林以其肥沃的土地和豐富的農產品聞名，是台灣重要的農業生產地之一。這裡盛產稻米、甘蔗、花生和各類蔬果，尤其是斗六的西瓜和土庫的蒜頭都相當有名。來到雲林，還可以參觀當地的農場，體驗農作的樂趣，並品嚐新鮮的農產品。</p>
+
+                <h3>文化與歷史</h3>
+                <p>雲林擁有深厚的文化底蘊，傳統藝術如布袋戲和歌仔戲在這裡非常盛行。虎尾鎮的雲林布袋戲館是了解這項傳統藝術的好地方，館內收藏了許多珍貴的戲偶和歷史資料。</p>
+                <p>此外，雲林的廟宇文化也相當豐富，如北港朝天宮是台灣著名的媽祖廟之一，每年吸引大量信徒前來朝聖。這裡的廟會活動熱鬧非凡，是體驗台灣傳統宗教文化的絕佳機會。</p>
+
+                <h3>景點與活動</h3>
+                <p>雲林還有不少值得一遊的景點，如古坑的綠色隧道和劍湖山世界主題樂園。古坑以其優美的自然景觀和咖啡文化聞名，綠色隧道兩旁種滿樹木，是個騎自行車和散步的好地方。劍湖山世界則是適合全家同樂的主題樂園，提供多種遊樂設施和表演。</p>
+
+                <h3>美食與特產</h3>
+                <p>來到雲林，不能錯過當地的美食。除了新鮮的農產品外，還有許多傳統小吃，如北港的麻油雞和斗六的肉圓。這些美食不僅美味，還帶有濃厚的地方特色。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

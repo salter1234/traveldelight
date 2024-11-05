@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陽明山國家公園 - 自然的綠色天堂</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">陽明山國家公園：自然的綠色天堂</h2>
+
+            <img src="https://www.wingontravel.com/travel/feature/wp-content/uploads/2019/10/%E9%99%BD%E6%98%8E%E5%B1%B1%E6%99%AF%E9%BB%9E-%E4%BA%8C%E5%AD%90%E5%9D%AA%E6%AD%A5%E9%81%93-1024x1024.jpg" alt="陽明山國家公園" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>陽明山國家公園位於台北市近郊，以其壯麗的自然景觀和豐富的生態系統聞名。這裡是遠離城市喧囂的理想去處，讓我們一同探索這片充滿活力與教育意義的自然樂園吧！</p>
+
+                <h3>歷史與發展</h3>
+                <p>陽明山國家公園成立於1985年，是台灣第三座國家公園，佔地11,455公頃。多年來，公園持續進行保護與管理，致力於提供野生動植物更好的生活環境，並同時為遊客創造優質的參觀體驗。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>大屯火山群</strong>：欣賞壯觀的火山地形與特殊的地質現象。</li>
+                    <li><strong>冷水坑</strong>：享受溫泉的舒適與放鬆。</li>
+                    <li><strong>竹子湖</strong>：在春季欣賞滿山遍野的海芋花海。</li>
+                    <li><strong>擎天崗</strong>：廣闊的草原景觀，適合野餐與散步。</li>
+                </ul>
+
+                <h3>教育與保育</h3>
+                <p>陽明山國家公園不僅是一個欣賞自然美景的地方，更是一個重要的教育和保育中心。園區內設有多個教育區域，定期舉辦導覽活動，讓遊客深入了解自然生態與保育知識。</p>
+
+                <h3>交通資訊</h3>
+                <p>前往陽明山國家公園非常方便：</p>
+                <ul>
+                    <li>搭乘公車：可搭乘260、303、1717等公車至陽明山站下車。</li>
+                    <li>自行開車：沿北投或士林方向行駛，依指示牌前往陽明山國家公園。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#陽明山國家公園</span>
+                    <span class="spot-tag">#自然旅遊</span>
+                    <span class="spot-tag">#生態保育</span>
+                    <span class="spot-tag">#台灣之美</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

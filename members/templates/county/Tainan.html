@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台南旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">台南：古都的歷史與美食之旅</h2>
+
+            <img src="{% static 'pictures/county/Tainan.jpg' %}" alt="台南景觀" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>台南是台灣的古都，有著豐富的文化遺產和獨特的生活氛圍。</p>
+
+                <h3>歷史與文化</h3>
+                <ul>
+                    <li><strong>古蹟和廟宇</strong>：台南是台灣歷史最悠久的城市之一，擁有許多保存完好的古蹟，如赤崁樓和安平古堡，這些地方見證了台灣的歷史變遷。</li>
+                    <li><strong>老房子與小巷</strong>：走在台南的街道上，你會發現許多老房子和小巷，每一個角落都充滿著故事和濃厚的文化氛圍。</li>
+                </ul>
+
+                <h3>美食天堂</h3>
+                <ul>
+                    <li><strong>傳統小吃</strong>：台南被譽為台灣的美食之都，無論是擔仔麵、蝦捲、牛肉湯，還是碗粿、豆花，每一道小吃都讓人垂涎欲滴。</li>
+                    <li><strong>食物熱愛</strong>：台南人對於食物的熱愛體現在每一口的美味中，來到這裡一定要空著肚子，準備好大快朵頤。</li>
+                </ul>
+
+                <h3>人情味</h3>
+                <ul>
+                    <li><strong>熱情友善</strong>：台南人以熱情和友善著稱，這裡的生活節奏比較緩慢，讓人感到輕鬆自在。</li>
+                    <li><strong>溫暖氛圍</strong>：無論是在市場、夜市，還是小吃攤，你總能感受到濃厚的人情味，這種氛圍讓每一位來訪者都能感受到家的感覺。</li>
+                </ul>
+
+                <h3>自然與休閒</h3>
+                <ul>
+                    <li><strong>四草綠色隧道</strong>：乘坐小船穿梭在紅樹林間，享受大自然的寧靜，是台南著名的自然景點之一。</li>
+                    <li><strong>公園和海灘</strong>：台南也有許多公園和海灘，是享受戶外活動的好地方。</li>
+                </ul>
+
+                <p>總之，台南是一個充滿魅力的城市，無論是歷史、文化、美食還是自然景觀，這裡都能帶給你豐富的體驗。作為台南人，我非常歡迎你來探索這座城市，感受它的獨特之美。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

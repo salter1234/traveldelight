@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>傳統藝術中心 - 文化與藝術的交融</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">傳統藝術中心：文化與藝術的交融</h2>
+
+            <img src="https://www.taiwanviptravel.com/articles/images/national-center-for-traditional-arts-img4.jpg" alt="傳統藝術中心" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>位於宜蘭縣五結鄉的傳統藝術中心，是一個展示台灣傳統文化與藝術的綜合園區。這裡融合了歷史、工藝和表演藝術，是了解台灣文化的絕佳去處。</p>
+
+                <h3>歷史與發展</h3>
+                <p>傳統藝術中心成立於2000年，旨在保存與推廣台灣的傳統藝術。園區內有多個展覽館和工作坊，展示各類傳統工藝和藝術表演，吸引了大量國內外遊客。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>藝術大街</strong>：模仿古代街市，匯集了各種傳統工藝店鋪，可以親自參與製作。</li>
+                    <li><strong>戲劇館</strong>：定期上演傳統戲劇，如布袋戲、歌仔戲等。</li>
+                    <li><strong>工藝坊</strong>：提供DIY體驗，讓遊客親自動手製作傳統工藝品。</li>
+                    <li><strong>展覽館</strong>：展示台灣各地的傳統藝術品與文物，深入了解文化背景。</li>
+                </ul>
+
+                <h3>教育與保育</h3>
+                <p>傳統藝術中心不僅是觀光景點，還是一個重要的教育場所。中心定期舉辦各類講座和工作坊，推廣傳統文化知識，並致力於培養新一代的藝術人才。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘公車</strong>：從宜蘭市區搭乘公車至五結，步行即可抵達。</li>
+                    <li><strong>自行開車</strong>：沿著台2線行駛，依指示牌前往傳統藝術中心。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#傳統藝術中心</span>
+                    <span class="spot-tag">#文化藝術</span>
+                    <span class="spot-tag">#宜蘭旅遊</span>
+                    <span class="spot-tag">#台灣傳統文化</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

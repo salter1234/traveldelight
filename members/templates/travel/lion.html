@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蘭嶼雙獅岩</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">蘭嶼雙獅岩：奇特的自然景觀</h2>
+
+            <img src="https://tour.taitung.gov.tw/image/33511/1024x768" alt="蘭嶼雙獅岩" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>蘭嶼雙獅岩，以其獨特的形狀和壯麗的景色，成為蘭嶼島上一個著名的自然景點。這座岩石因形似兩頭獅子而得名，吸引了眾多遊客前來觀賞。</p>
+
+                <h3>地理與形成</h3>
+                <p>雙獅岩位於蘭嶼的海岸線上，是由長期的海浪侵蝕和風化作用形成的。這一自然奇觀展示了地質變遷的壯麗與神秘。</p>
+
+                <h3>景觀特色</h3>
+                <ul>
+                    <li><strong>獨特形狀</strong>：岩石形似兩頭獅子，栩栩如生，令人驚嘆。</li>
+                    <li><strong>壯麗景色</strong>：周圍環境優美，海天一色，是攝影愛好者的理想取景地。</li>
+                    <li><strong>觀景平台</strong>：設有觀景平台，方便遊客近距離欣賞和拍照。</li>
+                </ul>
+
+                <h3>旅遊資訊</h3>
+                <p>
+                    <strong>交通方式</strong>：遊客可從台灣本島搭船或搭機抵達蘭嶼，然後租用機車或自行車前往雙獅岩。<br>
+                    <strong>參觀建議</strong>：建議選擇晴朗的日子參觀，以便更好地欣賞到雙獅岩的全貌。
+                </p>
+
+                <h3>注意事項</h3>
+                <p>
+                    <strong>安全</strong>：在岩石附近活動時，請注意安全，避免靠近懸崖邊緣。<br>
+                    <strong>環境保護</strong>：請保持環境整潔，愛護自然景觀，不留垃圾。
+                </p>
+
+                <p>蘭嶼雙獅岩以其獨特的自然造型和壯觀的海景，成為蘭嶼旅遊的必訪之地，為遊客帶來難忘的觀賞體驗。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

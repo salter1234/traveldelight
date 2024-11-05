@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>管理会员</h2>
+
+<!-- 这里是您原来的表单结构 -->
+<div class="card-title">{{ fieldset.description }}</div>
+<div class="p-5{% if fieldset.name %} card-body{% endif %}">
+    {% for line in fieldset %}
+        <div class="form-group{% if line.fields|length == 1 and line.errors %} errors{% endif %}{% if not line.has_visible_field %} hidden{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% endfor %}">
+            <div class="row">
+                {% for field in line %}
+                    <label class="{% if not line.fields|length == 1 and forloop.counter != 1 %}col-auto {% else %}col-sm-3 {% endif %}text-left" for="id_{{ field.field.name }}">
+                        {{ field.field.label|capfirst }}
+                        {% if field.field.field.required %}
+                            <span class="text-red">* </span>
+                        {% endif %}
+                    </label>
+                    <div class="{% if not line.fields|length == 1 %} col-auto  fieldBox {% else %} col-sm-7 {% endif %} {% if field.field.name %} field-{{ field.field.name }}{% endif %}">
+                        <!-- 这里可以添加字段的输入控件 -->
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- 会员列表 -->
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>邮箱</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{ member.id }}</td>
+            <td>{{ member.username }}</td>
+            <td>{{ member.email }}</td>
+            <td>
+                <!-- 删除按钮 -->
+                <a href="{% url 'delete_member' member.id %}" class="btn btn-danger" onclick="return confirm('你确定要删除这个会员吗？');">删除</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

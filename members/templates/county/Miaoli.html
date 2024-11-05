@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苗栗旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">苗栗：山水風光與客家文化的交融</h2>
+
+            <img src="{% static 'pictures/county/Miaoli.jpg' %}" alt="苗栗自然景觀" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>苗栗位於台灣的中北部，是一個以山水風光和客家文化聞名的地方。這裡的生活步調比較悠閒，擁有豐富的自然資源和獨特的文化魅力。</p>
+
+                <h3>自然景觀</h3>
+                <ul>
+                    <li><strong>三義的木雕藝術村</strong>：不僅可以欣賞到精緻的木雕作品，還能漫步於周圍的山林間，享受大自然的寧靜。</li>
+                    <li><strong>南庄</strong>：有美麗的桂花巷和充滿懷舊氣息的老街，讓人彷彿回到過去。</li>
+                </ul>
+
+                <h3>客家文化</h3>
+                <p>苗栗是客家文化的重要據點之一。在這裡，你可以品嚐到正宗的客家美食，如擂茶和客家小炒，這些都是來到苗栗不可錯過的美味。</p>
+                <p>每年舉辦的苗栗客家桐花祭更是吸引了不少遊客前來欣賞漫山遍野的桐花盛景。</p>
+
+                <h3>季節特徵</h3>
+                <p>苗栗的天氣宜人，四季皆有不同的風情。春天可以賞花，夏天適合去海邊或山上避暑，秋冬則是品味當地農產品的好時節。</p>
+
+                <p>苗栗是一個充滿自然美景和人文風情的地方，適合喜歡探索和享受慢活的旅人。無論是想要親近大自然，還是體驗深厚的客家文化，苗栗都不會讓你失望。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

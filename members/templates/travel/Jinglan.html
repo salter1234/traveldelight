@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳景蘭洋樓 - 金門的歷史文化地標</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">陳景蘭洋樓：金門的歷史文化地標</h2>
+
+            <img src="https://kinmen.travel/attractions/10267/1024x768_attractions-image-phszdac-kkuqihy8v7xyra.jpg" alt="陳景蘭洋樓" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>陳景蘭洋樓位於金門縣金城鎮，是一座具有歷史意義的洋樓建築。這棟建築由旅居海外的華僑陳景蘭於1921年建造，融合了中西建築風格，成為金門地區的重要文化資產。</p>
+
+                <h3>建築特色</h3>
+                <ul>
+                    <li><strong>中西合璧</strong>：洋樓結合了西方的建築風格和中國傳統的裝飾元素，外觀宏偉，內部裝潢精緻，展現出獨特的建築美學。</li>
+                    <li><strong>歷史背景</strong>：陳景蘭洋樓不僅是一座住宅，還見證了金門地區的歷史變遷，包含戰爭時期的使用痕跡和華僑回鄉的故事。</li>
+                    <li><strong>文化展示</strong>：樓內設有展覽，介紹金門的歷史、文化及陳景蘭家族的故事，讓遊客深入了解當地的文化背景。</li>
+                </ul>
+
+                <h3>必訪活動</h3>
+                <ul>
+                    <li><strong>建築參觀</strong>：探索洋樓的各個角落，欣賞其獨特的建築設計和精美的裝飾。</li>
+                    <li><strong>歷史學習</strong>：透過展覽了解金門的歷史和陳景蘭家族的貢獻。</li>
+                    <li><strong>攝影留念</strong>：捕捉這座歷史建築的美麗瞬間，留下珍貴的回憶。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>步行</strong>：位於金城鎮的中心地帶，適合步行前往。</li>
+                    <li><strong>搭乘公車</strong>：從金門機場或其他地區搭乘公車至金城鎮，然後步行到達。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#陳景蘭洋樓</span>
+                    <span class="spot-tag">#中西合璧</span>
+                    <span class="spot-tag">#歷史建築</span>
+                    <span class="spot-tag">#文化展示</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

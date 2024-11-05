@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">台北：探索台灣的首都</h2>
+
+            <img src="{% static 'pictures/county/Taipei.jpg' %}" alt="台北城市景觀" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>台北，作為台灣的首都，是一個充滿活力、文化多元且具現代化氣息的城市。這座城市不僅擁有繁華的都市景觀，還融合了豐富的歷史遺產和自然美景，是遊客探索台灣的理想起點。</p>
+
+                <h3>歷史與文化</h3>
+                <ul>
+                    <li><strong>歷史建築</strong>：台北擁有如總統府和中正紀念堂等著名建築，這些建築見證了台灣的歷史變遷。</li>
+                    <li><strong>故宮博物院</strong>：這座博物院收藏了大量珍貴的中國古代文物，是了解中華文化的絕佳去處。</li>
+                </ul>
+
+                <h3>自然景觀</h3>
+                <ul>
+                    <li><strong>陽明山國家公園</strong>：擁有壯麗的山景和豐富的生態系統，適合徒步旅行、賞花和泡溫泉。</li>
+                </ul>
+
+                <h3>美食天堂</h3>
+                <ul>
+                    <li><strong>夜市美食</strong>：士林夜市和饒河街夜市提供多樣化的台灣小吃，如蚵仔煎、牛肉麵和珍珠奶茶。</li>
+                </ul>
+
+                <h3>現代魅力</h3>
+                <ul>
+                    <li><strong>台北101</strong>：這座城市地標提供壯麗的城市景色，是旅遊者必訪之地。</li>
+                    <li><strong>西門町</strong>：年輕人和遊客的聚集地，充滿了各式商店、餐廳和文化活動。</li>
+                </ul>
+
+                <p>台北是一個充滿驚喜的城市，無論你是歷史愛好者、自然愛好者，還是美食愛好者，這裡都能提供豐富的體驗。台北的多元文化和友善的市民讓每一位訪客都能感受到賓至如歸的氛圍。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

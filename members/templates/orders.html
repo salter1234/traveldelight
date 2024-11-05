@@ -1,0 +1,126 @@
+{% extends 'header.html' %}  
+
+{% block title %}  
+    我的訂單  
+{% endblock %}  
+
+{% block content %}  
+<section>  
+    <div class="container">  
+          {# Align title to the left #}  
+        {% if orders %}  
+            <table class="table table-bordered caption-top"> 
+                <caption><h2 style="text-align: left;">旅遊行程訂單</h2></caption>
+                <thead>  
+                    <tr>  
+                        <th style="white-space: nowrap;">訂單編號</th>  
+                        <th style="white-space: nowrap;">旅遊行程</th>  
+                        <th style="white-space: nowrap;">出發地點</th>  
+                        <th style="white-space: nowrap;">出團日期</th>  
+                        <th style="white-space: nowrap;">狀態</th>  
+                        <th style="white-space: nowrap;">操作</th>  {# 新增操作列 #}  
+                    </tr>  
+                </thead>  
+                <tbody>  
+                    {% for order in orders %}  
+                        <tr>  
+                            <td style="white-space: nowrap;">{{ forloop.counter }}</td>  {# 使用 forloop.counter 從 1 開始編號 #}  
+                            <td style="white-space: nowrap;">{{ order.tour.tourname }}</td>  
+                            <td style="white-space: nowrap;">{{ order.gosite }}</td>  
+                            <td style="white-space: nowrap;">{{ order.godate }}</td>  
+                            <td style="white-space: nowrap;">{{ order.godate|date:"Y-m-d"|date:"Y-m-d"|default:"已訂購" }}</td>   
+                            <td>  
+                                <form action="{% url 'delete_order' order.id %}" method="post" style="display:inline;">  
+                                    {% csrf_token %}  
+                                    <button type="submit" class="btn btn-danger btn-sm">刪除</button>  
+                                </form>  
+                            </td>  
+                        </tr>  
+                    {% endfor %}  
+                </tbody>  
+            </table>  
+        {% else %}  
+            <p>您目前沒有任何訂單。</p>  
+        {% endif %} 
+    </div>  
+</section>  
+
+<section>  
+    <div class="container">  
+        {% comment %} <h2 style="text-align: left;">台鐵訂單</h2>  {# Align title to the left #}   {% endcomment %}
+        {% if tickets %}  
+            <table class="table table-bordered caption-top">
+                <caption><h2 style="text-align: left;">台鐵訂單</h2></caption>  
+                <thead>  
+                    <tr>  
+                        <th style="white-space: nowrap;">訂單編號</th>  
+                        <th style="white-space: nowrap;">車次</th>  
+                        <th style="white-space: nowrap;">出發站</th>  
+                        <th style="white-space: nowrap;">到達站</th> 
+                        <th style="white-space: nowrap;">出發日期</th>
+                        <th style="white-space: nowrap;">出發時間</th> 
+                        <th style="white-space: nowrap;">狀態</th>  
+                        <th style="white-space: nowrap;">操作</th>  {# 新增操作列 #}  
+                    </tr>  
+                </thead>  
+                <tbody>  
+                    {% for ticket in tickets %}  
+                        <tr>  
+                            <td style="white-space: nowrap;">{{ forloop.counter }}</td>  {# 使用 forloop.counter 從 1 開始編號 #}  
+                            <td style="white-space: nowrap;">{{ ticket.train_number }}</td>  
+                            <td style="white-space: nowrap;">{{ ticket.from_station }}</td>  
+                            <td style="white-space: nowrap;">{{ ticket.to_station }}</td> 
+                            <td style="white-space: nowrap;">{{ ticket.departure_time }}</td>
+                            <td style="white-space: nowrap;">{{ ticket.go_time }}</td>
+                            <td style="white-space: nowrap;">{{ ticket.departure_time|date:"Y-m-d"|date:"Y-m-d"|default:"已訂購" }}</td>   
+                            <td>  
+                                <form action="{% url 'delete_ticket' ticket.id %}" method="post" style="display:inline;">  
+                                    {% csrf_token %}  
+                                    <button type="submit" class="btn btn-danger btn-sm">刪除</button>  
+                                </form>  
+                            </td>  
+                        </tr>  
+                    {% endfor %}  
+                </tbody>  
+            </table>  
+        {% else %}  
+            <h3>您目前沒有任何訂單。</h3>  
+        {% endif %}  
+    </div>  
+</section>  
+
+<section>  
+    <div class="container">  
+        {% comment %} <h2 style="text-align: left;">歷史訂單</h2>  {# Align title to the left #}   {% endcomment %}
+        {% if past_orders %}  
+            <table class="table table-bordered caption-top"> 
+                <caption><h2 style="text-align: left;">歷史訂單</h2></caption> 
+                <thead>  
+                    <tr>  
+                        <th style="white-space: nowrap;">訂單編號</th>  
+                        <th style="white-space: nowrap;">旅遊行程</th>  
+                        <th style="white-space: nowrap;">出發地點</th>  
+                        <th style="white-space: nowrap;">出團日期</th>  
+                        <th style="white-space: nowrap;">狀態</th>  
+                    </tr>  
+                </thead>  
+                <tbody>  
+                    {% for order in past_orders %}  
+                        <tr>  
+                            <td style="white-space: nowrap;">{{ forloop.counter }}</td>  {# 使用 forloop.counter 從 1 開始編號 #}  
+                            <td style="white-space: nowrap;">{{ order.tour.tourname }}</td>  
+                            <td style="white-space: nowrap;">{{ order.gosite }}</td>  
+                            <td style="white-space: nowrap;">{{ order.godate }}</td>  
+                            <td style="white-space: nowrap;">已結束</td>  
+                        </tr>  
+                    {% endfor %}  
+                </tbody>  
+            </table>  
+        {% else %}  
+            <p>您目前沒有任何歷史訂單。</p>  
+        {% endif %}  
+    </div>  
+</section>  
+
+{% include 'footer.html' %}  
+{% endblock %}

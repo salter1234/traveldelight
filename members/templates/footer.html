@@ -1,0 +1,77 @@
+{% load static %}
+<!--footer-->
+<style>
+  footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+  }
+
+  .social-icon img {
+    transition: transform 0.3s;
+  }
+
+  .social-icon img:hover {
+    transform: scale(1.1);
+  }
+
+  h4 {
+    margin-bottom: 10px; 
+  }
+</style>
+<footer id="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4 text-left d-flex flex-column mb-3">
+              <img src="{% static 'pictures/footer.jpg' %}" width="100%">
+          </div>
+          <div class="col-md-4 text-left mb-3">
+              <h4>最新消息</h4>
+              <ul>
+                  <li><a href="{% url 'index' %}">首頁</a></li>
+                  <li><a href="{% url 'about' %}">關於我們</a></li>
+              </ul>
+              <ul>
+                  <li><a href="{% url 'introduce' %}">景點介紹</a></li>
+                  <li><a href="{% url 'tours' %}">旅遊行程</a></li>
+              </ul>
+          </div>
+          <div class="col-md-4 text-left mb-3">
+              <h4>聯絡方式</h4>
+              <p>組別：第7組專題報告</p>
+              <p>題目：旅遊網站</p>
+          </div>
+      </div>
+
+      <div class="row mt-4">
+          <div class="col-6 d-flex justify-content-center mb-1">
+              <div class="social-icon">
+                  <a href="https://page.line.me/680xuunt?openQrModal=true" target="_blank">
+                      <img src="{% static 'pictures/line.png' %}" alt="Line" width="80" height="80">
+                  </a>
+              </div>
+          </div>
+          <div class="col-6 d-flex justify-content-center mb-1">
+              <div class="social-icon">
+                  <a href="https://facebook.com" target="_blank">
+                      <img src="{% static 'pictures/fb.png' %}" alt="Facebook" width="80" height="80">
+                  </a>
+              </div>
+          </div>
+          <div class="col-6 d-flex justify-content-center mb-1">
+              <div class="social-icon">
+                  <a href="https://youtube.com" target="_blank">
+                      <img src="{% static 'pictures/youtube.png' %}" alt="YouTube" width="80" height="80"> 
+                  </a>
+              </div>
+          </div>
+          <div class="col-6 d-flex justify-content-center mb-1">
+              <div class="social-icon">
+                  <a href="#" target="_blank">
+                      <img src="{% static 'pictures/7_group.jpg' %}" alt="第七組" width="80" height="80"> 
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+

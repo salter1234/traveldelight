@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遠雄海洋公園 - 海洋世界的奇幻之旅</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">遠雄海洋公園：海洋世界的奇幻之旅</h2>
+
+            <img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1568,h_1044/activities/eio6pc9anx7dyponv2dy/%E9%81%A0%E9%9B%84%E6%B5%B7%E6%B4%8B%E5%85%AC%E5%9C%92%E9%96%80%E7%A5%A8-Klook%E5%AE%A2%E8%B7%AF.jpg" alt="遠雄海洋公園" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>遠雄海洋公園位於台灣花蓮縣壽豐鄉，是一個結合海洋生態、娛樂設施和表演活動的綜合性主題樂園。這裡不僅可以欣賞到多樣的海洋生物，還能享受到各種精彩的娛樂表演。</p>
+
+                <h3>歷史與發展</h3>
+                <p>遠雄海洋公園於2002年開幕，致力於提供遊客一個寓教於樂的海洋體驗。園區分為多個主題區域，每個區域都有獨特的景點和活動。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>海洋劇場</strong>：觀賞海豚和海獅的精彩表演，是公園的招牌活動之一。</li>
+                    <li><strong>海底隧道</strong>：漫步於透明隧道中，欣賞四周環繞的各種海洋生物。</li>
+                    <li><strong>極地探險</strong>：體驗南北極的動物生態，包括企鵝和北極熊。</li>
+                    <li><strong>遊樂設施</strong>：提供多種刺激的遊樂設施，如雲霄飛車和摩天輪。</li>
+                </ul>
+
+                <h3>教育與保育</h3>
+                <p>遠雄海洋公園不僅是娛樂場所，還是一個重要的海洋教育基地。園區內設有多個教育展區，介紹海洋生物的生活習性和保育知識，並定期舉辦工作坊和講座。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘火車</strong>：從台北搭乘火車至花蓮，然後轉乘公車或計程車前往。</li>
+                    <li><strong>自行開車</strong>：從花蓮市區沿台11線南下，依指示牌行駛至遠雄海洋公園。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#遠雄海洋公園</span>
+                    <span class="spot-tag">#海洋生態</span>
+                    <span class="spot-tag">#娛樂表演</span>
+                    <span class="spot-tag">#家庭旅遊</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

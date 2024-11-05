@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>和平島地質公園</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">和平島地質公園：海洋與岩石的交響曲</h2>
+
+            <img src="https://www.travel.taipei/content/images/attractions/363298/1024x768_attractions-image-kbbplhx--kgozc4dx3kqvw.jpg" alt="和平島地質公園" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>和平島地質公園位於台灣基隆市，是一個以獨特的海蝕地形和豐富的地質景觀聞名的自然景區。這裡的岩石景觀和多樣的海洋生態，讓遊客可以近距離感受大自然的力量與美麗。</p>
+
+                <h3>歷史與發展</h3>
+                <p>和平島自古以來就是基隆的重要地標之一，過去曾是軍事重地。隨著時代變遷，和平島轉型為地質公園，保護並展示其獨特的地質和生態資源。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>海蝕平台</strong>：觀察由海水侵蝕形成的各種奇岩怪石，如海蝕洞、海蝕柱等。</li>
+                    <li><strong>潮間帶生態</strong>：探索潮間帶豐富的生態環境，觀察各種海洋生物。</li>
+                    <li><strong>地質步道</strong>：沿著步道漫步，可以近距離欣賞各種地質景觀。</li>
+                    <li><strong>觀景台</strong>：提供絕佳的視野，可以遠眺基隆港和太平洋的壯麗海景。</li>
+                </ul>
+
+                <h3>教育與保育</h3>
+                <p>和平島地質公園致力於地質教育與保育工作。園區內設有解說牌，介紹各種地質現象和生態系統，讓遊客在觀賞美景的同時，增進對地質科學的了解。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘公車</strong>：從基隆火車站搭乘基隆市公車，於和平島站下車。</li>
+                    <li><strong>自行開車</strong>：從台北市區沿國道1號北上，接國道3號，再轉台2線至和平島。</li>
+                </ul>
+
+                <p>使用這些標籤來標記和平島的特色：#和平島 #地質公園 #海蝕地形 #自然生態</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

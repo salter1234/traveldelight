@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 引入外部 CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- 引入 Font Awesome 和 jQuery -->
+    <script
+      src="https://kit.fontawesome.com/68f8681dba.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>{% block title %}我的網站{% endblock %}</title>
+
+    
+
+    <style>
+
+      /* 为标题添加渐变背景和调整字体样式 */
+      header div h1 {
+        background: linear-gradient(
+          to right,
+          rgba(164, 164, 164, 0.9),
+          rgba(184, 184, 184, 0.7)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        font-size: 3rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15),
+          -1px -1px 1px rgba(255, 255, 255, 0.3);
+      }
+
+      /* 确保图片大小适中 */
+      .logo {
+        max-width: 150px;
+        height: auto;
+        position: absolute;
+        left: 75px;
+        top: 25px;
+      }
+
+      /* 中间对齐标题 */
+      .header-container {
+        display: flex; /* 使用 Flexbox */
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        margin-top: 10px; /* 顶部边距 */
+        height: 100px; /* 設定容器高度以便於垂直居中 */
+      }
+
+      div h1 {
+        position: fixed; /* 固定位置 */
+        top: 10px; /* 距離頂部 0 像素 */
+        left: 50%; /* 水平居中 */
+        transform: translateX(-50%); /* 用於精確居中 */
+        z-index: 2000; /* 提高 z-index 確保在其他內容之上 */
+        background-color: white; /* 設定背景顏色 */
+        margin: 0; /* 去掉默認的外邊距 */
+        padding: 10px; /* 添加內邊距 */
+        border: none
+      }
+
+      header {
+        position: fixed; /* 固定在視口頂部 */
+        top: 0; /* 距離頁面頂部 0 像素 */
+        left: 0; /* 距離頁面左側 0 像素 */
+        width: 100%; /* 寬度 100% */
+        z-index: 1000; /* 確保在其他元素之上 */
+        background-color: #f8f9fa; /* 背景顏色 */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
+      }
+
+      body {
+        padding-top: 100px; /* 根據 header 的高度設置合適的上邊距 */
+      }
+
+      header ul {
+        list-style: none; /* 移除列表項目的預設標記 */
+        margin: 0; /* 移除外邊距 */
+        display: flex; /* 使用 Flexbox 來排列項目 */
+        justify-content: space-around; /* 在水平方向均勻分佈項目 */
+        background-color: #f8f9fa; /* 設定背景顏色 */
+        border-bottom: 2px solid #ccc; /* 底部邊框 */
+        padding-top: 50px; /* 向下內邊距 */
+      }
+
+      header ul li {
+        margin: 0 15px; /* 設定列表項目的左右邊距 */
+      }
+
+      header ul li a {
+        text-decoration: none; /* 移除超連結的下劃線 */
+        color: #333; /* 設定文字顏色 */
+        font-weight: bold; /* 設定文字為粗體 */
+        transition: color 0.3s; /* 添加顏色變化的過渡效果 */
+      }
+
+      header ul li a:hover {
+        color: #007bff; /* 滑鼠懸停時改變文字顏色 */
+      }
+    </style>
+  </head>
+  <body style="padding-top: 140px;">
+    <!-- 導覽列 -->
+    <header class="bg-light py-3 mb-4">
+      <div class="container text-center" style="margin-left: 470px;">
+        <img
+          src="{% static 'pictures/travel.wed_logo.png' %}"
+          alt="Logo"
+          class="logo"
+        />
+        <!-- Logo -->
+        <div class="header-container">
+          <h1>Travel Delight</h1>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; right: 0; top: 0; width: 600px; height: 140px; z-index: 1000; background-color: transparent;">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">主頁</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">關於我們</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'introduce' %}">景點介紹</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'tours' %}">旅遊行程</a>
+                </li>
+                <!-- 個人資料下拉菜单 -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      個人資料
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="{% url 'profile' %}">個人資料</a></li>
+                      <li><a class="dropdown-item" href="/orders">我的訂單</a></li>
+                      <li><a class="dropdown-item" href="/favorites">我的收藏</a></li> <!-- 新增“我的收藏”按钮 -->
+                      {% if user.is_authenticated %}
+                      <li>
+                          <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                              {% csrf_token %}
+                              <button type="submit" class="dropdown-item">登出</button>
+                          </form>
+                      </li>
+                      {% else %}
+                      <li><a class="dropdown-item" href="{% url 'login' %}">登入</a></li>
+                      <li><a class="dropdown-item" href="{% url 'signup' %}">註冊</a></li>
+                      {% endif %}
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 主內容區塊 -->
+    {% block content %}
+    <!-- 頁面特定的內容會插入在這裡 -->
+    {% endblock %}
+
+    <!-- 引入 JavaScript 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <!-- 引入你自己的 JavaScript 文件 -->
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蘭嶼氣象站</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">蘭嶼氣象站：觀測風雲變幻的高地</h2>
+
+            <img src="https://tour.taitung.gov.tw/image/35960/1024x768" alt="蘭嶼氣象站" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>蘭嶼氣象站位於蘭嶼島的高處，是一個重要的氣象觀測點。這裡不僅提供了氣象數據，還是一個觀賞蘭嶼全景的絕佳地點。</p>
+
+                <h3>功能與歷史</h3>
+                <p>蘭嶼氣象站負責監測當地的天氣變化，提供重要的氣象資料，對於颱風預警和氣候研究具有重要意義。自建立以來，氣象站一直在為當地居民和政府提供準確的天氣預報。</p>
+
+                <h3>景觀特色</h3>
+                <ul>
+                    <li><strong>全景視野</strong>：由於地勢較高，氣象站提供了俯瞰整個蘭嶼的壯麗視野，尤其適合觀賞日出和日落。</li>
+                    <li><strong>自然環境</strong>：周圍植被豐富，空氣清新，是放鬆心情的好地方。</li>
+                    <li><strong>教育意義</strong>：遊客可以了解氣象觀測的基本知識，增進對氣象學的興趣。</li>
+                </ul>
+
+                <h3>旅遊資訊</h3>
+                <p>
+                    <strong>交通方式</strong>：從蘭嶼主要村莊可以租用機車或自行車前往，路途較為陡峭，建議有騎行經驗的遊客前往。<br>
+                    <strong>參觀時間</strong>：建議在天氣晴朗時參觀，以便欣賞到最佳的景色。
+                </p>
+
+                <h3>注意事項</h3>
+                <p>
+                    <strong>安全</strong>：由於地勢較高，請注意安全，不要靠近懸崖邊緣。<br>
+                    <strong>環境保護</strong>：請保持環境整潔，尊重當地的自然生態。
+                </p>
+
+                <p>蘭嶼氣象站不僅是科學觀測的重要設施，也是遊客欣賞蘭嶼自然美景的理想地點，為每位訪客帶來獨特的視覺和知識體驗。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

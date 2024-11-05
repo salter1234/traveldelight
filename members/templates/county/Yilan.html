@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宜蘭旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">宜蘭：自然與文化的融合</h2>
+
+            <img src="{% static 'pictures/county/Yilan.jpg' %}" alt="宜蘭景觀" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>宜蘭位於台灣的東北角，以其清新的自然景觀和豐富的文化底蘊而聞名。這裡有山有海，還有令人放鬆的鄉村風情，是個讓人感受慢活的理想地點。</p>
+
+                <h3>自然與戶外活動</h3>
+                <ul>
+                    <li><strong>太平山國家森林遊樂區</strong>：是喜愛登山健行者的天堂，無論是漫步在翠綠的森林中，還是欣賞壯麗的山景，都能讓人心曠神怡。</li>
+                    <li><strong>冬山河親水公園</strong>：提供了水上活動的機會，划獨木舟或是騎自行車環湖都是不錯的選擇。</li>
+                </ul>
+
+                <h3>溫泉與放鬆</h3>
+                <ul>
+                    <li><strong>礁溪溫泉</strong>：這裡的溫泉水質清澈，含有豐富的礦物質，對皮膚有很好的保養效果。無論是住在溫泉旅館還是體驗露天湯池，都是放鬆身心的絕佳方式。</li>
+                </ul>
+
+                <h3>文化與藝術</h3>
+                <ul>
+                    <li><strong>宜蘭傳藝中心</strong>：結合了傳統工藝與現代藝術的空間，提供各式各樣的手作體驗和表演。</li>
+                    <li><strong>宜蘭國際童玩藝術節</strong>：每年舉辦的活動結合了藝術、音樂和遊戲，適合各個年齡層的人。</li>
+                </ul>
+
+                <h3>美食與特產</h3>
+                <ul>
+                    <li><strong>三星蔥和鴨賞</strong>：宜蘭的招牌特產，羅東夜市是品嚐這些小吃的好地方，從蔥油餅到蜜餞，琳瑯滿目的選擇讓人食指大動。</li>
+                </ul>
+
+                <h3>農村體驗</h3>
+                <ul>
+                    <li><strong>農業體驗活動</strong>：宜蘭的農場和休閒農莊提供如採果、製作米食等活動，讓遊客能夠親身體驗農村生活的樂趣。</li>
+                </ul>
+
+                <p>宜蘭是一個結合自然、美食與文化的地區，不論你是喜愛戶外活動、享受溫泉放鬆，還是探索當地美食和農村生活，這裡都能帶給你豐富的體驗。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

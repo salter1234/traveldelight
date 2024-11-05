@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九族文化村 - 探索台灣原住民文化的旅程</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">九族文化村：探索台灣原住民文化的旅程</h2>
+
+            <img src="https://www.abic.com.tw/upload/facvNINE/x000.jpg.pagespeed.ic.0B1AmjYy_1.jpg" alt="九族文化村" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>九族文化村位於台灣南投縣，是一個結合文化、遊樂和自然景觀的主題公園。這裡以展示台灣原住民文化為主題，並提供多樣的娛樂設施和美麗的自然風光。</p>
+
+                <h3>園區特色</h3>
+                <ul>
+                    <li><strong>原住民文化展示</strong>：九族文化村內有多個主題區域，展示台灣九大原住民族的傳統建築、服飾、工藝和舞蹈表演，讓遊客深入了解台灣的多元文化。</li>
+                    <li><strong>遊樂設施</strong>：園區內設有多種遊樂設施，包括雲霄飛車、摩天輪和水上遊樂設施，適合全家大小一同遊玩。</li>
+                    <li><strong>自然景觀</strong>：園區背倚山林，綠意盎然，並鄰近日月潭，景色優美，是放鬆身心的好地方。</li>
+                </ul>
+
+                <h3>必訪活動</h3>
+                <ul>
+                    <li><strong>文化表演</strong>：觀賞原住民的傳統舞蹈和音樂表演，感受濃厚的文化氛圍。</li>
+                    <li><strong>遊樂園區</strong>：體驗刺激的遊樂設施，享受歡樂時光。</li>
+                    <li><strong>自然漫步</strong>：在園區內的步道上漫步，欣賞周圍的自然美景。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘客運</strong>：從台中或埔里搭乘客運至九族文化村，交通方便。</li>
+                    <li><strong>自行開車</strong>：從台中出發，沿國道3號南下，再轉接台14線和台21線即可抵達。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#九族文化村</span>
+                    <span class="spot-tag">#原住民文化</span>
+                    <span class="spot-tag">#遊樂設施</span>
+                    <span class="spot-tag">#自然景觀</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

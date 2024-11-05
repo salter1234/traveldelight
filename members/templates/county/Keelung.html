@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基隆旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">基隆：北部海港的璀璨明珠</h2>
+
+            <img src="{% static 'pictures/county/Keelung.jpg' %}" alt="基隆城市風景" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>基隆，位於台灣的北部海岸，是一座充滿海港風情的城市。作為台灣的主要港口之一，基隆以其獨特的地理位置和豐富的歷史文化吸引著眾多遊客。</p>
+
+                <h3>港口與海洋文化</h3>
+                <p>基隆港是台灣最重要的國際港口之一，擁有繁忙的貨運和客運交通。基隆的海洋文化深植於市民的生活中，漁業活動和海洋美食是這座城市的重要特色。遊客可以在基隆港口欣賞到壯觀的船舶進出景象，並參加海上遊覽活動，感受海洋的魅力。</p>
+
+                <h3>歷史與文化</h3>
+                <p>基隆擁有豐富的歷史遺跡和文化景點。基隆廟口夜市是當地的地標之一，以其多樣化的美食和熱鬧的氣氛聞名。這裡的廟宇如奠濟宮和開基天后宮，不僅是宗教信仰的中心，也是了解基隆歷史的重要場所。</p>
+
+                <h3>自然景觀</h3>
+                <p>基隆周邊的自然景觀同樣令人驚豔。和平島公園是欣賞海岸風光和進行戶外活動的絕佳地點，擁有美麗的海灘和岩石地形。基隆嶼則是一個適合潛水和浮潛的地方，以其清澈的海水和豐富的海洋生態吸引著自然愛好者。</p>
+
+                <h3>美食與夜生活</h3>
+                <p>基隆的美食文化豐富多樣，尤其以海鮮料理聞名。基隆廟口夜市提供了各式各樣的地道小吃，如鼎邊銼、泡泡冰和天婦羅，讓人垂涎欲滴。這裡的夜生活同樣充滿活力，無論是酒吧、咖啡廳還是音樂表演，都能讓人享受愉快的夜晚。</p>
+
+                <h3>交通便利</h3>
+                <p>基隆的交通十分便利，距離台北市僅需短短的火車車程，成為許多台北居民假日出遊的首選。基隆市內的公共交通系統完善，方便遊客探索這座城市的每一個角落。</p>
+
+                <h3>結語</h3>
+                <p>基隆是一座融合了自然美景、豐富歷史和多元文化的城市。無論你是對海洋活動感興趣，還是想品嚐地道台灣美食，基隆都能提供獨特的體驗。這座城市的熱情與活力，讓每一位訪客都能感受到濃厚的海港魅力。基隆，無疑是台灣北部的一顆璀璨明珠，值得探索與發現。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

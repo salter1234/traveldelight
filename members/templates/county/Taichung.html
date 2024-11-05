@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台中旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">台中：創意與自然之都</h2>
+
+            <img src="{% static 'pictures/county/Taichung.jpg' %}" alt="台中城市景觀" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>台中，位於台灣中部，是一座充滿魅力與創意的城市。這裡以舒適的氣候、多元的文化以及豐富的自然景觀而聞名，吸引著眾多旅客和居民。</p>
+
+                <h3>城市特色</h3>
+                <ul>
+                    <li><strong>宜人的生活環境</strong>：台中以寬敞的街道和綠意盎然的公園聞名，如秋紅谷生態公園和草悟道，是市民休閒的理想場所。</li>
+                </ul>
+
+                <h3>藝術與創意</h3>
+                <ul>
+                    <li><strong>國立台灣美術館</strong>：台灣最大的美術館，定期舉辦國內外藝術展覽。</li>
+                    <li><strong>彩虹眷村</strong>：色彩繽紛的壁畫村落，吸引無數遊客和攝影愛好者。</li>
+                </ul>
+
+                <h3>美食與夜市</h3>
+                <ul>
+                    <li><strong>逢甲夜市</strong>：台中最著名的夜市之一，提供大腸包小腸、鹽酥雞等地道小吃。</li>
+                    <li><strong>精緻餐廳與咖啡廳</strong>：台中擁有眾多創新料理和精緻的用餐選擇，讓美食愛好者流連忘返。</li>
+                </ul>
+
+                <h3>自然景觀</h3>
+                <ul>
+                    <li><strong>大雪山森林遊樂區</strong>：擁有豐富的生態系統和徒步路線，適合觀賞自然和野生動物。</li>
+                    <li><strong>日月潭</strong>：台灣最大的淡水湖，距離台中不遠，適合進行自行車和划船活動。</li>
+                </ul>
+
+                <h3>經濟與創新</h3>
+                <ul>
+                    <li><strong>創新與科技發展</strong>：台中是重要的經濟中心，擁有眾多工業園區和科技公司，致力於智慧城市建設。</li>
+                </ul>
+
+                <p>台中是一座充滿活力與多樣性的城市，無論你是藝術愛好者、美食饕客，還是自然探索者，這裡都能提供無盡的驚喜與樂趣。友善的市民與便利的交通讓每一位訪客都能輕鬆探索這座城市的魅力。台中，無疑是台灣中部的一顆璀璨明珠，值得每一位旅人的駐足與探索。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

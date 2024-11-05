@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綠世界生態農場</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">綠世界生態農場：探索自然的樂園</h2>
+
+            <img src="https://static.popdaily.com.tw/u/202206/ab52149e-4885-458c-82ca-e1c842d2013d.jpeg" alt="綠世界生態農場" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>綠世界生態農場位於台灣新竹縣，是一個以生態保育與環境教育為主題的農場。這裡提供豐富的自然景觀和多樣的生態體驗，是親子同遊和自然愛好者的理想去處。</p>
+
+                <h3>園區特色</h3>
+                <ul>
+                    <li><strong>生態展示區</strong>：園區內設有多個生態展示區，包括鳥類、昆蟲、植物等，讓遊客深入了解各種生態系統。</li>
+                    <li><strong>動物互動</strong>：遊客可以近距離接觸小動物，如餵食羊駝、觀賞孔雀開屏等，享受與動物互動的樂趣。</li>
+                    <li><strong>植物園</strong>：擁有多樣的植物展示，從熱帶雨林植物到本土植物，適合植物愛好者探索。</li>
+                    <li><strong>步道與湖泊</strong>：園區內設有多條步道和湖泊，提供遊客悠閒漫步和觀察自然的空間。</li>
+                </ul>
+
+                <h3>活動與體驗</h3>
+                <ul>
+                    <li><strong>生態導覽</strong>：專業導覽員帶領遊客深入了解各種生態知識，增進環境保育的意識。</li>
+                    <li><strong>手作課程</strong>：提供如植物拓印、自然工藝品製作等手作活動，適合全家大小共同參與。</li>
+                    <li><strong>露營與野餐</strong>：園區內設有露營區和野餐區，是享受戶外生活的好地方。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>自駕</strong>：從國道3號下「關西交流道」，依指示牌行駛即可抵達。</li>
+                    <li><strong>大眾交通</strong>：搭乘台鐵至「竹東站」，轉乘當地公車或計程車前往農場。</li>
+                </ul>
+
+                <p>綠世界生態農場不僅是學習生態知識的好地方，也是放鬆心情、親近大自然的理想選擇。無論是一天的短暫遊覽，還是長時間的生態之旅，這裡都能帶給您豐富的體驗與收穫。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金門模範街 - 歷史與現代交融的購物街</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">金門模範街：歷史與現代交融的購物街</h2>
+
+            <img src="https://kinmen.travel/attractions/36423/1024x768_attractions-image-jgcrfzgno0ifzi20xdo7ha.jpg" alt="金門模範街" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>金門模範街位於金門縣金城鎮，是一條充滿歷史風情的購物街。這裡結合了傳統閩南建築風格與現代商業氛圍，是遊客了解金門文化和享受購物樂趣的好去處。</p>
+
+                <h3>街區特色</h3>
+                <ul>
+                    <li><strong>傳統建築</strong>：模範街保留了許多傳統的閩南紅磚建築，讓人彷彿置身於過去的時光，感受濃厚的歷史氛圍。</li>
+                    <li><strong>多元商店</strong>：街上有各式各樣的商店，從特色手工藝品、金門特產到時尚服飾，應有盡有，滿足遊客的購物需求。</li>
+                    <li><strong>地道美食</strong>：在模範街上，還可以品嚐到正宗的金門小吃，如廣東粥、蚵仔煎等，讓人流連忘返。</li>
+                </ul>
+
+                <h3>必訪活動</h3>
+                <ul>
+                    <li><strong>建築欣賞</strong>：漫步於街道之中，欣賞傳統閩南建築的獨特美感。</li>
+                    <li><strong>特色購物</strong>：探索各種特色商店，購買金門特產和精美紀念品。</li>
+                    <li><strong>美食品嚐</strong>：品味地道的金門美食，體驗當地的飲食文化。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>步行</strong>：模範街位於金城鎮中心，步行即可輕鬆到達。</li>
+                    <li><strong>搭乘公車</strong>：從金門機場或其他地區搭乘公車至金城鎮，再步行前往模範街。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#金門模範街</span>
+                    <span class="spot-tag">#閩南建築</span>
+                    <span class="spot-tag">#特色購物</span>
+                    <span class="spot-tag">#金門美食</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

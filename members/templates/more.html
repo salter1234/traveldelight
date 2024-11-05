@@ -1,0 +1,133 @@
+{% extends "header.html" %}
+
+{% block content %}
+{% load static %}
+
+<title>{% block title %}查看更多{% endblock %}</title>
+
+<style>
+    .more-wrap {
+        display: none; /* 預設不顯示，根據頁面切換來顯示 */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .more-wrap.more-active {
+        display: flex; /* 顯示當前頁面 */
+    }
+
+    .more-wrap ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .more-wrap li {
+        width: 23%; /* 每行 4 個項目 */
+        margin: 10px 1%; /* 設置項目間距 */
+        border: 1.5px solid #ddd; /* 邊框寬度為 1.5px */
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .more-wrap a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 10px;
+    }
+
+    .more-wrap img {
+        width: 255px;
+        height: 170px;
+        display: block;
+    }
+
+    .more-wrap ul li p {
+        font-size: 20px;
+        line-height: 1.5;
+        color: #333;
+        margin: 10px 0;
+        text-align: left;
+        border: none;
+        text-align: center;
+        font-family: 'Microsoft JhengHei';
+        font-weight: bold;
+    }
+
+    .more-pagination {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .more-pagination button {
+        margin: 0 5px;
+        padding: 12px 20px;
+        border: none;
+        color: block;
+        cursor: pointer;
+        border-radius: 40px;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: background-color 0.3s;
+        min-width: 5px;
+    }
+
+    .more-pagination button.more-active {
+        background-color: #FAFAD2;
+    }
+</style>
+
+<div class="more-wrap more-active" id="more-page-1">
+    <ul>
+        <li><a href="{% url 'more_list' '台北' %}"><img src="{% static 'pictures/county/Taipei.jpg' %}"><p>台北</p></a></li>
+        <li><a href="{% url 'more_list' '新北' %}"><img src="{% static 'pictures/county/NewTaipei.jpg' %}"><p>新北</p></a></li>
+        <li><a href="{% url 'more_list' '基隆' %}"><img src="{% static 'pictures/county/Keelung.jpg' %}"><p>基隆</p></a></li>
+        <li><a href="{% url 'more_list' '新竹' %}"><img src="{% static 'pictures/county/Hsinchu.jpg' %}"><p>新竹</p></a></li>
+        <li><a href="{% url 'more_list' '桃園' %}"><img src="{% static 'pictures/county/Taoyuan.jpg' %}"><p>桃園</p></a></li>
+        <li><a href="{% url 'more_list' '苗栗' %}"><img src="{% static 'pictures/county/Miaoli.jpg' %}"><p>苗栗</p></a></li>
+        <li><a href="{% url 'more_list' '台中' %}"><img src="{% static 'pictures/county/Taichung.jpg' %}"><p>台中</p></a></li>
+        <li><a href="{% url 'more_list' '彰化' %}"><img src="{% static 'pictures/county/Changhua.jpg' %}"><p>彰化</p></a></li>
+        <li><a href="{% url 'more_list' '南投' %}"><img src="{% static 'pictures/county/nantou.jpg' %}"><p>南投</p></a></li>
+        <li><a href="{% url 'more_list' '雲林' %}"><img src="{% static 'pictures/county/Yunlin.jpg' %}"><p>雲林</p></a></li>
+        <li><a href="{% url 'more_list' '嘉義' %}"><img src="{% static 'pictures/county/Chiayi.jpg' %}"><p>嘉義</p></a></li>
+        <li><a href="{% url 'more_list' '台南' %}"><img src="{% static 'pictures/county/Tainan.jpg' %}"><p>台南</p></a></li>
+        <li><a href="{% url 'more_list' '高雄' %}"><img src="{% static 'pictures/county/Kaohsiung.jpg' %}"><p>高雄</p></a></li>
+        <li><a href="{% url 'more_list' '屏東' %}"><img src="{% static 'pictures/county/Pingtung.jpg' %}"><p>屏東</p></a></li>
+        <li><a href="{% url 'more_list' '宜蘭' %}"><img src="{% static 'pictures/county/Yilan.jpg' %}"><p>宜蘭</p></a></li>
+        <li><a href="{% url 'more_list' '台東' %}"><img src="{% static 'pictures/county/Taitung.jpg' %}"><p>台東</p></a></li>
+        <li><a href="{% url 'more_list' '花蓮' %}"><img src="{% static 'pictures/county/Hualien.jpg' %}"><p>花蓮</p></a></li>
+        <li><a href="{% url 'more_list' '澎湖' %}"><img src="{% static 'pictures/county/Penghu.jpg' %}"><p>澎湖</p></a></li>
+        <li><a href="{% url 'more_list' '金門' %}"><img src="{% static 'pictures/county/kinmen.jpg' %}"><p>金門</p></a></li>
+        <li><a href="{% url 'more_list' '馬祖' %}"><img src="{% static 'pictures/county/Mazu.jpg' %}"><p>馬祖</p></a></li>
+    </ul>
+</div>
+
+
+<div class="more-pagination">
+    <button class="more-active" onclick="showPage(1)"><b>1</b></button>
+</div>
+
+<script>
+    function showPage(pageNumber) {
+        // 隱藏所有頁面
+        const pages = document.querySelectorAll('.more-wrap');
+        pages.forEach(page => page.classList.remove('more-active'));
+
+        // 顯示選擇的頁面
+        document.getElementById(`more-page-${pageNumber}`).classList.add('more-active');
+
+        // 更新分頁按鈕狀態
+        const buttons = document.querySelectorAll('.more-pagination button');
+        buttons.forEach(button => button.classList.remove('more-active'));
+        buttons[pageNumber - 1].classList.add('more-active');
+    }
+</script>
+
+{% include 'footer.html' %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

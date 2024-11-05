@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>武陵農場 - 四季皆美的高山樂園</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">武陵農場：四季皆美的高山樂園</h2>
+
+            <img src="https://travel.taichung.gov.tw/image/58310/1024x768" alt="武陵農場" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>武陵農場位於台灣台中市和平區，是一個以自然景觀和農業生產為主題的旅遊勝地。這裡擁有壯麗的高山景色和豐富的動植物資源，是休閒旅遊和生態體驗的理想地點。</p>
+
+                <h3>景點特色</h3>
+                <ul>
+                    <li><strong>四季景觀</strong>：武陵農場因其獨特的地理位置，每個季節都有不同的風貌。春天櫻花盛開，夏季綠意盎然，秋天楓葉繽紛，冬季則有機會看到雪景。</li>
+                    <li><strong>農業體驗</strong>：農場內種植了多種水果和蔬菜，如水蜜桃、蘋果、高山茶等，遊客可以參加採果活動，享受親手摘採的樂趣。</li>
+                    <li><strong>自然步道</strong>：設有多條步道，讓遊客可以在森林中漫步，探索當地的自然生態和野生動植物。</li>
+                </ul>
+
+                <h3>必訪活動</h3>
+                <ul>
+                    <li><strong>櫻花季</strong>：每年春天，農場的櫻花吸引大量遊客前來觀賞，是台灣著名的賞櫻勝地之一。</li>
+                    <li><strong>採果樂</strong>：根據季節參加不同的採果活動，體驗農業生活。</li>
+                    <li><strong>生態觀察</strong>：參加導覽活動，了解農場的生態系統和保育工作。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <p>前往武陵農場的方法：</p>
+                <ul>
+                    <li>自行開車：從台中市區出發，沿著台8線公路前往梨山，再依指示牌前往武陵農場。</li>
+                    <li>搭乘公共交通：從台中市搭乘客運至梨山，然後轉乘接駁車或計程車到達農場。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#武陵農場</span>
+                    <span class="spot-tag">#四季景觀</span>
+                    <span class="spot-tag">#農業體驗</span>
+                    <span class="spot-tag">#自然步道</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

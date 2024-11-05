@@ -1,0 +1,4 @@
+.logo-custom-size {
+    max-width: 150px;  /* 最大宽度设置为 150 像素，您可以根据需要进行调整 */
+    height: auto;       /* 高度自适应，保持图像比例 */
+}

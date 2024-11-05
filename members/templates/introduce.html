@@ -1,0 +1,208 @@
+{% extends "header.html" %}
+
+{% block content %}
+{% load static %}
+
+<title>{% block title %}景點介紹{% endblock %}</title>
+
+<style>
+    .spot2-wrap {
+        display: none; /* 預設不顯示，根據頁面切換來顯示 */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .spot2-wrap.spot2-active {
+        display: flex; /* 顯示當前頁面 */
+    }
+
+    .spot2-wrap ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .spot2-wrap li {
+        width: 23%; /* 每行 4 個項目 */
+        margin: 10px 1%; /* 設置項目間距 */
+        border: 1.5px solid #ddd; /* 邊框寬度為 1.5px */
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .spot2-wrap a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 10px;
+    }
+
+    .spot2-wrap img {
+        width: 255px;
+        height: 170px;
+        display: block;
+    }
+
+    .spot2-wrap ul li p {
+        font-size: 20px;
+        line-height: 1.5;
+        color: #333;
+        margin: 10px 0;
+        text-align: left;
+        border: none;
+        text-align: center;
+        font-family: 'Microsoft JhengHei';
+        font-weight: bold;
+    }
+
+    .spot2-pagination {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .spot2-pagination button {
+        margin: 0 5px;
+        padding: 12px 20px;
+        border: none;
+        color: block;
+        cursor: pointer;
+        border-radius: 40px;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: background-color 0.3s;
+        min-width: 5px;
+    }
+
+    .spot2-pagination button.spot2-active {
+        background-color: #FAFAD2;
+    }
+</style>
+
+<div class="spot2-wrap spot2-active" id="spot2-page-1">
+    <ul>
+        <li><a href="{% url 'spot_list' '阿里山國家森林遊樂區' %}"><img src="https://photo.settour.com.tw/900x600/https://www.settour.com.tw/ss_img/info/location/CYI/I0/CYI0000089/CYI0000089_87204.jpg" alt="阿里山國家森林遊樂區"><p>阿里山國家森林遊樂區</p></a></li>
+        <li><a href="{% url 'spot_list' '朝日溫泉' %}"><img src="https://image.cdn-eztravel.com.tw/Vm1dYjPaWYskvklKKwhRhcf4GQiDmKO3gtKKmANOEq0/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvR05JXzE0MDQyMjY1NjUuanBn.jpg" alt="朝日溫泉"><p>朝日溫泉</p></a></li>
+        <li><a href="{% url 'spot_list' '澎湖縣白沙鄉通梁村' %}"><img src="https://i0.wp.com/journey.tw/wp-content/uploads/20180422235643_26.jpg?resize=1100%2C734&quality=99&ssl=1" alt="澎湖縣白沙鄉通梁村"><p>澎湖縣白沙鄉通梁村</p></a></li>
+        <li><a href="{% url 'spot_list' '馬祖北海坑道' %}"><img src="https://www.dbnsa.gov.tw/att/pic/b_11005725.jpg" alt="馬祖北海坑道"><p>馬祖北海坑道</p></a></li>
+        <li><a href="{% url 'spot_list' '北港朝天宮' %}"><img src="https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_2249_8.jpg" alt="北港朝天宮"><p>北港朝天宮</p></a></li>
+        <li><a href="{% url 'spot_list' '馬祖北海坑道' %}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Beihai_Military_Tunnel_%E5%8C%97%E6%B5%B7%E5%9D%91%E9%81%93_-_panoramio_%281%29.jpg/1200px-Beihai_Military_Tunnel_%E5%8C%97%E6%B5%B7%E5%9D%91%E9%81%93_-_panoramio_%281%29.jpg" alt="馬祖北海坑道"><p>馬祖北海坑道</p></a></li>
+        <li><a href="{% url 'spot_list' '綠島柴口浮潛區' %}"><img src="https://www.eastcoast-nsa.gov.tw/image/29044/1024x768" alt="綠島柴口浮潛區"><p>綠島柴口浮潛區</p></a></li>
+        <li><a href="{% url 'spot_list' '成美文化園區' %}"><img src="https://tourism.chcg.gov.tw/upload/27/2023101713555162455.jpg" alt="成美文化園區"><p>成美文化園區</p></a></li>
+        <li><a href="{% url 'spot_list' '清境農場' %}"><img src="https://image.cdn-eztravel.com.tw/1TB0_BgFtcPNRqkPkelkDtZii9W7OyyYb5IC5Btuqxo/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L3BvaS90dy9OQTAvQ2luZ2ppbmcgRmFybS9zaHV0dGVyc3RvY2tfMzU4NTQ4OTQ0LmpwZw.jpg" alt="清境農場"><p>清境農場</p></a></li>
+        <li><a href="{% url 'spot_list' '小琉球蛤板灣' %}"><img src="https://www.dbnsa.gov.tw/att/pic/b_11005731.jpg" alt="小琉球蛤板灣"><p>小琉球蛤板灣</p></a></li>
+        <li><a href="{% url 'spot_list' '澄清湖風景區' %}"><img src="https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_627_9.jpg&sizetype=3" alt="澄清湖風景區"><p>澄清湖風景區</p></a></li>
+        <li><a href="{% url 'spot_list' '大溪老街' %}"><img src="https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_2488_25.jpg&sizetype=3" alt="大溪老街"><p>大溪老街</p></a></li>
+    </ul>
+</div>
+
+<div class="spot2-wrap" id="spot2-page-2">
+    <ul>
+        <li><a href="{% url 'spot_list' '斗六膨鼠森林公園' %}"><img src="https://cc.tvbs.com.tw/img/program/upload/2023/01/12/20230112161123-155f73d0.jpg" alt="斗六膨鼠森林公園"><p>斗六膨鼠森林公園</p></a></li>
+        <li><a href="{% url 'spot_list' '台中異想新樂園' %}"><img src="https://wonder-newland.daliartplaza.com.tw/daliart/images/f2.jpg" alt="台中異想新樂園"><p>台中異想新樂園</p></a></li>
+        <li><a href="{% url 'spot_list' '奮起湖老街' %}"><img src="https://images-besttour.cdn.hinet.net/intranet/view/images/VTWNCYI99.jpg" alt="奮起湖老街"><p>奮起湖老街</p></a></li>
+        <li><a href="{% url 'spot_list' '飛牛牧場' %}"><img src="https://image.everfuntravel.com/_data/i/upload/2021/02/24/20210224112802-e6fe3a82-xl.png" alt="飛牛牧場"><p>飛牛牧場</p></a></li>
+        <li><a href="{% url 'spot_list' '嘉義蓋婭莊園' %}"><img src="https://cc.tvbs.com.tw/img/program/upload/2023/07/10/20230710115042-f7ed3a07.jpg" alt="嘉義蓋婭莊園"><p>嘉義蓋婭莊園</p></a></li>
+        <li><a href="{% url 'spot_list' '綠世界生態農場' %}"><img src="https://static.popdaily.com.tw/u/202206/ab52149e-4885-458c-82ca-e1c842d2013d.jpeg" alt="綠世界生態農場"><p>綠世界生態農場</p></a></li>
+        <li><a href="{% url 'spot_list' '彰化穀堡園區' %}"><img src="https://baofamily.tw/wp-content/uploads/pixnet/1578068506-1082902096.jpg" alt="彰化穀堡園區"><p>彰化穀堡園區</p></a></li>
+        <li><a href="{% url 'spot_list' '古寧頭戰史館' %}"><img src="https://kinmen.travel/attractions/10380/1024x768_attractions-image-r3x3dnph70sltz4oqjff5w.jpg" alt="古寧頭戰史館"><p>古寧頭戰史館</p></a></li>
+        <li><a href="{% url 'spot_list' '馬祖鐵堡' %}"><img src="https://www.matsu-nsa.gov.tw/UserFiles/image/specialplan/%E9%90%B5%E5%A0%A11-min.jpg" alt="馬祖鐵堡"><p>馬祖鐵堡</p></a></li>
+        <li><a href="{% url 'spot_list' '陳景蘭洋樓' %}"><img src="https://kinmen.travel/attractions/10267/1024x768_attractions-image-phszdac-kkuqihy8v7xyra.jpg" alt="陳景蘭洋樓"><p>陳景蘭洋樓</p></a></li>
+        <li><a href="{% url 'spot_list' '馬祖津沙聚落' %}"><img src="https://cc.tvbs.com.tw/img/program/upload/2018/05/23/20180523103359-f0585227.jpg" alt="馬祖津沙聚落"><p>馬祖津沙聚落</p></a></li>
+        <li><a href="{% url 'spot_list' '九份' %}"><img src="https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_290_8.jpg&sizetype=3" alt="九份"><p>九份</p></a></li>
+    </ul>
+</div>
+
+<div class="spot2-wrap" id="spot2-page-3">
+    <ul>
+        <li><a href="{% url 'spot_list' '墾丁國家公園' %}"><img src="https://recreation.forest.gov.tw/Files/Forest/RA/photo/album/0600002/06_%E4%BB%99%E6%B4%9E(%E6%94%9D%E5%BD%B1-%E8%8E%8A%E5%93%B2%E7%91%8B.jpg" alt="墾丁國家公園"><p>墾丁國家公園</p></a></li>
+        <li><a href="{% url 'spot_list' '知本國家森林遊樂區' %}"><img src="https://tour.taitung.gov.tw/image/28067/1024x768" alt="知本國家森林遊樂區"><p>知本國家森林遊樂區</p></a></li>
+        <li><a href="{% url 'spot_list' '六福村主題遊樂園' %}"><img src="https://pix1.tripperway.com/001/original/123654922.jpg" alt="六福村主題遊樂園"><p>六福村主題遊樂園</p></a></li>
+        <li><a href="{% url 'spot_list' '綠島燈塔' %}"><img src="https://tour.taitung.gov.tw/image/35865/1024x768" alt="綠島燈塔"><p>綠島燈塔</p></a></li>
+        <li><a href="{% url 'spot_list' '蘭嶼雙獅岩' %}"><img src="https://tour.taitung.gov.tw/image/33511/1024x768" alt="蘭嶼雙獅岩"><p>蘭嶼雙獅岩</p></a></li>
+        <li><a href="{% url 'spot_list' '龍磐公園' %}"><img src="https://images.abic.com.tw/photoDB/post/1631867945.jpg" alt="龍磐公園"><p>龍磐公園</p></a></li>
+        <li><a href="{% url 'spot_list' '龍騰斷橋' %}"><img src="https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_C100_342_8.jpg&sizetype=3" alt="龍騰斷橋"><p>龍騰斷橋</p></a></li>
+        <li><a href="{% url 'spot_list' '蘭嶼情人洞' %}"><img src="https://tour.taitung.gov.tw/image/35952/1024x768" alt="蘭嶼情人洞"><p>蘭嶼情人洞</p></a></li>
+        <li><a href="{% url 'spot_list' '鹿野高台' %}"><img src="https://tour.taitung.gov.tw/image/23972/1024x768" alt="鹿野高台"><p>鹿野高台</p></a></li>
+        <li><a href="{% url 'spot_list' '澎湖大菓葉柱狀玄武岩' %}"><img src="https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_A12-00345_4.jpg&sizetype=3" alt="澎湖大菓葉柱狀玄武岩"><p>澎湖大菓葉柱狀玄武岩</p></a></li>
+        <li><a href="{% url 'spot_list' '梅花湖' %}"><img src="https://lh3.googleusercontent.com/places/ANJU3DtxD5rW9YuXsGIO5GHDvurhULfPFLOHx2x2SzzeIx0ndhwbzynkNUQf5WhUWxNF23OuMDFpT55dOVQcD8-h2oWOCYRbDVQ2r9w=s1600-w960" alt="梅花湖"><p>梅花湖</p></a></li>
+        <li><a href="{% url 'spot_list' '基隆廟口夜市' %}"><img src="https://bigpipi.tw/wp-content/uploads/2023/04/eZy-Watermark_27-04-2023_21-52-25.jpg" alt="基隆廟口夜市"><p>基隆廟口夜市</p></a></li>
+    </ul>
+</div>
+
+<div class="spot2-wrap" id="spot2-page-4">
+    <ul>
+        <li><a href="{% url 'spot_list' '金門模範街' %}"><img src="https://kinmen.travel/attractions/36423/1024x768_attractions-image-jgcrfzgno0ifzi20xdo7ha.jpg" alt="金門模範街"><p>金門模範街</p></a></li>
+        <li><a href="{% url 'spot_list' '奎壁山摩西分海' %}"><img src="https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_A12-00413.jpg" alt="奎壁山摩西分海"><p>奎壁山摩西分海</p></a></li>
+        <li><a href="{% url 'spot_list' '南寮漁港' %}"><img src="https://image.cdn-eztravel.com.tw/6dgGgWBaCrbAQLmmdZEpRU60AOYqyrNsRby6nR2v3dA/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSFNaXzE2NTMwNjk4MTcuanBn.jpg" alt="南寮漁港"><p>南寮漁港</p></a></li>
+        <li><a href="{% url 'spot_list' '南庄老街' %}"><img src="https://storage.googleapis.com/smiletaiwan-cms-cwg-tw/ckeditor/201812/ckeditor-5c2323425e979.jpg" alt="南庄老街"><p>南庄老街</p></a></li>
+        <li><a href="{% url 'spot_list' '國立自然科學博物館' %}"><img src="https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_2191_8.jpg&sizetype=3" alt="國立自然科學博物館"><p>國立自然科學博物館</p></a></li>
+        <li><a href="{% url 'spot_list' '九族文化村' %}"><img src="https://www.abic.com.tw/upload/facvNINE/x000.jpg.pagespeed.ic.0B1AmjYy_1.jpg" alt="九族文化村"><p>九族文化村</p></a></li>
+        <li><a href="{% url 'spot_list' '遠雄海洋公園' %}"><img src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1568,h_1044/activities/eio6pc9anx7dyponv2dy/%E9%81%A0%E9%9B%84%E6%B5%B7%E6%B4%8B%E5%85%AC%E5%9C%92%E9%96%80%E7%A5%A8-Klook%E5%AE%A2%E8%B7%AF.jpg" alt="遠雄海洋公園"><p>遠雄海洋公園</p></a></li>
+        <li><a href="{% url 'spot_list' '和平島地質公園' %}"><img src="https://www.travel.taipei/content/images/attractions/363298/1024x768_attractions-image-kbbplhx--kgozc4dx3kqvw.jpg" alt="和平島地質公園"><p>和平島地質公園</p></a></li>
+        <li><a href="{% url 'spot_list' '埔心牧場' %}"><img src="https://cdn.fontrip.com/fontour/file/show/41xmm/1024.jpg" alt="埔心牧場"><p>埔心牧場</p></a></li>
+        <li><a href="{% url 'spot_list' '砂卡礑步道' %}"><img src="https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_8_6.jpg" alt="砂卡礑步道"><p>砂卡礑步道</p></a></li>
+        <li><a href="{% url 'spot_list' '平溪' %}"><img src="https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_3510_22.jpg" alt="平溪"><p>平溪</p></a></li>
+        <li><a href="{% url 'spot_list' '小琉球落日亭' %}"><img src="https://www.msvilla.com.tw/upload/spot_b/be2df1a406e36c524f0dc18f18ae6686.jpg" alt="小琉球落日亭"><p>小琉球落日亭</p></a></li>
+    </ul>
+</div>
+
+<div class="spot2-wrap" id="spot2-page-5">
+    <ul>
+        <li><a href="{% url 'spot_list' '台北市立動物園' %}"><img src="https://www.welcometw.com/wp-content/uploads/2023/12/e47dc3c6d89a4cc2855a8f7438847a4c.jpg" alt="台北市立動物園"><p>台北市立動物園</p></a></li>
+        <li><a href="{% url 'spot_list' '西門町' %}"><img src="{% static 'pictures/section/ximen.jpg' %}" alt="西門町"><p>西門町</p></a></li>
+        <li><a href="{% url 'spot_list' '太魯閣國家公園' %}"><img src="https://mediaim.expedia.com/destination/9/b5499b0fd49cda6a796ea7cbbdbe4d76.jpg" alt="太魯閣國家公園"><p>太魯閣國家公園</p></a></li>
+        <li><a href="{% url 'spot_list' '田寮月世界' %}"><img src="https://khh.travel/image/39317/1024x768" alt="田寮月世界"><p>田寮月世界</p></a></li>
+        <li><a href="{% url 'spot_list' '富岡地質公園' %}"><img src="https://www.eastcoast-nsa.gov.tw/image/72371/1024x768" alt="富岡地質公園（小野柳）"><p>富岡地質公園（小野柳）</p></a></li>
+        <li><a href="{% url 'spot_list' '傳統藝術中心' %}"><img src="https://www.taiwanviptravel.com/articles/images/national-center-for-traditional-arts-img4.jpg" alt="傳統藝術中心"><p>傳統藝術中心</p></a></li>
+        <li><a href="{% url 'spot_list' '勝利星村創意生活園區' %}"><img src="https://www.wowlavie.com/files/article/a1/19305/atl_m_210019305_870.jpg" alt="勝利星村創意生活園區"><p>勝利星村創意生活園區</p></a></li>
+        <li><a href="{% url 'spot_list' '望幽谷' %}"><img src="https://keelunghihi.com.tw/wp-content/uploads/2021/05/202404084.png" alt="望幽谷"><p>望幽谷</p></a></li>
+        <li><a href="{% url 'spot_list' '蘭嶼氣象站' %}"><img src="https://tour.taitung.gov.tw/image/35960/1024x768" alt="蘭嶼氣象站"><p>蘭嶼氣象站</p></a></li>
+        <li><a href="{% url 'spot_list' '宜蘭五峰旗瀑布' %}"><img src="https://jiaoxi-tourism.tw/images/Attractions/region5/view35/view35-04.jpeg" alt="宜蘭五峰旗瀑布"><p>宜蘭五峰旗瀑布</p></a></li>
+        <li><a href="{% url 'spot_list' '武陵農場' %}"><img src="https://travel.taichung.gov.tw/image/58310/1024x768" alt="武陵農場"><p>武陵農場</p></a></li>
+        <li><a href="{% url 'spot_list' '彰化溪湖糖廠' %}"><img src="https://tourism.chcg.gov.tw/upload/27/2024082013251269631.jpg" alt="彰化溪湖糖廠"><p>彰化溪湖糖廠</p></a></li>
+    </ul>
+</div>
+
+<div class="spot2-wrap" id="spot2-page-6">
+    <ul>
+        <li><a href="{% url 'spot_list' '溪頭自然教育園區' %}"><img src="https://travel.nantou.gov.tw/wp-content/uploads/google_map_photos/45213/0.jpg?1634689096" alt="溪頭自然教育園區"><p>溪頭自然教育園區</p></a></li>
+        <li><a href="{% url 'spot_list' 'Xpark' %}"><img src="https://travel.tycg.gov.tw/content/images/attractions/99750/1024x768_attractions-image-agxdkvnbvkayo5sox1aonq.jpg" alt="Xpark"><p>Xpark</p></a></li>
+        <li><a href="{% url 'spot_list' '陽明山國家公園' %}"><img src="https://www.wingontravel.com/travel/feature/wp-content/uploads/2019/10/%E9%99%BD%E6%98%8E%E5%B1%B1%E6%99%AF%E9%BB%9E-%E4%BA%8C%E5%AD%90%E5%9D%AA%E6%AD%A5%E9%81%93-1024x1024.jpg" alt="陽明山國家公園"><p>陽明山國家公園</p></a></li>
+        <li><a href="{% url 'spot_list' '野柳' %}"><img src="https://newtaipei.travel/content/images/attractions/25146/1024x768_attractions-image-8afwjyeuj0ozjd1fte0nxw.jpg" alt="野柳"><p>野柳</p></a></li>
+        <li><a href="{% url 'spot_list' '雲嶺之丘' %}"><img src="https://cc.tvbs.com.tw/img/program/upload/2023/05/11/20230511161220-09425eb8.jpg" alt="雲嶺之丘"><p>雲嶺之丘</p></a></li>
+        <li><a href="{% url 'spot_list' '棧貳庫KW' %}"><img src="https://khh.travel/image/37470/1024x768" alt="棧貳庫KW"><p>棧貳庫KW</p></a></li>
+    </ul>
+</div>
+
+<div class="spot2-pagination">
+    <button class="spot2-active" onclick="showPage(1)"><b>1</b></button>
+    <button onclick="showPage(2)"><b>2</b></button>
+    <button onclick="showPage(3)"><b>3</b></button>
+    <button onclick="showPage(4)"><b>4</b></button>
+    <button onclick="showPage(5)"><b>5</b></button>
+    <button onclick="showPage(6)"><b>6</b></button>
+</div>
+
+<script>
+    function showPage(pageNumber) {
+        // 隱藏所有頁面
+        const pages = document.querySelectorAll('.spot2-wrap');
+        pages.forEach(page => page.classList.remove('spot2-active'));
+
+        // 顯示選擇的頁面
+        document.getElementById(`spot2-page-${pageNumber}`).classList.add('spot2-active');
+
+        // 更新分頁按鈕狀態
+        const buttons = document.querySelectorAll('.spot2-pagination button');
+        buttons.forEach(button => button.classList.remove('spot2-active'));
+        buttons[pageNumber - 1].classList.add('spot2-active');
+    }
+</script>
+
+{% include 'footer.html' %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

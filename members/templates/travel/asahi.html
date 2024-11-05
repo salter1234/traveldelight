@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>朝日溫泉</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">朝日溫泉：綠島的天然地熱奇觀</h2>
+
+            <img src="https://image.cdn-eztravel.com.tw/Vm1dYjPaWYskvklKKwhRhcf4GQiDmKO3gtKKmANOEq0/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvR05JXzE0MDQyMjY1NjUuanBn.jpg" alt="朝日溫泉" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>朝日溫泉位於台灣的綠島，是一個獨特的海底溫泉，也是台灣少數的海岸溫泉之一。這裡不僅提供舒適的溫泉體驗，還讓您在享受溫泉的同時欣賞壯麗的海景。</p>
+
+                <h3>地理位置與特色</h3>
+                <p>朝日溫泉位於綠島的東南海岸，面向太平洋。在這裡，您可以一邊浸泡在天然的溫泉中，一邊欣賞海天一色的美景，尤其是清晨的日出，更是令人驚嘆。</p>
+
+                <h3>溫泉特色</h3>
+                <ul>
+                    <li><strong>天然海底溫泉</strong>：朝日溫泉的水源來自海底的地熱，水質清澈，富含多種礦物質，對皮膚有益。</li>
+                    <li><strong>露天溫泉池</strong>：溫泉區設有多個露天池，讓您在自然環境中放鬆身心。</li>
+                    <li><strong>日出美景</strong>：清晨的日出被譽為朝日溫泉的一大亮點，許多遊客特地在此迎接新的一天。</li>
+                </ul>
+
+                <h3>注意事項</h3>
+                <p>
+                    <strong>安全與禮儀</strong>：浸泡時請注意安全，並遵守溫泉區的規定與禮儀。<br>
+                    <strong>環境保護</strong>：請勿將垃圾留在溫泉區，保持環境的整潔。<br>
+                    <strong>開放時間</strong>：由於潮汐影響，溫泉的開放時間可能會有所調整，建議提前查詢相關資訊。
+                </p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭船</strong>：從台東富岡漁港搭乘渡輪到綠島，然後租用機車或自行車前往溫泉。</li>
+                    <li><strong>飛機</strong>：從台東機場搭乘小型飛機至綠島，然後轉乘當地交通工具。</li>
+                </ul>
+
+                <p>朝日溫泉是綠島的天然寶藏，無論是追求放鬆還是欣賞自然美景，這裡都能帶給您獨特而難忘的體驗。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

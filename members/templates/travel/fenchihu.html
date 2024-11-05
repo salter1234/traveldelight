@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奮起湖老街</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">奮起湖老街：懷舊與自然的交融</h2>
+
+            <img src="https://images-besttour.cdn.hinet.net/intranet/view/images/VTWNCYI99.jpg" alt="奮起湖老街" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>奮起湖老街位於嘉義縣，是一個充滿歷史氣息的小鎮，因其獨特的鐵道文化和自然美景而深受遊客喜愛。這裡不僅有保存完好的古老建築，還有豐富的在地美食和手工藝品，是探索台灣傳統文化的絕佳地點。</p>
+
+                <h3>歷史與發展</h3>
+                <p>奮起湖老街擁有悠久的歷史，最初因阿里山森林鐵路的開通而繁榮起來。這裡的老建築和鐵道設施至今仍保留完好，讓人們可以感受到過去的繁華與熱鬧。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>鐵道文化館</strong>：深入了解奮起湖的鐵道歷史，欣賞古老的火車和鐵道設施。</li>
+                    <li><strong>茶園步道</strong>：漫步於茶園之中，享受清新的空氣與美麗的景色。</li>
+                    <li><strong>奮起湖便當</strong>：品嚐當地著名的鐵路便當，體驗濃厚的懷舊風味。</li>
+                </ul>
+
+                <h3>教育與保育</h3>
+                <p>奮起湖不僅是一個旅遊勝地，也是自然教育的重要場所。當地積極推動生態保育和文化教育活動，讓遊客在遊覽的同時增進對自然和文化的認識。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>自駕</strong>：從嘉義市區出發，沿著台18線行駛至奮起湖，約需1.5小時。</li>
+                    <li><strong>大眾交通</strong>：可搭乘嘉義縣市區公車或阿里山小火車，具體班次請提前查詢。</li>
+                </ul>
+
+                <p>奮起湖老街以其獨特的魅力和豐富的文化資源，為遊客提供了一個探索台灣傳統生活方式的窗口。無論是品嚐美食、欣賞自然，還是體驗歷史文化，這裡都能讓人留下難忘的回憶。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

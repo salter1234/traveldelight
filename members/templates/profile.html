@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}用戶資料{% endblock %}
+
+{% load static %}
+
+{% block style %}
+    <style>
+        .profile-container {
+            max-width: 400px; /* 最大宽度 */
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9); /* 半透明背景 */
+            padding: 20px;
+            border-radius: 10px; /* 圆角 */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 阴影 */
+            margin-top: 50px; /* 向下移动 */
+        }
+        h1 {
+            text-align: center; /* 标题居中 */
+        }
+        img {
+            max-width: 150px; /* 限制头像宽度 */
+            border-radius: 50%; /* 圆形头像 */
+            display: block;
+            margin: 0 auto; /* 头像居中 */
+        }
+        .btn-edit {
+            width: 100%; /* 按钮宽度为100% */
+            margin-top: 15px; /* 按钮上方间距 */
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="profile-container">
+        <h1>用戶資料</h1>
+
+        {% if user.profile.avatar %}
+            <img src="{{ user.profile.avatar.url }}" alt="{{ user.username }}的頭像">
+        {% else %}
+            <img src="{% static 'avatars/image.png' %}" alt="{{ user.username }}的頭像">
+        {% endif %}
+
+        <p>用戶名: {{ user.username }}</p>
+        <p>電子郵件: {{ user.email }}</p>
+        <a href="{% url 'profile_edit' %}" class="btn btn-primary btn-edit">編輯資料</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘉義市概覽</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">嘉義概覽</h2>
+
+            <img src="{% static 'pictures/county/Chiayi.jpg' %}" alt="嘉義市城市風景" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>嘉義位於台灣的西南部，是一個結合自然美景、豐富歷史與文化的城市。無論是熱愛戶外活動的人，還是對歷史文化充滿興趣的旅人，嘉義都能提供豐富的體驗。</p>
+
+                <h3>自然景觀</h3>
+                <p>嘉義擁有壯麗的自然風光，其中最著名的莫過於阿里山。阿里山以其雲海、日出、森林鐵路和櫻花聞名，是台灣最受歡迎的旅遊景點之一。搭乘阿里山森林鐵路，穿越森林與山嵐，讓人彷彿置身於仙境。此外，阿里山的茶園也非常值得一訪，這裡出產的高山茶香氣濃郁，是品茶愛好者的天堂。</p>
+
+                <h3>歷史與文化</h3>
+                <p>嘉義市區有許多具有歷史意義的建築和博物館。例如，嘉義市立博物館展示了豐富的地方歷史與文化，讓人深入了解嘉義的發展過程。另有嘉義鐵道藝術村，這裡原是舊鐵道倉庫，現已轉型為藝術創作空間，吸引了許多藝術家進駐。</p>
+
+                <h3>文化活動</h3>
+                <p>嘉義以其木雕藝術聞名，每年舉辦的嘉義國際藝術節吸引了來自世界各地的藝術家和遊客。這個活動展示了當代藝術作品，並提供各種工作坊和表演，是一個感受藝術氛圍的好機會。</p>
+
+                <h3>美食與特產</h3>
+                <p>嘉義的美食也是一大亮點。嘉義雞肉飯是當地的招牌美食，雞肉嫩滑，搭配香噴噴的米飯，令人口齒留香。此外，嘉義的火雞肉飯、豆漿和涼麵也是不容錯過的美味。嘉義的農產品同樣豐富，特別是竹崎的竹筍和梅山的咖啡，都是當地的特產。</p>
+
+                <h3>休閒活動</h3>
+                <p>嘉義也提供多樣的休閒活動選擇。你可以在蘭潭風景區騎自行車，享受湖畔的寧靜，或是在故宮南院欣賞精美的藝術品和文物。這些地方都讓人能夠放鬆心情，享受悠閒的時光。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

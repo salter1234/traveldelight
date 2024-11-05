@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龍磐公園 - 壯麗的海岸風光</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">龍磐公園：壯麗的海岸風光</h2>
+
+            <img src="https://images.abic.com.tw/photoDB/post/1631867945.jpg" alt="龍磐公園" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>龍磐公園位於台灣墾丁國家公園內，是一個以壯觀的海岸景觀和廣闊的草原地形而聞名的自然景點。這裡擁有絕佳的視野，可以欣賞到太平洋的壯麗海景，是觀賞日出和日落的熱門地點。</p>
+
+                <h3>景點特色</h3>
+                <ul>
+                    <li><strong>海岸景觀</strong>：龍磐公園的懸崖峭壁俯瞰著蔚藍的海洋，波濤拍岸的景象令人震撼。</li>
+                    <li><strong>廣闊草原</strong>：公園內的草原地形開闊，適合散步、野餐和放鬆身心。</li>
+                    <li><strong>觀星勝地</strong>：由於遠離城市光害，夜晚的龍磐公園是觀星的理想地點，星空璀璨。</li>
+                </ul>
+
+                <h3>必訪活動</h3>
+                <ul>
+                    <li><strong>觀日出和日落</strong>：在清晨或黃昏時分，欣賞太陽從海平面升起或落下的壯麗景象。</li>
+                    <li><strong>健行和攝影</strong>：沿著步道探索公園，捕捉自然景觀的美麗瞬間。</li>
+                    <li><strong>野餐和放鬆</strong>：在草原上享受野餐，體驗大自然的寧靜與美好。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>自行開車</strong>：從墾丁市區出發，沿台26線向東行駛約20分鐘即可到達。</li>
+                    <li><strong>租用自行車或機車</strong>：在墾丁租用交通工具，沿著海岸公路騎行，享受沿途風光。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#龍磐公園</span>
+                    <span class="spot-tag">#海岸風光</span>
+                    <span class="spot-tag">#草原景觀</span>
+                    <span class="spot-tag">#觀星聖地</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

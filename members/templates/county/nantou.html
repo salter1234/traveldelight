@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南投旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">南投：中央高地的自然與文化之美</h2>
+
+            <img src="{% static 'pictures/county/Nantou.jpg' %}" alt="南投自然景觀" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>南投位於台灣的正中央，是唯一不靠海的縣市，以其壯麗的山水風光和豐富的文化景點而聞名。</p>
+
+                <h3>著名景點</h3>
+                <ul>
+                    <li><strong>日月潭</strong>：台灣最大的天然湖泊，四周被群山環繞，遊客可以乘船遊湖或在環湖自行車道上騎行，享受湖光山色的美麗。</li>
+                    <li><strong>合歡山</strong>：登山愛好者的天堂，提供壯觀的自然景觀和豐富的生態資源。</li>
+                    <li><strong>玉山</strong>：台灣最高峰，也是熱門的登山地點，吸引著挑戰者。</li>
+                </ul>
+
+                <h3>文化體驗</h3>
+                <ul>
+                    <li><strong>埔里</strong>：以清新的空氣和純淨的水質聞名，是紹興酒的重要產地，遊客可以參觀酒廠，了解釀酒的過程，還可以品嚐當地的特色美食。</li>
+                    <li><strong>中台禪寺</strong>：展示南投的宗教信仰和歷史文化，提供寧靜的氛圍。</li>
+                    <li><strong>集集小鎮</strong>：充滿文化氣息的地方，適合漫遊與探索。</li>
+                </ul>
+
+                <p>南投是一個結合自然美景和文化魅力的地方，無論是喜愛戶外活動還是文化探索的旅人，都能在這裡找到屬於自己的樂趣。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

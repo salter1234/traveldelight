@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北港朝天宮</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">北港朝天宮：媽祖信仰的中心</h2>
+
+            <img src="https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_2249_8.jpg" alt="北港朝天宮" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>北港朝天宮，位於台灣雲林縣北港鎮，是台灣最具代表性的媽祖廟之一。這座廟宇不僅是宗教信仰的中心，亦是歷史文化的重要遺產，吸引著無數信徒與遊客前來參拜。</p>
+
+                <h3>歷史背景</h3>
+                <p>北港朝天宮始建於清康熙年間，至今已有三百多年的歷史。廟宇供奉的媽祖，是海上保護神，深受漁民及商旅的敬仰。隨著時代的變遷，朝天宮經歷多次修繕與擴建，成為今日規模宏大的建築群。</p>
+
+                <h3>建築特色</h3>
+                <ul>
+                    <li><strong>大殿</strong>：大殿是朝天宮的核心，雕梁畫棟，充滿傳統工藝的精緻之美。</li>
+                    <li><strong>牌樓</strong>：入口的牌樓氣勢恢宏，是廟宇的標誌性建築之一。</li>
+                    <li><strong>壁畫與雕刻</strong>：廟內的壁畫與雕刻細緻生動，展現了豐富的歷史故事與宗教意涵。</li>
+                </ul>
+
+                <h3>宗教活動</h3>
+                <p>北港朝天宮每年舉辦盛大的媽祖遶境活動，是台灣重要的宗教盛事之一。成千上萬的信徒從四面八方聚集於此，參加盛會，祈求平安與庇佑。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>自駕</strong>：從國道1號下「斗南交流道」，沿台19線南行至北港鎮即可。</li>
+                    <li><strong>公車</strong>：搭乘台灣好行或其他客運路線至「北港站」，步行即可到達。</li>
+                </ul>
+
+                <p>北港朝天宮不僅是信仰的中心，也是文化與歷史的寶庫，值得每一位來訪者細細品味。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

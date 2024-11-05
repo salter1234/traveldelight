@@ -1,0 +1,554 @@
+html, body {
+	margin: 0; /* 清除預設邊距 */
+	padding: 0; /* 清除預設內邊距 */
+	width: 100%; /* 設定寬度為 100% */
+	height: 100%; /* 設定高度為 100% */
+	overflow-x: hidden; /* 隱藏水平滾動條 */
+	overflow-y: auto; /* 允許垂直滾動 */
+	box-sizing: border-box; /* 設定邊框和內邊距計算方式 */
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Noto Sans TC', sans-serif;
+}
+p,a,span,li,label{
+	font-family: 'Open Sans', sans-serif;
+}
+img{
+	max-width:100%;
+}
+nav li{
+	    margin: 0 13px;
+}
+.btn{
+    background-color: #FF7575;
+    padding: 7px 28px;
+    border: none;
+}
+.btn:hover{
+	opacity:0.8;
+	background-color: #f05f5c!important;
+}
+#second{
+	padding: 80px 0px;
+}
+#second h3, #latest h3{
+	margin-bottom: 70px;
+	font-size: 32px;
+}
+#second img{
+	border-radius: 100%;
+    width: 108px;
+}
+#second h5{
+	margin-top: 22px;
+    font-size: 16px;
+}
+
+p{
+	font-size: 16px;
+    line-height: 26px;
+    color: #707070;
+}
+p.lead{
+	color: black;
+	line-height: 31px;
+}
+#latest {
+	background: rgb(248, 248, 248);
+	padding: 80px 0px;
+}
+#latest .upper{
+	position:relative;
+}
+#latest .innertext{
+	position:absolute;
+	bottom:20px;
+	left:30px;
+}
+#latest .innertext span{
+	background: rgba(255,255,255,0.3);
+    padding: 5px 16px;
+    border-radius: 30px;
+}
+#latest h4{
+	font-size: 19px;
+    margin-top: 18px;
+}
+#latest .lower{
+	    padding: 22px;
+
+}
+#latest .col-md-4 .outer{
+	box-shadow: 0 0 8px 0 rgba(0,0,0,0.08);
+	padding: 0px;
+	margin: 0 5px;
+}
+#latest .lower h3{
+	font-size: 21px;
+	margin-bottom: 20px;
+}
+#latest a{
+	color:black;
+}
+#latest a{
+	color:black;
+	text-decoration: none;
+}
+#latest i{
+	margin-right:5px;
+}
+#email{
+	padding: 80px 0px
+}
+footer{
+	padding: 80px 0px
+}
+#email p{
+	margin-top: 40px;
+}
+#email .btn{
+	margin-top: 10px;
+	font-size: 16px;
+}
+footer{
+	border-top: 1px solid rgba(0,0,0,0.09);
+}
+footer img{
+	margin-bottom: 30px;
+}
+footer h4{
+	font-size: 20px;
+    margin-bottom: 35px;
+
+}
+footer ul{
+	list-style: none;
+    padding: 0;
+}
+footer ul a{
+	color: #707070;
+}
+footer a{
+	color:#f05f5c;
+}
+footer a:hover{
+	color:#f05f5c;
+}
+footer ul a:hover{
+	color: #707070;
+	text-decoration: none;
+	opacity: 0.8;
+}
+footer ul li{
+	margin-bottom: 10px;
+}
+footer ul{
+	float: left;
+    margin-right: 46px;
+}
+#latest .thehead h3{
+    margin-bottom: 7px;
+    font-size: 32px;
+
+}
+#latest .thehead p{
+    margin-bottom: 80px;
+
+
+}
+#latest .thehead .col-md-4 p{
+	margin-bottom: 0px;
+    margin-top: 25px;
+}
+#latest .thehead h3.notag{
+	margin-bottom: 88px;
+}
+.card-header .btn,.card-header .btn:hover{
+	background:none!important;
+	color:black;
+}
+
+#singlecontent{
+	padding: 80 0px;
+}
+.thetag{
+	color: #f05f5c;
+    font-size: 16px;
+    border: 1px solid #f05f5c;
+    padding: 10px 18px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-left: 7px;
+}
+#singlecontent h4{
+	margin-top:50px;
+}
+.apply{
+	background-color: #f9f9f9;
+	padding: 44px;
+}
+.apply .btn{
+	font-size: 16px;
+    margin-top: 31px;
+    width: 100%;
+}
+.applybelow{
+	margin-top:80px;
+	text-align: center;
+}
+.btn2{
+    color: #707070;
+    border: 1px solid #707070;
+    padding: 10px 24px;
+    border-radius: 20px;
+    margin-top: 3px;
+    display: inline-block;
+}
+.btn2:hover{
+	text-decoration: none;
+	opacity: 0.8;
+	color: #707070;
+}
+.cinner{
+	position:relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+#contactcontent{
+	padding: 80px 0px;
+}
+#contactcontent h3{
+	margin-bottom: 40px;
+}
+#contactcontent a{
+	color:#f05f5c;
+}
+#contactcontent a.btn{
+	color:white;
+}
+#contactcontent textarea{
+	height:200px;
+	margin-bottom: 10px;
+}
+#contactcontent i{
+	display:inline-block;
+	margin-right: 4px;
+}
+
+/* 當螢幕寬度小於 768px 時 */
+@media only screen and (max-width: 768px) {
+    #second h5 {
+        margin-bottom: 50px;
+    }
+    #latest .col-md-4 {
+        margin-bottom: 60px;
+    }
+    footer h4 {
+        font-size: 17px;
+        margin-top: 30px;
+        margin-bottom: 18px;
+    }
+    .map-interaction img {
+        width: 80%; /* 在小螢幕上將圖片寬度設置為 80% */
+    }
+
+    /* 針對整體調整：容器在小螢幕上進行邊距調整 */
+    .container {
+        padding: 10px; /* 減少容器的內邊距，以更好地適應小螢幕 */
+    }
+	html body {
+        overflow-y: scroll; /* 強制顯示垂直滾動條 */
+    }
+}
+
+/* 當螢幕寬度小於 480px 時 */
+@media screen and (max-width: 480px) {
+    .map-interaction img {
+        width: 100%; /* 在手機上將圖片寬度設置為 100% */
+    }
+
+    /* 針對整體調整：在更小螢幕上進一步優化容器 */
+    .container {
+        padding: 5px; /* 在非常小的螢幕上減少容器的內邊距 */
+    }
+}
+
+
+.intro {
+    background: url('/static/pictures/tw.jpg') no-repeat center center; /* 設置背景圖片並置中顯示 */
+    background-size: 100% auto; /* 圖片寬度填滿區塊，高度自動調整以保持比例 */
+    background-position: center; /* 調整圖片位置到區塊中心 */
+    height: 100vh; /* 區塊高度設為視窗高度的 50% */
+    margin-bottom: 20px; /* 底部外距 20px */
+    position: relative; /* 確保區塊內部定位正常 */
+}
+
+#regionMap {
+    width: 300vh; /* 寬度自動調整 */
+    height: 100%; /* 圖片高度跟隨 .intro 區塊的高度 */
+    max-height: 50vh; /* 圖片的最大高度與 .intro 相同 */
+    display: inline-block;
+    vertical-align: top;
+}
+
+.intro h2{
+	color: black; /* 設置文字顏色 */
+	font-family: 'Microsoft JhengHei', sans-serif; /* 設置文字字體為 Arial，預設為無襯線字體 */
+}
+
+.tabs {
+    display: flex;
+    justify-content: center; /* 使子元素在容器中水平置中 */
+    margin-bottom: 20px; /* 下方外距 20px，為下面的內容留出空間 */
+}
+
+.tab-btn {
+    padding: 10px 20px; /* 上下內距 10px，左右內距 20px，增加按鈕的可點擊範圍 */
+    margin: 0 10px; /* 左右外距 10px，增加按鈕之間的間距 */
+    cursor: pointer; /* 當滑鼠懸停在按鈕上時，顯示指標樣式 */
+	margin-top: 20px; /* 增加上邊距，將按鈕向下移動 */
+	transform: translateX(30px); /* 將按鈕向右移動 20px */
+}
+
+.tab-btn.active {
+    background-color: #ff6600; /* 當按鈕處於激活狀態時，背景色設為橙色 */
+    color: white; /* 當按鈕處於激活狀態時，文字顏色設為白色 */
+}
+
+.map-interaction {
+    margin-right: 20px; /* 調整地圖和按鈕之間的間距 */
+	display: flex; /* 啟用 Flexbox */
+    align-items: center; /* 垂直置中 */
+    height: 100%; /* 設定容器高度 */
+}
+
+.map-interaction img {
+    width: 50%; /* 預設寬度 */
+    height: auto; /* 高度自動以保持比例 */
+}
+
+.city-info {
+	color: white;
+    text-align: center;
+    margin-top: 20px;
+	flex-grow: 1; /* 讓 city-info 區塊擴展以填充空間 */
+}
+
+.spots {
+    min-height: 200px; /* 設定最小高度，確保排版穩定 */
+    margin-top: 20px;
+}
+
+.region-info {
+    background-color: rgba(255, 255, 255, 0.2); /* 白色背景，80% 不透明 */
+    border: 1px solid #ccc; /* 邊框設定 */
+    border-radius: 5px; /* 圓角設定 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影設定 */
+    padding: 20px; /* 內邊距設定 */
+    text-align: left; /* 文字對齊 */
+    transform: translate(268px, 50px); /* 位置調整 */
+}
+
+#spotsContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: auto;
+	margin: 20px;
+	padding: 10px;
+	text-align: center; /* 文本居中 */
+	color: black; /* 文本顏色 */
+}
+
+#spotsContainer div {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#spotsContainer p {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.images img {
+    width: 50%;  /* 或者您可以根据需要设定具体的宽度，例如 200px */
+    height: auto; /* 保持比例 */
+    margin: 1%;
+    object-fit: cover; /* 可选，确保图片填满容器并保持比例 */
+}
+
+.container {
+    display: flex; /* 使用 Flexbox 使元素平行 */
+    align-items: flex-start; /* 讓子元素對齊到頂部 */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.sec-body {
+    padding: 5px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.com-h2-top {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bj-scroll-box {
+    width: 1150px; /* 調整盒子的寬度來顯示更多圖片 */
+    height: 320px; /* 設置盒子的高度 */
+    overflow: hidden;
+    white-space: nowrap; /* 使內部元素不換行 */
+    border: 1px solid #ccc; /* 增加邊框 */
+    padding: 10px; /* 增加內邊距 */
+    position: relative; /* 使按鈕相對於容器 */
+    margin: 0 auto; /* 使盒子水平居中 */
+}
+
+.scroll-btn {
+    position: absolute; /* 使按鈕絕對定位 */
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%); /* 垂直居中 */
+    background-color: #008B8B; /* 按鈕背景顏色 */
+    border: none; /* 去掉邊框 */
+    width: 40px; /* 按鈕寬度 */
+    height: 40px; /* 按鈕高度 */
+    border-radius: 100%; /* 圓形按鈕 */
+    cursor: pointer; /* 游標變為指針 */
+    display: flex; /* 使用 Flexbox 來居中內容 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    z-index: 10; /* 確保按鈕位於上方 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 按鈕陰影 */
+    transition: background-color 0.3s, transform 0.3s; /* 漸變效果 */
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0, 123, 255, 1); /* 懸停時改變顏色 */
+    transform: translateY(-50%) scale(1.1); /* 懸停時放大 */
+}
+
+.scroll-btn.left {
+    left: 5px; /* 左側按鈕位置 */
+}
+
+.scroll-btn.right {
+    right: 5px; /* 右側按鈕位置 */
+}
+
+
+.card-container {
+    display: flex; /* 使用 flexbox 來水平排列卡片 */
+    padding: 0; /* 去掉列表的內邊距 */
+    list-style-type: none; /* 去掉列表的標記 */
+    height: 280px; /* 限制高度 */
+    overflow: hidden; /* 隱藏超出部分 */
+    transition: transform 0.3s ease; /* 平滑過渡效果 */
+    margin: 0;
+    width: calc(220px * 20 + 10px * 20); /* 設置自動寬度，以適應所有卡片 */
+}
+
+.card {
+    flex: 0 0 220px;
+    margin: 0 5px; /* 卡片之間的間距 */
+    border: 1px solid #ccc; /* 邊框 */
+    border-radius: 5px; /* 邊角圓滑 */
+    overflow: hidden; /* 隱藏超出部分 */
+    position: relative; /* 相對定位，便於懸停效果 */
+    padding: 10px; /* 內部填充，避免內容過於擁擠 */
+    background-color: white; /* 背景色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* 添加陰影效果 */
+    box-sizing: border-box; /* 包括邊框和內邊距在內的總寬度 */
+}
+
+.card img {
+    max-width: 100%; /* 圖片寬度自適應 */
+    height: auto; /* 高度自適應 */
+    border-radius: 4px; /* 圖片邊角圓滑 */
+}
+
+.card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.card p {
+    padding: 0 10px 10px;
+    text-align: justify;
+}
+
+.card-description {
+    max-height: 50px; /* 限制最大高度 */
+    overflow: hidden; /* 隱藏超出部分 */
+    text-overflow: ellipsis; /* 顯示省略號 */
+    white-space: nowrap; /* 不換行 */
+    transition: max-height 0.3s ease; /* 漸變效果 */
+}
+
+.card:hover .card-description {
+    max-height: 100px; /* 懸停時顯示完整內容（根據需要調整） */
+    white-space: normal; /* 允許換行 */
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.load-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.load-more:hover {
+    background-color: #0056b3;
+}
+
+.unit-scrollPanel {
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	margin-bottom: 5px;
+}
+
+.unit-scrollPanel h2 {
+	text-align: center;
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+
+.load-more {
+    display: block; /* 設置元素為區塊級元素，使其佔滿整行 */
+    margin-right: 25px;
+    margin-bottom: 5px;
+    padding: 10px 20px; /* 設置內邊距，上下 10px，左右 20px */
+    background-color: transparent;
+    color: #808000;
+    border: none; /* 移除元素的邊框 */
+    border-radius: 10px; /* 設置圓角邊框，圓角半徑為 5px */
+    cursor: pointer; /* 鼠標移到元素上時顯示為指針狀 */
+    font-size: 16px; /* 設置文字大小為 16px */
+}
+
+.load-more:hover {
+	background-color: Khaki;
+}
+
+.logo-custom-size {
+    max-width: 150px;  /* 最大宽度设置为 150 像素，您可以根据需要进行调整 */
+    height: auto;       /* 高度自适应，保持图像比例 */
+}

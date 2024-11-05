@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘉義蓋婭莊園</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">蓋婭莊園：結合自然與藝術的療癒空間</h2>
+
+            <img src="https://cc.tvbs.com.tw/img/program/upload/2023/07/10/20230710115042-f7ed3a07.jpg" alt="嘉義蓋婭莊園" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>嘉義蓋婭莊園是一個結合自然生態和休閒活動的美麗園區，位於台灣嘉義縣。這裡以優美的自然環境和多元的活動選擇，成為家庭旅遊和朋友聚會的理想地點。</p>
+
+                <h3>景點特色</h3>
+                <ul>
+                    <li><strong>自然景觀</strong>：莊園內擁有豐富的自然景觀，包括大片的綠地、樹林和水池，適合散步和放鬆心情。</li>
+                    <li><strong>生態體驗</strong>：提供各種生態教育活動，讓遊客了解當地的動植物和自然保育知識。</li>
+                    <li><strong>休閒設施</strong>：園區內設有多種休閒設施，如露營區、烤肉區和戶外遊樂設施，適合全家大小一起享受。</li>
+                </ul>
+
+                <h3>活動與體驗</h3>
+                <ul>
+                    <li><strong>生態導覽</strong>：參加專業的生態導覽，深入了解莊園內的自然生態和環境保護措施。</li>
+                    <li><strong>戶外活動</strong>：提供如露營、烤肉和野餐等活動，讓您在大自然中享受愉快的時光。</li>
+                    <li><strong>手作工坊</strong>：參加手作工坊，學習製作自然工藝品或烘焙，增添旅遊的樂趣。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>自駕</strong>：從嘉義市區出發，沿著台18線或其他主要道路行駛，按照導航指示即可到達。</li>
+                    <li><strong>大眾交通</strong>：可搭乘嘉義縣市區公車或計程車，具體路線建議查詢當地交通資訊。</li>
+                </ul>
+
+                <p>嘉義蓋婭莊園提供了一個遠離城市喧囂的自然空間，讓人們可以享受寧靜的時光，並透過各種活動增進對自然的認識和欣賞。無論是短暫的週末度假還是長期的休閒旅程，這裡都是一個不錯的選擇。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>屏東旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">屏東：南國美景與文化的融合</h2>
+
+            <img src="{% static 'pictures/county/Pingtung.jpg' %}" alt="屏東自然景觀" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>屏東位於台灣的最南端，是一個充滿自然美景和多元文化的地方。這裡擁有壯麗的海岸線、豐富的生態資源以及獨特的文化風情，讓人一踏入就能感受到濃厚的南國氣息。</p>
+
+                <h3>自然風光</h3>
+                <ul>
+                    <li><strong>墾丁國家公園</strong>：台灣最美麗的海岸線之一，擁有迷人的白沙灘、碧藍的海水和壯觀的珊瑚礁，吸引著無數遊客前來享受陽光與海洋活動。</li>
+                </ul>
+
+                <h3>生態資源</h3>
+                <ul>
+                    <li><strong>四重溪溫泉</strong>：著名的溫泉勝地，讓人能在大自然的懷抱中放鬆身心。</li>
+                    <li><strong>三地門鄉</strong>：原住民部落，提供深入了解台灣原住民文化的機會，並且可以參加傳統的手工藝體驗。</li>
+                </ul>
+
+                <h3>文化特色</h3>
+                <p>屏東的文化多元且豐富，擁有許多客家和原住民社區，各自保存著獨特的傳統和習俗。每年舉辦的屏東熱帶農業博覽會展示了當地的農業成果和特色產品。</p>
+
+                <h3>美食饗宴</h3>
+                <ul>
+                    <li><strong>東港黑鮪魚</strong>：當地美味的海鮮，絕對不可錯過。</li>
+                    <li><strong>屏東夜市和墾丁大街夜市</strong>：提供各式各樣的台灣小吃，讓你在逛街的同時滿足味蕾。</li>
+                </ul>
+
+                <h3>節慶活動</h3>
+                <p>屏東的節慶活動多姿多彩，例如每年在東港舉行的東港迎王平安祭典，是一個結合宗教信仰和民俗文化的大型活動，吸引了大量的信徒和觀光客。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

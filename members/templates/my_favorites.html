@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的收藏</title>
+    <!-- 引入 Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card {
+            min-height: 350px; /* 設定最小高度，使卡片大小一致 */
+            display: flex;
+            flex-direction: column;
+        }
+        .card-img-top {
+            width: 100%; /* 統一圖片寬度 */
+            height: 200px; /* 統一圖片高度 */
+            object-fit: cover; /* 保持圖片比例，裁剪適應區域 */
+        }
+        .card-body {
+            flex-grow: 1; /* 填滿卡片內容的可用空間 */
+        }
+        .card-text {
+            max-height: 4em; /* 限制文字區塊的最大高度 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5; /* 限制顯示行數 (2.5倍行數，視需求可微調) */
+            -webkit-box-orient: vertical;
+        }
+        body {
+            background-color: #f0f0f0; /* 背景顏色 */
+        }
+        .fixed-btn {
+            position: fixed; /* 固定位置 */
+            right: 20px; /* 距離右邊 20px */
+            top: 50%; /* 垂直置中 */
+            transform: translateY(-50%); /* 垂直中心 */
+            z-index: 1000; /* 確保按鈕在最上面 */
+        }
+        #recommendations {
+            margin-top: 20px; /* 推薦行程距離收藏行程 20px */
+            display: none; /* 初始隱藏推薦行程 */
+        }
+        #recommendations h2 {
+            margin-top: 20px; /* 給予推薦標題上邊距 */
+        }
+        /* 按鈕樣式 */
+        .fixed-btn button {
+            writing-mode: vertical-rl; /* 文字直向排列 */
+            white-space: nowrap; /* 防止文字換行 */
+            transition: background-color 0.3s, color 0.3s; /* 添加過渡效果 */
+            background-color: #17a2b8; /* 主題顏色 */
+            color: white; /* 文字顏色 */
+        }
+        .fixed-btn button:hover {
+            background-color: white !important; /* 滑鼠移到時背景顏色變白 */
+            color: #17a2b8; /* 按鈕文字顏色變為主題色 */
+        }
+    </style>
+    <script>
+        function toggleRecommendations() {
+            var recDiv = document.getElementById("recommendations");
+            recDiv.style.display = (recDiv.style.display === "none") ? "block" : "none";
+            if (recDiv.style.display === "block") {
+                // 滾動到推薦區域
+                recDiv.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    </script>
+</head>
+<body>
+    {% extends 'header.html' %}
+
+    {% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <!-- 收藏行程展示區 -->
+            {% if favorites %}
+                {% for favorite in favorites %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="{{ favorite.tour.tourimage }}" class="card-img-top" alt="{{ favorite.tour.tourname }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ favorite.tour.tourname }}</h5>
+                                <a href="{% url 'tourDetail' favorite.tour.id %}" class="btn btn-primary">查看行程</a>
+                                <form action="{% url 'remove_favorite' favorite.tour.id %}" method="post" style="display: inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">刪除</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="text-center">你尚未收藏任何行程。</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- 推薦行程按鈕 -->
+    <div class="fixed-btn">
+        <button class="btn btn-info" onclick="toggleRecommendations()">推薦</button>
+    </div>
+
+    <!-- 推薦行程展示區 -->
+    <div id="recommendations" class="mt-4">
+        <h2>推薦行程</h2>
+        <div class="row">
+            {% if recommendations %}
+                {% for tour in recommendations %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="{{ tour.tourimage }}" class="card-img-top" alt="{{ tour.tourname }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ tour.tourname }}</h5>
+
+                                <p class="card-text">{{ tour.tourSpecial|truncatechars:20 }}</p>
+
+                                <a href="{% url 'tourDetail' tour.id %}" class="btn btn-primary">查看行程</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="text-center">目前沒有推薦的行程。</p>
+            {% endif %}
+        </div>
+    </div>
+
+    {% endblock %}
+
+    <!-- 引入 Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

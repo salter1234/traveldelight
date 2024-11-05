@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南寮漁港</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">南寮漁港：新竹的海岸明珠</h2>
+
+            <img src="https://image.cdn-eztravel.com.tw/6dgGgWBaCrbAQLmmdZEpRU60AOYqyrNsRby6nR2v3dA/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L2ltZy9WRFIvSFNaXzE2NTMwNjk4MTcuanBn.jpg" alt="南寮漁港" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>南寮漁港位於台灣新竹市，是一個結合漁業、觀光與休閒的多功能港口。這裡以其美麗的海景、新鮮的海產和豐富的活動，吸引著眾多遊客前來探索。</p>
+
+                <h3>景點特色</h3>
+                <ul>
+                    <li><strong>漁港風情</strong>：南寮漁港保留了傳統漁村的風貌，您可以在此觀賞漁船進出、體驗漁村生活。</li>
+                    <li><strong>海鮮市場</strong>：港口附近有多家海鮮餐廳和市場，提供新鮮的海產美食，讓您大快朵頤。</li>
+                    <li><strong>海岸步道</strong>：沿著海岸線設有步道，適合散步和騎自行車，享受海風與美景。</li>
+                    <li><strong>觀光塔</strong>：港口的觀光塔提供全景視角，可以俯瞰整個漁港及周邊海域。</li>
+                </ul>
+
+                <h3>活動與體驗</h3>
+                <ul>
+                    <li><strong>釣魚</strong>：南寮漁港是釣魚愛好者的天堂，您可以在此享受悠閒的釣魚時光。</li>
+                    <li><strong>風箏衝浪</strong>：由於海風穩定，這裡也是風箏衝浪的熱門地點。</li>
+                    <li><strong>日落觀賞</strong>：傍晚時分，南寮漁港成為觀賞壯麗日落的絕佳地點。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>自駕</strong>：從國道1號下「新竹交流道」，沿著台15線行駛即可到達。</li>
+                    <li><strong>大眾交通</strong>：搭乘新竹市區公車至「南寮漁港站」，步行即可抵達。</li>
+                </ul>
+
+                <p>南寮漁港不僅是體驗新竹海岸風情的好去處，也是享受美食與休閒的理想地點。無論是短暫的週末旅行，還是悠閒的假期安排，這裡都能帶給您獨特的海洋體驗。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

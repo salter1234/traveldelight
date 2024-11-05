@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>野柳</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">野柳：大自然的藝術傑作</h2>
+
+            <img src="https://newtaipei.travel/content/images/attractions/25146/1024x768_attractions-image-8afwjyeuj0ozjd1fte0nxw.jpg" alt="野柳" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>野柳地質公園位於台灣新北市萬里區，是一個以奇特的地質景觀和海蝕地形聞名的自然景區。這裡的岩石經過長時間的海水和風力侵蝕，形成了各種獨特的形狀，如女王頭、仙女鞋等，吸引了大量遊客和地質學者。</p>
+
+                <h3>歷史與發展</h3>
+                <p>野柳地質公園因其獨特的地質結構而成為台灣著名的自然景點。這些地質奇觀是由於數千年的自然侵蝕作用形成的，展示了大自然的鬼斧神工。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>女王頭</strong>：野柳的地標性景觀，形狀酷似一位優雅的女王。</li>
+                    <li><strong>仙女鞋</strong>：形狀獨特的岩石，吸引許多遊客駐足拍照。</li>
+                    <li><strong>蜂巢岩</strong>：由於風化和侵蝕作用形成的蜂窩狀岩石。</li>
+                    <li><strong>海蝕平台</strong>：廣闊的海蝕平台，提供觀察各種地質景觀的絕佳位置。</li>
+                </ul>
+
+                <h3>教育與保育</h3>
+                <p>野柳地質公園致力於地質教育與保育工作。園區內設有多個解說牌，介紹各種地質現象和生態系統，讓遊客在觀賞美景的同時，增進對地質科學的了解。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘公車</strong>：從台北搭乘國光客運1815路，於野柳站下車。</li>
+                    <li><strong>自行開車</strong>：從台北市區沿國道1號南下，接國道3號，再轉台2線至野柳。</li>
+                </ul>
+
+                <p>使用這些標籤來標記野柳的特色：#野柳 #地質公園 #女王頭 #自然奇觀</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

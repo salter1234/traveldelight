@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溪頭自然教育園區 - 探索自然與生態的綠色天堂</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">溪頭自然教育園區：探索自然與生態的綠色天堂</h2>
+
+            <img src="https://travel.nantou.gov.tw/wp-content/uploads/google_map_photos/45213/0.jpg?1634689096" alt="溪頭自然教育園區" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>溪頭自然教育園區位於台灣南投縣鹿谷鄉，是一個以森林生態和自然教育為主題的旅遊景點。這裡擁有豐富的自然資源和多樣的生態系統，是學習和體驗大自然的絕佳場所。</p>
+
+                <h3>景點特色</h3>
+                <ul>
+                    <li><strong>森林步道</strong>：園區內設有多條步道，讓遊客可以深入森林，探索多樣的植物和動物生態。最著名的是「神木步道」，可以看到壯觀的千年紅檜。</li>
+                    <li><strong>大學池</strong>：這是一個寧靜的湖泊，周圍環繞著茂密的森林，是觀賞野生動物和享受大自然寧靜的好地方。</li>
+                    <li><strong>自然教育中心</strong>：提供各種生態教育活動和展覽，適合家庭和學生團體參加，增加對自然環境的認識。</li>
+                </ul>
+
+                <h3>必訪活動</h3>
+                <ul>
+                    <li><strong>森林浴</strong>：漫步在濃密的森林中，享受新鮮空氣和大自然的療癒力量。</li>
+                    <li><strong>生態觀察</strong>：參加導覽活動，了解溪頭的生態系統和保育工作。</li>
+                    <li><strong>攝影</strong>：捕捉森林中的美麗景色和野生動植物的瞬間。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘客運</strong>：從台中或埔里搭乘客運至鹿谷，再轉乘當地交通工具前往溪頭。</li>
+                    <li><strong>自行開車</strong>：從台中出發，沿國道3號和台16線行駛，約需2小時即可抵達。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#溪頭自然教育園區</span>
+                    <span class="spot-tag">#森林步道</span>
+                    <span class="spot-tag">#生態教育</span>
+                    <span class="spot-tag">#自然景觀</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

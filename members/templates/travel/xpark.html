@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xpark - 探索海洋的奇幻世界</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">Xpark：探索海洋的奇幻世界</h2>
+
+            <img src="https://travel.tycg.gov.tw/content/images/attractions/99750/1024x768_attractions-image-agxdkvnbvkayo5sox1aonq.jpg" alt="Xpark" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>Xpark位於台灣桃園市，是一座結合科技與自然的現代化水族館，致力於提供遊客全新的海洋探索體驗。這裡展示了來自全球各地的多樣海洋生物，並透過先進的展示技術，讓遊客彷彿置身於海底世界。</p>
+
+                <h3>展館特色</h3>
+                <ul>
+                    <li><strong>多樣生態展示</strong>：Xpark分為多個主題展區，包括熱帶雨林、極地天地、珊瑚礁生態等，每個展區都展現了不同的海洋生態系統。</li>
+                    <li><strong>互動體驗</strong>：館內設有多種互動設施，讓遊客可以近距離觀察和學習海洋生物的生活習性。</li>
+                    <li><strong>沉浸式環境</strong>：利用聲光效果和大型水族箱，營造出沉浸式的觀賞環境，讓人仿佛置身於海洋之中。</li>
+                </ul>
+
+                <h3>必看展區</h3>
+                <ul>
+                    <li><strong>熱帶雨林區</strong>：展示了熱帶地區的豐富生態，包括多種魚類和植物。</li>
+                    <li><strong>企鵝館</strong>：觀賞活潑可愛的企鵝在特製的環境中自由活動。</li>
+                    <li><strong>水母隧道</strong>：透過透明隧道欣賞各種色彩斑斕的水母，感受夢幻般的氛圍。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘高鐵</strong>：從台北搭乘高鐵至桃園站，轉乘接駁公車或計程車即可到達。</li>
+                    <li><strong>開車前往</strong>：從台北出發，沿國道1號至中壢交流道下，依指示牌行駛即可抵達。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#Xpark</span>
+                    <span class="spot-tag">#水族館</span>
+                    <span class="spot-tag">#海洋生物</span>
+                    <span class="spot-tag">#親子活動</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

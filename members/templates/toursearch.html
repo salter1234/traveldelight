@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+{% block title %}最新的旅遊行程{% endblock %}
+{% load static %}
+{% load custom_filters %}
+
+{% block style %}
+  <!-- 自定义 CSS (旅遊行程card)-->
+  <style>
+    .card {
+      position: relative;
+    }
+    
+    .card-btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+    .search-form {
+      border: 1px solid #28a745;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f9f9f9;
+    }
+    .form-group {
+        margin-right: 10px;
+    }
+    .form-control {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .btn-success:hover {
+        background-color: #218838;
+    }
+    .rating-wrapper {
+      line-height: 0.2;
+    }
+    .fa-star, .fa-star-o {
+      color: orange;
+      font-size: 0.8em; /* 確保星星的大小一致 */
+    }
+  </style>
+  {% endblock %}
+  {% block content %}
+    <div class='container'>      
+        <!-- 日期&目的地 搜尋表單 -->
+          <form class="row search-form" method="POST" required>
+            {% csrf_token %}
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-4">
+                  <label class="visually" for="specificSizeInputName">出發日期區間</label>
+                  {{ form.firstDate }}
+                </div>
+                <div class="col-md-4">
+                  <label class="visually" for="specificSizeInputName">.</label>
+                  {{ form.lastDate }}
+                </div>
+                <div class="col-md-4">
+                  <label class="visually" for="specificSizeInputName">您想去的地方</label>
+                      {{ form.seleSite }}
+                </div>
+                <br>
+                
+      <!-- 依照 '旅遊天數' 搜尋結果表單 -->
+                <div class="col-md-3">
+                  <div class="row">
+                    <div class="col-6 col-sm-4 align-self-center">
+                      <h6>旅遊天數</h6>
+                    </div>
+                    <div class="col-6 col-sm-8">
+                        
+                      {% for choiceday in form.day %}
+                          {{ choiceday }}<br>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+      <!-- 依照 '旅遊公司' 搜尋結果表單 -->
+                <div class="col-md-3">
+                  <div class="row">
+                    <div class="col-6 col-sm-4 align-self-center">
+                      <h6>旅遊公司</h6>
+                    </div>
+                    <div class="col-6 col-sm-8">
+                      {% for choicecomp in form.comp %}
+                            {{ choicecomp }}<br>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+       <!-- 依照 '價格' '最早出發日期'排序搜尋結果 按鍵 -->
+                <div class="col-md-4 align-self-center">
+                  {% for radio in form.option %}
+                    {{ radio }}
+                  {% endfor %} 
+                </div>
+                <div class="col-auto align-self-center">
+                  <button type="submit" class="btn btn-success" required>搜尋</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <br>
+    </div>  
+  </header>
+  <section>
+    <div class="container">
+    <!-- 依照 '旅遊行程' 搜尋結果呈現(缺天數呈現&外連到詳細頁面) -->
+    <div class="col text-dark bg-light">
+      <br>
+      {% if page_obj == 'None' or page_obj.paginator.count == 0 %}
+        <h3>總共有0筆行程，共1頁，第1頁</h3>
+        <br>
+        <h1>查無旅遊行程，請重新調整搜尋條件！</h1>
+        {% load static %}
+          <img src="{% static '404notfound.jpg' %}" class="img-fluid" alt="404notfound" width="800px"height="800px;">
+      {% else %}
+          <h3>總共有{{ page_obj.paginator.count }}筆行程，共{{ page_obj.paginator.num_pages }}頁，第{{ page_obj.number }}頁</h3>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for contact in page_obj %}              
+              <div class="col">
+                <div class="card h-100" style="position: relative;">
+                  <img src="{{ contact.tourimage }}" class="card-img-top" alt="{{ contact.tourname }}" height="300px;">
+                  <div class="card-body h-auto">
+                      <h5 class="card-title">{{ contact.tourname }}</h5>
+                      <p class="card-subtitle">
+                          <span class="badge rounded-pill bg-dark">{{ contact.tourday }}天</span>&nbsp;
+                          <span class="badge rounded-pill bg-secondary">{{ contact.toursite }}</span>&nbsp;
+                          <span class="badge bg-warning text-dark">{{ contact.company }}</span>
+                      </p>
+                      <p class="card-text"><small class="text-muted">最快出發日期：{{ contact.earlierGoDate}}</small></p>
+                      <div class="rating-wrapper">
+                        {% if contact.id|rating %}{% else %}                    
+                          <p>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>評論：{{ contact.id|rating5 }}
+                          </p>
+                          <p>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star-o"></span>評論：{{ contact.id|rating4 }}
+                          </p>
+                          <p>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star-o"></span>
+                            <span class="fa fa-star-o"></span>評論：{{ contact.id|rating3 }}
+                          </p>
+                          <p>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star-o"></span>
+                            <span class="fa fa-star-o"></span>
+                            <span class="fa fa-star-o"></span>評論：{{ contact.id|rating2 }}
+                          </p>
+                          <p>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star-o"></span>
+                            <span class="fa fa-star-o"></span>
+                            <span class="fa fa-star-o"></span>
+                            <span class="fa fa-star-o"></span>評論：{{ contact.id|rating1 }}
+                          </p>
+                        {% endif %}
+                      </div>
+                      <h5 class="card-title" style="color:red;">{{ contact.price }}元</h5>
+                      <a href="{% url 'tourDetail' contact.id %}" class="btn btn-danger card-btn">瞭解詳情</a>
+                  </div>
+                </div>
+              </div>             
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div> 
+  
+  </section>
+  <section>
+    <br>
+  <!-- 分頁器 -->
+  {% if page_obj == 'None' %}
+    <div class="pagination justify-content-center"> 
+      <li class="page-item disabled">
+        <a class="page-link" href="?firstDate={{ startDate }}&lastDate={{ endDate }}&seleSite={{ tour_toursite }}&day={{ tour_tourday|join:',' }}&comp={{ tour_company_ids|join:',' }}&option={{ options }}&page=1">1</a>
+      </li> 
+    </div>
+  {% else %}
+    <!-- 第一頁/上一頁 -->
+    <div class="pagination justify-content-center">                  
+      {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?firstDate={{ startDate }}&lastDate={{ endDate }}&seleSite={{ tour_toursite }}&day={{ tour_tourday|join:',' }}&comp={{ tour_company_ids|join:',' }}&option={{ options }}&page=1">第一頁</a>   
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="?firstDate={{ startDate }}&lastDate={{ endDate }}&seleSite={{ tour_toursite }}&day={{ tour_tourday|join:',' }}&comp={{ tour_company_ids|join:',' }}&option={{ options }}&page={{ page_obj.previous_page_number }}">上一頁</a> 
+        </li>
+      {% endif %}
+    <!-- 顯示頁數 -->
+      {% if page_obj.paginator.num_pages < 11 %}
+          {% for n in num0 %}
+            <li class="page-item {% if n == page %}active{% endif %}">
+                <a class="page-link" href="?firstDate={{ startDate }}&lastDate={{ endDate }}&seleSite={{ tour_toursite }}&day={{ tour_tourday|join:',' }}&comp={{ tour_company_ids|join:',' }}&option={{ options }}&page={{ n }}">{{ n }}</a>
+            </li>
+          {% endfor %}
+      {% else %}
+          {% if page_obj.number <= 5 %}
+              {% for n in num0 %}
+                <li class="page-item {% if n == page %}active{% endif %}">
+                  <a class="page-link" href="?firstDate={{ startDate }}&lastDate={{ endDate }}&seleSite={{ tour_toursite }}&day={{ tour_tourday|join:',' }}&comp={{ tour_company_ids|join:',' }}&option={{ options }}&page={{ n }}">{{ n }}</a>
+                </li>
+              {% endfor %}
+          {% else %}
+              {% if nowpageadd5 > page_obj.paginator.num_pages %}
+                  {% for n in num1 %}
+                    <li class="page-item {% if n == page %}active{% endif %}">
+                      <a class="page-link" href="?firstDate={{ startDate }}&lastDate={{ endDate }}&seleSite={{ tour_toursite }}&day={{ tour_tourday|join:',' }}&comp={{ tour_company_ids|join:',' }}&option={{ options }}&page={{ n }}">{{ n }}</a>
+                    </li>
+                  {% endfor %}
+              {% else %}
+                  {% for n in num2 %}
+                    <li class="page-item {% if n == page %}active{% endif %}">
+                      <a class="page-link" href="?firstDate={{ startDate }}&lastDate={{ endDate }}&seleSite={{ tour_toursite }}&day={{ tour_tourday|join:',' }}&comp={{ tour_company_ids|join:',' }}&option={{ options }}&page={{ n }}">{{ n }}</a>
+                    </li>
+                  {% endfor %}
+              {% endif %}  
+          {% endif %}
+      {% endif %}
+    <!-- 第一頁/上一頁 -->
+      {% if page_obj.has_next %}
+          <li class="page-item">
+              <a class="page-link" href="?firstDate={{ startDate }}&lastDate={{ endDate }}&seleSite={{ tour_toursite }}&day={{ tour_tourday|join:',' }}&comp={{ tour_company_ids|join:',' }}&option={{ options }}&page={{ page_obj.next_page_number }}">下一頁</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?firstDate={{ startDate }}&lastDate={{ endDate }}&seleSite={{ tour_toursite }}&day={{ tour_tourday|join:',' }}&comp={{ tour_company_ids|join:',' }}&option={{ options }}&page={{ page_obj.paginator.num_pages }}">最末頁</a>
+          </li>
+      {% endif %}    
+    </div>
+  {% endif %} 
+  </section>
+{% endblock %}

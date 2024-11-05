@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綠島柴口浮潛區</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">綠島柴口浮潛區：探索台灣隱藏的海底寶藏</h2>
+
+            <img src="https://www.eastcoast-nsa.gov.tw/image/29044/1024x768" alt="綠島柴口浮潛區" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>綠島柴口浮潛區位於台灣東部的綠島，是一個以清澈海水和豐富的海洋生態系統著稱的浮潛地點。這裡擁有壯觀的珊瑚礁和多樣的海洋生物，是浮潛愛好者不容錯過的地方。</p>
+
+                <h3>地理位置與環境</h3>
+                <p>綠島位於台灣東部外海，屬於台東縣。柴口浮潛區以其清澈見底的海水和美麗的海底景觀吸引著眾多遊客。這裡的海水能見度極高，讓浮潛者能夠清楚地觀察海底世界。</p>
+
+                <h3>浮潛特色</h3>
+                <ul>
+                    <li><strong>豐富的海洋生態</strong>：柴口海域擁有多種珊瑚和色彩斑斕的熱帶魚，是觀察海洋生物的理想地點。</li>
+                    <li><strong>適合各級浮潛者</strong>：無論是初學者還是有經驗的浮潛者，都能在這裡找到適合的浮潛區域。</li>
+                    <li><strong>完善的浮潛設施</strong>：當地提供浮潛裝備租借和專業的導覽服務，確保您的浮潛活動安全且愉快。</li>
+                </ul>
+
+                <h3>注意事項</h3>
+                <p>
+                    <strong>安全措施</strong>：浮潛時務必穿戴救生衣，並遵循導遊的指導。<br>
+                    <strong>環境保護</strong>：請勿觸摸或踩踏珊瑚，並將所有垃圾帶走，以保護海洋環境。<br>
+                    <strong>天氣與海況</strong>：浮潛前請確認當地的天氣和海況，以確保活動的安全。
+                </p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭船</strong>：從台東富岡漁港搭乘渡輪至綠島，然後租用機車或自行車前往柴口。</li>
+                    <li><strong>飛機</strong>：從台東機場搭乘小型飛機到綠島，然後轉乘當地交通工具。</li>
+                </ul>
+
+                <p>綠島柴口浮潛區是探索海底世界的絕佳去處，無論是想要親近自然還是享受水上活動，這裡都能帶給您獨特而難忘的體驗。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

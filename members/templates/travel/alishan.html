@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿里山國家森林遊樂區</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">阿里山國家森林遊樂區：自然與文化的交織</h2>
+
+            <img src="https://photo.settour.com.tw/900x600/https://www.settour.com.tw/ss_img/info/location/CYI/I0/CYI0000089/CYI0000089_87204.jpg" alt="阿里山國家森林遊樂區" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>阿里山國家森林遊樂區位於台灣嘉義縣，是台灣最知名的旅遊勝地之一。這裡以其壯麗的森林景觀、豐富的生態資源以及獨特的文化遺產，吸引著來自世界各地的遊客。</p>
+
+                <h3>景點特色</h3>
+                <ul>
+                    <li><strong>阿里山神木</strong>：園區內有著名的神木林，這些巨大的紅檜樹齡超過千年，是阿里山的象徵之一。</li>
+                    <li><strong>日出與雲海</strong>：阿里山的日出和雲海景觀聞名遐邇，特別是在祝山觀景台，您可以欣賞到壯麗的日出景象。</li>
+                    <li><strong>阿里山森林鐵路</strong>：這條歷史悠久的鐵路提供獨特的乘車體驗，讓您在森林中穿梭，感受大自然的美好。</li>
+                    <li><strong>櫻花季</strong>：每年春天，阿里山的櫻花盛開，吸引大量遊客前來賞花。</li>
+                </ul>
+
+                <h3>活動與體驗</h3>
+                <ul>
+                    <li><strong>健行步道</strong>：園區內設有多條步道，適合不同程度的健行者，讓您深入探索森林的奧秘。</li>
+                    <li><strong>文化體驗</strong>：參觀當地的鄒族文化村，了解原住民的生活方式和傳統。</li>
+                    <li><strong>攝影</strong>：阿里山的自然景觀和豐富的生態資源是攝影愛好者的天堂。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>自駕</strong>：從國道3號下「竹崎交流道」，沿著台18線行駛即可到達。</li>
+                    <li><strong>大眾交通</strong>：搭乘台鐵至「嘉義站」，轉乘阿里山森林鐵路或公車前往。</li>
+                </ul>
+
+                <p>阿里山國家森林遊樂區不僅提供壯麗的自然景觀，還有豐富的文化與歷史遺產，是一個兼具休閒與教育價值的旅遊目的地。無論是享受自然風光還是探索文化魅力，這裡都能滿足您的需求。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

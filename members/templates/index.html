@@ -1,0 +1,610 @@
+{% extends "header.html" %}
+
+{% block content %}
+{% load static %}
+
+<title>{% block title %}首頁{% endblock %}</title>
+  <style>
+      #slider {
+          width: 800px; /* 设置容器宽度 */
+          overflow: hidden; /* 隐藏超出容器的内容 */
+          position: relative; /* 使子元素绝对定位 */
+      }
+      #images {
+          display: flex; /* 使用 flexbox 排列图片 */
+          transition: transform 0.5s ease; /* 设置过渡效果 */
+      }
+      .image {
+          max-width: 300px; /* 设置图片最大宽度 */
+          height: auto; /* 高度自动 */
+      }
+      #images img {
+          width: 200px; /* 每张图片的宽度 */
+          height: auto; /* 自动保持高度比例 */
+          margin-right: 10px; /* 图片之间的间距 */
+      }
+      .button {
+          background-color: #4CAF50; /* 按钮背景色 */
+          color: white; /* 字体颜色 */
+          border: none; /* 无边框 */
+          padding: 10px 20px; /* 上下和左右内边距 */
+          text-align: center; /* 文本居中 */
+          font-size: 16px; /* 字体大小 */
+          border-radius: 8px; /* 圆角边框 */
+          cursor: pointer; /* 鼠标悬停时显示手形光标 */
+          margin: 0 10px; /* 左右留出间距 */
+      }
+      .container3 {
+          display: flex; /* 使用 Flexbox 布局 */
+          align-items: center; /* 垂直居中对齐 */
+          justify-content: center; /* 水平居中对齐 */
+          margin: 20px; /* 外边距 */
+      }
+      .search-form {
+          border: 1px solid #28a745;
+          border-radius: 8px;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: #f9f9f9;
+      }
+      .form-group {
+          margin-right: 10px;
+      }
+      .form-control {
+          padding: 5px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+      .btn-success {
+          background-color: #28a745;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+      .btn-success:hover {
+          background-color: #218838;
+      }
+
+      #weather-container {
+        margin-top: 20px; /* 添加顶部间距 */
+        display: flex;
+        justify-content: center; /* 水平居中卡片 */
+        align-items: flex-start; /* 顶部对齐 */
+    }
+
+    #weather-cards {
+        display: flex; /* 确保卡片水平排列 */
+        gap: 10px; /* 卡片间距 */
+    }
+
+    .weather-card {
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        width: 180px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .weather-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center; /* 确保标题文本居中 */
+    }
+
+    .weather-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .weather-temperature {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .weather-rain-chance {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .weather-comfort-level {
+        font-size: 14px;
+    }
+
+    .input-group {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .social-icon {
+        width: 80px; /* 图标的宽度 */
+        height: 80px; /* 图标的高度 */
+        display: flex; /* 使用 flexbox 对齐 */
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        margin: 5px; /* 外边距，调整图标之间的间距 */
+        border-radius: 50%; /* 圆角效果 */
+        background-color: #f0f0f0; /* 背景颜色 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+        transition: transform 0.3s ease; /* 平滑过渡效果 */
+    }
+    
+    .social-icon:hover {
+        transform: scale(1.1); /* 鼠标悬停时放大 */
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  <!-- 引入你自己的 jquery 文件 -->
+  <script src="{% static 'js/custom.js' %}"></script> <!-- 引入你自己的 custom.js 文件 -->
+  <br><div class='container'><div class="col-md-4"><h3>搜尋國內旅遊行程</h3></div></div>
+  <section class='search'>    
+    <div class='container'>
+    <!-- 日期&目的地 搜尋表單 -->   
+      <form action="/tours/" class="row search-form" method="POST" required>
+        
+        {% csrf_token %}
+            <div class="col-md-4">
+              <label class="visually" for="specificSizeInputName">出發日期區間</label>
+              {{ form.firstDate }}
+            </div>
+            <div class="col-md-4">
+              <label class="visually" for="specificSizeInputName"></label>
+              {{ form.lastDate }}
+            </div>
+            <div class="col-md-4">
+              <label class="visually" for="specificSizeInputName">您想去的地方</label>
+                  {{ form.seleSite }}
+            </div>
+            <br>
+            
+  <!-- 依照 '旅遊天數' 搜尋結果表單 -->
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-6 col-sm-8 align-self-center">
+                  <h6>旅遊天數</h6>
+                </div>
+                <div class="col-6 col-sm-8 align-self-center">
+                    
+                  {% for choiceday in form.day %}
+                      {{ choiceday }}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+  <!-- 依照 '旅遊公司' 搜尋結果表單 -->
+            <div class="col-md-3">
+              <div class="row">
+                <div class="col-6 col-sm-8 align-self-center">
+                  <h6>旅遊公司</h6>
+                </div>
+                <div class="col-6 col-sm-8 align-self-center">
+                  {% for choicecomp in form.comp %}
+                        {{ choicecomp }}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+   <!-- 依照 '價格' '最早出發日期'排序搜尋結果 按鍵 -->
+            <div class="col-md-4 align-self-center">
+              {% for radio in form.option %}
+                {{ radio }}
+              {% endfor %} 
+            </div>
+            <div class="col-auto align-self-center">
+              <button type="submit" class="btn btn-primary" required>搜尋</button>
+            </div>
+          </div>
+        
+      </form>
+    </div>
+  </section>
+
+
+<!--抓取天氣-->
+<section>
+    <form method="POST" action="{% url 'fetch_weather' %}">
+        {% csrf_token %}
+        <button type="submit">取得天氣資料</button>
+    </form>
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h3 class="weather-title" style="text-align: center;"></h3> <!-- 把标题放在这里 -->
+        <div id="weather-container" style="display: flex; justify-content: center; margin-top: 20px;">
+            <div id="weather-cards" style="display: flex; gap: 10px;"> <!-- 添加 gap 来控制卡片间距 -->
+                <!-- 卡片内容将动态生成 -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const weatherData = {{ weather_data|safe }};
+    let currentIndex = 0;
+
+    function displayWeather() {
+        if (weatherData.length === 0) return; // 如果沒有數據則返回
+
+        const currentData = weatherData[currentIndex];
+
+        // 更新标题
+        const titleElement = document.querySelector('.weather-title');
+        titleElement.innerText = currentData.title; // 更新标题内容
+
+        // 获取卡片容器
+        const weatherCards = document.getElementById('weather-cards');
+        weatherCards.innerHTML = ''; // 清空卡片内容
+
+        // 定义获取天气图标的函数
+        function getWeatherIcon(rainChance) {
+            if (rainChance < 20) {
+                return "{% static 'pictures/sun.png' %}"; // 显示太阳图标
+            } else if (rainChance < 60) {
+                return "{% static 'pictures/cloud.png' %}"; // 显示多云图标
+            } else {
+                return "{% static 'pictures/rain.jpg' %}"; // 显示雨图标
+            }
+        }
+
+        // 将降雨概率转换为数字，去掉 % 符号
+        const rainChance1 = parseFloat(currentData.rain_chance.replace('%', ''));
+        const rainChance2 = parseFloat(currentData.next_rain_chance.replace('%', ''));
+        const rainChance3 = parseFloat(currentData.next2_rain_chance.replace('%', ''));
+
+        // 创建三张卡片，并动态设置内容
+        const card1 =
+            `<div class="weather-card">
+                <h3 class="weather-title">${currentData.time}</h3>
+                <img src="${getWeatherIcon(rainChance1)}" alt="天氣圖示" class="weather-icon">
+                <p class="weather-temperature">${currentData.temperature}</p>
+                <p class="weather-rain-chance">降雨機率: ${rainChance1}%</p>
+                <p class="weather-comfort-level">${currentData.comfort}</p>
+            </div>`;
+
+        const card2 =
+            `<div class="weather-card">
+                <h3 class="weather-title">${currentData.next_time}</h3>
+                <img src="${getWeatherIcon(rainChance2)}" alt="天氣圖示" class="weather-icon">
+                <p class="weather-temperature">${currentData.next_temperature}</p>
+                <p class="weather-rain-chance">降雨機率: ${rainChance2}%</p>
+                <p class="weather-comfort-level">${currentData.next_comfort}</p>
+            </div>`;
+
+        const card3 =
+            `<div class="weather-card">
+                <h3 class="weather-title">${currentData.next2_time}</h3>
+                <img src="${getWeatherIcon(rainChance3)}" alt="天氣圖示" class="weather-icon">
+                <p class="weather-temperature">${currentData.next2_temperature}</p>
+                <p class="weather-rain-chance">降雨機率: ${rainChance3}%</p>
+                <p class="weather-comfort-level">${currentData.next2_comfort}</p>
+            </div>`;
+
+        // 将卡片加入容器中
+        weatherCards.innerHTML = card1 + card2 + card3;
+
+        // 更新索引以顯示下一組數據
+        currentIndex = (currentIndex + 1) % weatherData.length; // 循環索引
+    }
+
+    // 每2秒更新顯示的數據
+    setInterval(displayWeather, 2000);
+</script>
+
+<!--tw 地圖-->
+<section class="intro">
+  <div class="container">
+      <div class="map-interaction">
+          <img id="regionMap" src="{% static 'pictures/twmap.png' %}" alt="Taiwan Map"
+              style="width: auto; height: 100%; display: inline-block; vertical-align: top;" onclick="changeImage()">
+      </div>
+      <div class="city-info">
+          <h2><b>熱門景點</b></h2>
+          <div class="tabs">
+              <button class="tab-btn active" data-region="north">北部地區</button>
+              <button class="tab-btn" data-region="central">中部地區</button>
+              <button class="tab-btn" data-region="south">南部地區</button>
+              <button class="tab-btn" data-region="east">東部地區</button>
+              <button class="tab-btn" data-region="island">離島地區</button>
+          </div>
+          <div class="spots" id="spotsContainer">
+              <!-- 這裡動態顯示不同區域的景點 -->
+          </div>
+      </div>
+  </div>
+</section>
+
+<!--js 各地介紹跳轉-->
+<div class="sec-body">
+    <section id="unit-scrollPanel-0" class="unit-scrollPanel">
+    <h2 class="com-h2-top">
+        <span>台灣各地介紹</span>
+    </h2>
+    <div class="bj-scroll-box">
+        <button class="scroll-btn left" onclick="scrollLeft()">&#10094;</button>
+        <ul class="card-container">
+            <li class="card">
+                <a href="{% url 'more_list' '台北' %}">
+                    <img src="{% static 'pictures/county/Taipei.jpg' %}" alt="台北">             
+                    <h3>台北</h3></a>  
+                    <p class="card-description">臺灣最大的都市。也是政治、經濟、文化的中心。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '新北' %}">
+                    <img src="{% static 'pictures/county/NewTaipei.jpg' %}" alt="新北">
+                    <h3>新北</h3></a>
+                    <p class="card-description">臺灣最北的都市，環繞整個臺北市，總面積達二千多平方公里，海岸線長達120餘公里，風景名勝之多，為全臺之冠。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '基隆' %}">
+                    <img src="{% static 'pictures/county/Keelung.jpg' %}" alt="基隆">
+                    <h3>基隆</h3></a>
+                    <p class="card-description">基隆位於臺灣北部，三面環山，集商港、軍港、漁港於一身，冬天經常多雨，平均溫度僅在攝氏22度左右，素有「雨港之都」之稱。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '新竹' %}">
+                    <img src="{% static 'pictures/county/Hsinchu.jpg' %}" alt="新竹">
+                    <h3>新竹</h3></a>
+                    <p class="card-description">新竹縣是全台客家族群分佈最多的縣，早期多由紅毛港及南寮港登陸，以海豐和陸豐人居多。居住在風城的客家人，因為環境的關係，無論是語言、風俗民情和信仰，均自成一格。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '桃園' %}">
+                    <img src="{% static 'pictures/county/Taoyuan.jpg' %}" alt="桃園">
+                    <h3>桃園</h3></a>
+                    <p class="card-description">桃園縣最早稱為芝芭里，因以前多種桃樹，盛產桃花，故稱桃園，但目前桃花樹已不多見。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '苗栗' %}">
+                    <img src="{% static 'pictures/county/Miaoli.jpg' %}" alt="苗栗">
+                    <h3>苗栗</h3></a>
+                    <p class="card-description">苗栗原名貓裡，語意為平原或美麗之意。位於中部蜂腰地帶，依山面海，群山夾峙的平原，是一個多山的縣城。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '台中' %}">
+                    <img src="{% static 'pictures/county/Taichung.jpg' %}" alt="台中">
+                    <h3>台中</h3></a>
+                    <p class="card-description">台中位於臺灣西半部的樞紐位置，四季氣候宜人。日治時期，積極興建鐵路、開通公路及海港運輸，讓台中遂躍身為中臺灣政治、經濟、交通、文化的重鎮。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '彰化' %}">
+                    <img src="{% static 'pictures/county/Changhua.jpg' %}" alt="彰化">
+                    <h3>彰化</h3></a>
+                    <p class="card-description">彰化素有臺灣穀倉之稱，東南北三面環山，西臨臺灣海峽，境內以八卦山為主峰。該區氣候暖和，雨量適中，宜於農業發展，特別以花卉栽培最為發達。彰化古稱半線，係原住民社名。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '南投' %}">
+                    <img src="{% static 'pictures/county/nantou.jpg' %}" alt="南投">
+                    <h3>南投</h3></a>
+                    <p class="card-description">若說中部地區是臺灣的心臟地帶，那南投地區即是「臺灣心」。南投是臺灣唯一沒有臨海的縣。南投縣市面積4100平方公里，境內山多平原少，四周盡是山巒疊翠，觀光資源相當豐富，可說隨處皆是風景。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '雲林' %}">
+                    <img src="{% static 'pictures/county/Yunlin.jpg' %}" alt="雲林">
+                    <h3>雲林</h3></a>
+                    <p class="card-description">雲林縣位於臺灣的中南部，嘉南平原的最北端，全縣幾乎是沖積平原，是臺灣的榖倉及農業縣，臺灣的布袋戲從雲林開始發跡，因此雲林縣享有「布袋戲」之鄉的美譽。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '嘉義' %}">
+                    <img src="{% static 'pictures/county/Chiayi.jpg' %}" alt="嘉義">
+                    <h3>嘉義</h3></a>
+                    <p class="card-description">嘉義原名諸羅，明天啟2年（1622），福建漳州人顏思齊率人自笨港（今雲林北港與嘉義新港一帶）登陸開墾，可謂臺灣最古老的漢民聚落之一。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '台南' %}">
+                    <img src="{% static 'pictures/county/Tainan.jpg' %}" alt="台南">
+                    <h3>台南</h3></a>
+                    <p class="card-description">台南市是臺灣的發祥地，是全台歷史最悠久的都市。直至十九世紀末期，台南一直是臺灣政治經濟文化之重心，由於這層歷史淵源，故台南市古蹟名勝特多，佔有臺灣最悠久歷史及文化發展地位，稱為文化古都。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '高雄' %}">
+                    <img src="{% static 'pictures/county/Kaohsiung.jpg' %}" alt="高雄">
+                    <h3>高雄</h3></a>
+                    <p class="card-description">.臺灣南方最繁華的國際城市─「高雄市」，為2009世界運動會主辦城市，因受海洋氣候調節，全年陽光普照、氣候宜人，有獨特的「海洋首都」特性。近年來大力推展觀光事業，已成為全台最美麗的城市之一。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '屏東' %}">
+                    <img src="{% static 'pictures/county/Pingtung.jpg' %}" alt="屏東">
+                    <h3>屏東</h3></a>
+                    <p class="card-description">屏東縣是臺灣最南端的縣，輪廓狹長，依山傍海，東臨太平洋，西向臺灣海峽，南面巴士海峽，地處熱帶，四季如春，風光明媚，椰影婆娑，充滿南國風味，有臺灣南洋之稱，是國內不可多得的觀光聖地。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '宜蘭' %}">
+                    <img src="{% static 'pictures/county/Yilan.jpg' %}" alt="宜蘭">
+                    <h3>宜蘭</h3></a>
+                    <p class="card-description">宜蘭市位居蘭陽平原中心的精華地帶，河川縱橫提供豐富的灌溉資源，讓居於平原中央的宜蘭市擁有肥沃土地與充裕水源，成為一個農產豐饒的稻米之鄉。這麼多年來，宜蘭市一直是蘭陽平原的經政文教重心，也是南來北往的交通要道。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '台東' %}">
+                    <img src="{% static 'pictures/county/Taitung.jpg' %}" alt="台東">
+                    <h3>台東</h3></a>
+                    <p class="card-description">台東縣為臺灣第三大縣，境內多山，西邊雄踞著中央山脈，中北部有海岸山脈盤據。從平原到高山，從海洋到離島，自然景觀豐富，從熱帶、溫熱帶到寒帶植物，都可在台東發現。由於受山脈阻隔與洋流影響，台東縣年均溫在22度以上的月份高達8個月。所以台東又有太陽的故鄉之稱。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '花蓮' %}">
+                    <img src="{% static 'pictures/county/Hualien.jpg' %}" alt="花蓮">
+                    <h3>花蓮</h3></a>
+                    <p class="card-description">花蓮─昔日名哆囉滿，明朝弘治年間，葡萄牙人航海經過臺灣海峽，繞到臺灣東海岸，發現砂金，就用葡萄牙產金河流「利澳特愛魯」（Rio Dnero）稱呼花蓮。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '澎湖' %}">
+                    <img src="{% static 'pictures/county/Penghu.jpg' %}" alt="澎湖">
+                    <h3>澎湖</h3></a>
+                    <p class="card-description">澎湖舊稱「平湖」、「澎瀛」、「澎海」，又稱「西瀛」、「島夷」等等，是臺灣第一大島，主要的島嶼地景包括玄武岩方山、海岸珊瑚礁、沙灘、漁村文化與候鳥棲地，尤其玄武岩方山構成澎湖獨特的地質景觀，也因冷流與黑潮的交會，造就漁產豐富的海洋牧場。</p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '金門' %}">
+                    <img src="{% static 'pictures/county/kinmen.jpg' %}" alt="金門">
+                    <h3>金門</h3></a>
+                    <p class="card-description">金門距離中國大陸最近處僅有2100公尺，屬於丘陵地形，主要由花崗片麻岩構成，其歷史均與戰爭有所淵源，堪稱戰爭之島。 </p>
+                
+            </li>
+            <li class="card">
+                <a href="{% url 'more_list' '馬祖' %}">
+                    <img src="{% static 'pictures/county/Mazu.jpg' %}" alt="馬祖">
+                    <h3>馬祖</h3></a>
+                    <p class="card-description">馬祖列島以媽祖而得名，位於臺灣海峽西北西方，隸屬於福建省連江縣，面臨閩江口、連江口及羅源灣，與大陸僅呎水之隔，轄分南竿、北竿、莒光及東引等4鄉5島，為目前台澎金馬自由地區最北端之領土。</p>
+                
+            </li>
+        </ul>
+        <button class="scroll-btn right" onclick="scrollRight()">&#10095;</button>
+    </div>
+    <button id="loadMore" class="load-more" onclick="window.location.href='{% url 'travel_more' %}'"><b>查看更多</b></button>
+    </section>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let currentIndex = 0; // 當前顯示的卡片索引
+        const cardWidth = 220; // 每張卡片的寬度
+        const spacing = 20; // 每張卡片之間的間距
+        const totalWidth = cardWidth + spacing; // 每張卡片的總寬度（包括間距）
+        const visibleCards = 4; // 一次可見的卡片數量
+
+        const leftBtn = document.querySelector('.scroll-btn.left');
+        const rightBtn = document.querySelector('.scroll-btn.right');
+        const cardContainer = document.querySelector('.card-container');
+
+        leftBtn.addEventListener('click', function () {
+            scrollLeft(); 
+        });
+
+        rightBtn.addEventListener('click', function () {
+            scrollRight(); 
+        });
+
+        function scrollLeft() {
+            if (currentIndex > 0) {
+                currentIndex--; 
+                updateScrollPosition();
+            }
+        }
+
+        function scrollRight() {
+            const totalCards = document.querySelectorAll('.card').length; 
+            if (currentIndex < totalCards - visibleCards) {
+                currentIndex++; 
+                updateScrollPosition();
+            }
+        }
+
+        function updateScrollPosition() {
+            const offset = currentIndex * totalWidth; // 計算滑動的偏移量
+            cardContainer.style.transform = `translateX(-${offset}px)`; 
+            updateButtonStates(); 
+        }
+
+        function updateButtonStates() {
+            const totalCards = document.querySelectorAll('.card').length;
+            leftBtn.disabled = currentIndex === 0; 
+            rightBtn.disabled = currentIndex >= totalCards - visibleCards; 
+        }
+
+
+        updateButtonStates();
+    });
+</script>
+
+<!--信件填寫系統-->
+<section id="email">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-4 text-left">  <!-- 将 text-center 改为 text-left -->
+                <img src="{% static 'pictures/secend1.jpeg' %}" width="100" class="mb-3">
+                <h5>小編 IPan</h5>
+                <h4>感謝信任我們的各位夥伴們</h4>
+            </div>
+
+            <div class="col-md-6 text-left">  <!-- 将 text-center 改为 text-left -->
+                <h3>當我們有最新的旅遊行程會通知您!</h3><br>
+                <form id="emailForm" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="email" class="form-control mb-3" placeholder="Your E-mail Address" required>
+                    <button type="submit" class="btn btn-primary btn-lg">提交</button>
+                </form>
+            </div>
+            <div class="col-md-2 text-center">
+                <h4></h4>
+                <div class="row">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('emailForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+
+            fetch("{% url 'subscriptions:subscribe2' %}", {  
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {         
+                    var alertDiv = document.createElement('div');
+                    alertDiv.textContent = '感謝您的訂閱！我們會在有最新的旅遊行程時通知您！';
+                    alertDiv.style.backgroundColor = '#d4edda'; 
+                    alertDiv.style.color = '#155724'; 
+                    alertDiv.style.padding = '10px';
+                    alertDiv.style.marginBottom = '10px';
+                    alertDiv.style.border = '1px solid #c3e6cb';
+                    alertDiv.style.borderRadius = '4px';
+
+                    form.parentNode.insertBefore(alertDiv, form);
+
+                    submitButton.disabled = false;
+                } else {
+                    let errorMessage = data.errors ? data.errors.email[0] : '提交失敗，請稍後再試！';
+                    alert('提交失敗: ' + errorMessage);
+                    submitButton.disabled = false;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('提交失敗，請稍後再試！');
+                submitButton.disabled = false;
+            });
+        });
+    });
+</script>
+
+
+{% include 'footer.html' %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北市立動物園 - 都市中的自然天堂</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">西門町：臺北流行文化的心臟</h2>
+
+            <img src="{% static 'pictures/section1/ximen.jpg' %}" alt="西門町" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>西門町，這個位於臺北市中心的繁華地帶，一直是我最喜愛的地方之一。每次造訪，都能感受到這裡獨特的魅力和活力。今天，就讓我帶您一同探索這個充滿活力的街區吧！</p>
+
+                <h3>歷史與現代的交匯</h3>
+                <p>西門町的歷史可以追溯到日治時代。1896年，這裡建立了第一家戲院「東京亭」，自此奠定了西門町作為娛樂中心的基礎。隨著時間的推移，這裡經歷了多次變遷，從早期以電影院為主的商業活動，到後來百貨業的蓬勃發展，西門町見證了臺北的成長與變遷。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>西門紅樓</strong>：這座百年歷史建築現在是一個充滿活力的文創市集。</li>
+                    <li><strong>電影街</strong>：懷舊的電影海報牆讓人彷彿穿越時空。</li>
+                    <li><strong>萬年商業大樓</strong>：想買最新潮的服飾？這裡就是天堂！</li>
+                    <li><strong>西門町刺青街</strong>：藝術與時尚的完美結合。</li>
+                    <li><strong>西門町彩虹地景</strong>：這個LGBT友善地標展現了西門町的包容與多元。</li>
+                </ul>
+
+                <h3>美食推薦</h3>
+                <p>逛街逛累了？別忘了品嚐西門町的美食！從傳統的阿宗麵線到創新的彩虹霜淇淋，這裡的美食選擇豐富多樣，絕對能滿足您的味蕾。</p>
+
+                <h3>交通資訊</h3>
+                <p>前往西門町非常方便：</p>
+                <ul>
+                    <li>搭乘捷運：搭乘板南線（藍線）至西門站下車，由6號出口出站。</li>
+                    <li>搭乘公車：可搭乘至西門站、西門市場站或中華路北站的公車路線。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#西門町</span>
+                    <span class="spot-tag">#臺北旅遊</span>
+                    <span class="spot-tag">#文化探索</span>
+                    <span class="spot-tag">#美食天堂</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

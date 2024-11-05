@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬祖北海坑道</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">馬祖北海坑道</h2>
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Beihai_Military_Tunnel_%E5%8C%97%E6%B5%B7%E5%9D%91%E9%81%93_-_panoramio_%281%29.jpg/1200px-Beihai_Military_Tunnel_%E5%8C%97%E6%B5%B7%E5%9D%91%E9%81%93_-_panoramio_%281%29.jpg" alt="馬祖北海坑道" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>馬祖北海坑道是位於台灣馬祖列島南竿島的一個著名軍事遺跡，與金門的北海坑道同名，但各自有其獨特的歷史背景和地理特徵。這個坑道是馬祖重要的觀光景點之一，以其壯觀的工程和歷史意義吸引著眾多遊客。</p>
+
+                <h3>馬祖北海坑道的特色</h3>
+                <ul>
+                    <li><strong>歷史背景</strong>：馬祖北海坑道建於1968年，當時為了應對兩岸緊張局勢而修建，主要用於隱蔽船隻和物資儲存。</li>
+                    <li><strong>獨特的結構</strong>：坑道全長約700公尺，內部寬敞，可以容納多艘小型船隻。由於是人工開鑿於堅硬的花崗岩中，這裡也展現了當時的工程技術。</li>
+                    <li><strong>觀光體驗</strong>：遊客可以步行進入坑道，感受其宏偉壯觀，並了解其在歷史上的重要角色。坑道內部還有燈光效果，增添了參觀的趣味性。</li>
+                </ul>
+
+                <h3>旅遊資訊</h3>
+                <ul>
+                    <li><strong>交通方式</strong>：可從南竿福澳港或馬祖機場搭乘當地交通工具，或租借汽車、機車前往北海坑道。</li>
+                    <li><strong>開放時間</strong>：坑道通常每日開放，但具體時間可能會因季節或特殊活動有所變動，建議提前查詢當地旅遊資訊。</li>
+                    <li><strong>導覽服務</strong>：許多遊客選擇參加導覽活動，這樣可以獲得更深入的歷史介紹和坑道結構的詳細講解。</li>
+                </ul>
+
+                <p>馬祖北海坑道不僅是軍事歷史的見證，也是自然與人文景觀的結合地。無論是對歷史感興趣的旅客，還是尋求獨特旅遊體驗的人士，這裡都值得一訪。希望您能在馬祖北海坑道度過一段難忘的時光！</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

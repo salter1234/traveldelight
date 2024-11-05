@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高雄旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">高雄：南部的璀璨明珠</h2>
+
+            <img src="{% static 'pictures/county/Kaohsiung.jpg' %}" alt="高雄城市風景" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>高雄是台灣南部的一顆璀璨明珠，以其現代化的都市風貌和豐富的自然景觀吸引著眾多遊客。這座城市融合了繁華與悠閒，無論是海港、文化還是美食，都讓人流連忘返。</p>
+
+                <h3>港口城市</h3>
+                <p>高雄作為台灣最大的港口城市，擁有繁忙的海港和壯觀的海景。你可以在旗津搭乘渡輪，欣賞海景，或是在西子灣的海灘上享受陽光與海風。高雄港的夜景同樣迷人，燈火輝煌的城市天際線和港口的繁忙形成了一幅動人的畫面。</p>
+
+                <h3>現代建築</h3>
+                <p>這裡有許多現代化的地標建築，如高雄85大樓和高雄展覽館，展示了城市的活力與創新。駁二藝術特區則是另一個不容錯過的地方，這個由舊倉庫改造而成的藝術區，充滿了創意和活力，展出各種當代藝術作品，並舉辦不同的文化活動。</p>
+
+                <h3>自然與戶外</h3>
+                <p>高雄不僅僅是都市風光，它也擁有豐富的自然資源。壽山國家自然公園提供了絕佳的徒步旅行路線，讓人能夠在城市中享受大自然的寧靜。愛河是高雄的另一個著名景點，沿河而建的步道和公園是散步和騎自行車的理想場所，夜晚的愛河更是燈光璀璨，浪漫非常。</p>
+
+                <h3>美食與夜市</h3>
+                <p>高雄的美食同樣令人驚豔，六合夜市和瑞豐夜市是品嚐當地小吃的好去處。無論是海鮮、烤肉還是珍珠奶茶，這裡都能滿足你的味蕾。高雄的飲食文化融合了多元的風味，讓人每次來訪都有新的驚喜。</p>
+
+                <h3>文化與歷史</h3>
+                <p>高雄也有著豐富的文化和歷史遺產，佛光山佛陀紀念館是世界上最大的佛教建築群之一，吸引了無數信徒和遊客前來朝聖。這裡的寺廟和文化活動展示了台灣的宗教信仰和傳統文化。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六福村主題遊樂園</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">六福村主題遊樂園：冒險與歡樂的世界</h2>
+
+            <img src="https://pix1.tripperway.com/001/original/123654922.jpg" alt="六福村主題遊樂園" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>六福村主題遊樂園位於台灣新竹縣，是台灣最受歡迎的主題樂園之一。這裡結合了動物園與遊樂設施，為遊客提供豐富的娛樂選擇和難忘的體驗。</p>
+
+                <h3>園區特色</h3>
+                <p>六福村主題遊樂園分為多個主題區域，每個區域都有獨特的魅力：</p>
+                <ul>
+                    <li><strong>美國大西部</strong>：重現美國西部的荒野與牛仔文化，擁有刺激的過山車與水上設施。</li>
+                    <li><strong>南太平洋</strong>：充滿熱帶風情的區域，適合全家大小共同享受的遊樂設施。</li>
+                    <li><strong>阿拉伯皇宮</strong>：以神秘的阿拉伯文化為主題，提供異國情調的遊樂體驗。</li>
+                    <li><strong>非洲部落</strong>：結合動物園元素，可以近距離觀賞各種野生動物，特別是大型草食動物。</li>
+                </ul>
+
+                <h3>必玩設施</h3>
+                <ul>
+                    <li><strong>大怒神（Giant Drop）</strong>：台灣最高的自由落體設施，挑戰您的勇氣極限。</li>
+                    <li><strong>笑傲飛鷹（Roller Coaster）</strong>：高速刺激的雲霄飛車，讓您感受風馳電掣的快感。</li>
+                    <li><strong>動物探險</strong>：乘坐專車進入動物園區，觀賞各種野生動物，享受與動物親密接觸的樂趣。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>自駕</strong>：從國道3號下「關西交流道」，依指示牌行駛即可抵達。</li>
+                    <li><strong>大眾交通</strong>：搭乘高鐵至「新竹站」，轉乘公車或接駁車至六福村。</li>
+                </ul>
+
+                <p>六福村主題遊樂園無論是對於尋求刺激的年輕人，還是攜家帶眷的家庭遊客，都是一個充滿驚喜與歡樂的地方。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

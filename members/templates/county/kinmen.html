@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金門旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">金門：歷史文化與自然美景的交融</h2>
+
+            <img src="{% static 'pictures/county/Kinmen.jpg' %}" alt="金門自然景觀" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>金門，位於中國大陸與台灣之間的海峽中，擁有悠久的戰地歷史背景和濃厚的閩南文化氣息。這座島嶼不僅是一座國家級歷史文化保護區，也是擁有豐富自然資源與傳統人文景觀的旅遊勝地。</p>
+
+                <h3>金門的獨特景點</h3>
+                <ul>
+                    <li><strong>翟山坑道</strong>：金門最著名的戰地景點之一，這座由國軍開鑿的地下水上坑道，遊客可以漫步在這幽深的坑道中，感受歷史的厚重氣息。</li>
+                    <li><strong>莒光樓</strong>：金門的標誌性建築，以中國古典建築風格聞名，內設金門歷史博物館，展示當地的戰地文化和歷史故事。</li>
+                    <li><strong>太武山</strong>：金門的最高峰，登上山頂可俯瞰整個金門群島，並且有「毋忘在莒」的石刻，象徵著國軍的抗戰精神。</li>
+                    <li><strong>古寧頭戰史館</strong>：館內詳細介紹國共內戰中的金門保衛戰，透過歷史照片和影像紀錄重現戰爭的慘烈場景。</li>
+                    <li><strong>瓊林戰鬥村</strong>：歷史悠久的閩南古村落，保留了許多傳統建築和石板巷道，是金門特有的戰地村落。</li>
+                </ul>
+
+                <h3>金門的文化與活動</h3>
+                <ul>
+                    <li><strong>金門酒廠</strong>：遊客可以參觀製酒過程，了解高粱酒的歷史，並品嚐當地釀造的美酒。</li>
+                    <li><strong>迎城隍文化節</strong>：每年舉辦的盛大傳統活動，當地居民會進行祭祀儀式、遊行和民俗表演。</li>
+                    <li><strong>風獅爺傳統文化</strong>：金門的風獅爺是保護地方的神靈雕像，遊客可以尋找各種造型的風獅爺，感受當地的民俗信仰。</li>
+                </ul>
+
+                <h3>金門的美食</h3>
+                <ul>
+                    <li><strong>高粱酒釀的特製料理</strong>：許多餐廳會利用高粱酒入菜，如高粱酒蒸魚、酒香雞等。</li>
+                    <li><strong>金門貢糖</strong>：傳統的喜慶甜點，以花生和麥芽糖製成，是遊客最愛的伴手禮之一。</li>
+                    <li><strong>蚵仔煎</strong>：金門的蚵仔煎以鮮美的蚵仔搭配雞蛋和地瓜粉煎製而成，口感豐富且鮮甜多汁。</li>
+                </ul>
+
+                <p>金門以其獨特的戰地文化、壯麗的自然景觀和豐富的美食資源，成為了融合歷史與現代魅力的旅遊目的地。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

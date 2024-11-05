@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國立自然科學博物館 - 探索科學與自然的殿堂</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">國立自然科學博物館：探索科學與自然的殿堂</h2>
+
+            <img src="https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_2191_8.jpg&sizetype=3" alt="國立自然科學博物館" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>國立自然科學博物館位於台灣台中市，是一座集科學、自然與文化於一體的綜合性博物館。自1986年開館以來，一直是推廣科學教育和自然保育的重要場所。</p>
+
+                <h3>展館特色</h3>
+                <ul>
+                    <li><strong>常設展覽</strong>：博物館內設有多個主題展區，包括地球環境、生命科學、人類文化、天文學等，展示內容豐富多元，適合各年齡層的遊客。</li>
+                    <li><strong>特展活動</strong>：定期舉辦各類特展，涵蓋最新的科學發現和技術進步，讓觀眾能夠接觸到全球前沿的科學知識。</li>
+                    <li><strong>互動設施</strong>：設有多種互動展品和實驗活動，鼓勵觀眾動手操作，從中學習科學原理，增強參觀的趣味性和教育性。</li>
+                </ul>
+
+                <h3>必訪活動</h3>
+                <ul>
+                    <li><strong>天文館</strong>：參觀天文館內的數位天象儀，體驗震撼的星空秀和宇宙之旅。</li>
+                    <li><strong>科學工作坊</strong>：參加各類科學工作坊，親自動手做實驗，探索科學的奧秘。</li>
+                    <li><strong>自然環境探索</strong>：在戶外的植物園和生態池中，觀察多樣的植物和生態系統。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <p>前往國立自然科學博物館的方法：</p>
+                <ul>
+                    <li>自行開車：從台中市區出發，沿著主要道路依指示前往博物館，館內提供停車場。</li>
+                    <li>搭乘公共交通：搭乘台中市公車，於博物館站下車，步行即可到達。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#自然科學博物館</span>
+                    <span class="spot-tag">#科學教育</span>
+                    <span class="spot-tag">#互動展覽</span>
+                    <span class="spot-tag">#天文館</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

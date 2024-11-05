@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>埔心牧場：親近自然與動物的樂園</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">埔心牧場：親近自然與動物的樂園</h2>
+
+            <img src="https://cdn.fontrip.com/fontour/file/show/41xmm/1024.jpg" alt="埔心牧場" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>埔心牧場位於台灣桃園市楊梅區，是一個結合農牧體驗和休閒娛樂的觀光牧場。這裡提供豐富的戶外活動和農牧體驗，是親子旅遊和團體活動的理想地點。</p>
+
+                <h3>牧場特色</h3>
+                <ul>
+                    <li><strong>動物互動</strong>：埔心牧場飼養了多種動物，包括羊、牛、馬、兔子等，遊客可以親自餵食和接觸這些可愛的動物。</li>
+                    <li><strong>農牧體驗</strong>：牧場提供多種農牧活動，如擠牛奶、剪羊毛等，讓遊客體驗農村生活的樂趣。</li>
+                    <li><strong>自然景觀</strong>：廣闊的草原和清新的空氣，使這裡成為放鬆心情和享受大自然的好地方。</li>
+                </ul>
+
+                <h3>必玩活動</h3>
+                <ul>
+                    <li><strong>動物餵食</strong>：親手餵食可愛的羊和兔子，享受與動物互動的樂趣。</li>
+                    <li><strong>騎馬體驗</strong>：在專業教練的指導下，體驗騎馬的樂趣，感受與馬匹的親密接觸。</li>
+                    <li><strong>戶外野餐</strong>：在牧場的草地上享受野餐，與家人朋友共度悠閒時光。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘公車或火車</strong>：從台北或桃園搭乘火車至楊梅站，再轉乘計程車或接駁公車即可到達。</li>
+                    <li><strong>自行開車</strong>：從台北出發，沿國道1號至楊梅交流道下，依指示牌行駛即可抵達。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#埔心牧場</span>
+                    <span class="spot-tag">#親子活動</span>
+                    <span class="spot-tag">#農牧體驗</span>
+                    <span class="spot-tag">#戶外休閒</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

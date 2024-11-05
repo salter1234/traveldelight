@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新北市旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">新北市：北部的活力與多樣性</h2>
+
+            <img src="{% static 'pictures/county/NewTaipei.jpg' %}" alt="新北市城市風景" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>新北市，位於台灣北部，是一個充滿活力與多樣性的城市。作為台灣人口最多的城市，新北市擁有豐富的自然資源、文化遺產及現代化設施，是旅遊與生活的理想地點。</p>
+
+                <h3>自然與戶外活動</h3>
+                <p>新北市擁有壯麗的自然景觀，從海岸線到山脈，皆令人驚豔。北海岸的金山和萬里以其美麗的沙灘和溫泉聞名，是放鬆身心的好去處。對於喜愛登山健行的人，五分山與大屯山提供了絕佳的徒步旅行路線，讓人能夠一覽壯觀的城市與自然景色。</p>
+
+                <h3>文化與藝術</h3>
+                <p>新北市是一個文化薈萃的地方，擁有豐富的藝術和文化活動。每年舉辦的鶯歌陶瓷嘉年華吸引了大量陶藝愛好者，展示當地的陶瓷藝術精華。此外，三峽老街以其傳統建築和手工藝品店鋪，讓遊客能夠體驗到濃厚的歷史文化氛圍。</p>
+
+                <h3>生活與娛樂</h3>
+                <p>新北市的生活節奏既現代又舒適，擁有眾多的購物中心和休閒設施。林口的三井OUTLET PARK提供了國際品牌的購物選擇，而板橋區則以其繁華的商業區聞名，擁有多樣的餐飲和娛樂選擇。對於夜生活愛好者，淡水河畔的酒吧和咖啡廳提供了放鬆的好去處。</p>
+
+                <h3>創新與發展</h3>
+                <p>新北市不僅擁有豐富的自然和文化資源，還是台灣的重要經濟樞紐。汐止和新店等地區聚集了眾多科技公司和創新企業，推動著城市的經濟發展與技術進步。新北市政府積極推動智慧城市計劃，致力於提升市民的生活品質。</p>
+
+                <h3>結語</h3>
+                <p>新北市是一個充滿活力和多樣性的城市，無論你是喜愛自然、文化還是現代生活，這裡都能提供豐富的體驗。友善的市民和便利的交通讓每一位訪客都能輕鬆探索這座城市的每一個角落。無論是短暫的旅遊還是長期的居住，新北市都會讓你感受到家的溫暖與魅力。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

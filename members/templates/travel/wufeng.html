@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宜蘭五峰旗瀑布 - 隱藏的自然秘境</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">宜蘭五峰旗瀑布：隱藏的自然秘境</h2>
+
+            <img src="https://jiaoxi-tourism.tw/images/Attractions/region5/view35/view35-04.jpeg" alt="宜蘭五峰旗瀑布" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>五峰旗瀑布位於宜蘭縣，是一個被大自然環抱的美麗景點。這裡以其壯觀的瀑布和清新的空氣吸引著眾多遊客，是享受大自然的絕佳去處。</p>
+
+                <h3>歷史與發展</h3>
+                <p>五峰旗瀑布因其形狀如同五面旗幟而得名。這裡長期以來都是當地居民和遊客所喜愛的避暑勝地，隨著基礎設施的改善，吸引了更多人前來探索。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>主瀑布</strong>：高達50公尺的瀑布，水流湍急，氣勢磅礴。</li>
+                    <li><strong>步道</strong>：沿著步道漫步，享受森林浴的寧靜與舒適。</li>
+                    <li><strong>觀景台</strong>：提供絕佳的視野，可以俯瞰整個瀑布的美景。</li>
+                    <li><strong>野餐區</strong>：適合全家大小在此享受戶外餐點。</li>
+                </ul>
+
+                <h3>教育與保育</h3>
+                <p>五峰旗瀑布不僅是觀光的好去處，還是了解自然生態的理想場域。當地設有解說牌，介紹當地的動植物，提升遊客的環境保護意識。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘公車</strong>：從宜蘭市區搭乘公車至礁溪，再轉乘在地交通工具前往。</li>
+                    <li><strong>自行開車</strong>：沿著台9線行駛，依指示牌前往五峰旗瀑布。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#五峰旗瀑布</span>
+                    <span class="spot-tag">#自然秘境</span>
+                    <span class="spot-tag">#宜蘭旅遊</span>
+                    <span class="spot-tag">#生態保育</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

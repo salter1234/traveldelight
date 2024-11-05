@@ -1,0 +1,52 @@
+{% extends 'header.html' %}
+{% load custom_filters %}
+{% block title %}訂單送出{% endblock %}
+
+{% block content %}
+<br>
+    <br>
+    <br>
+    <br>
+
+<section>  
+        
+    <div class="container">        
+        <div class="row">              
+            <table class="table table-bordered caption-top" border="1">
+                <caption><h2>STEP1.旅遊行程訂單</h2></caption>
+                <tr class="text-center">
+                    <th><h5>您選擇的旅遊行程</h5></th>
+                    <th><h5>旅遊公司</h5></th>
+                    <th><h5>行程目的地</h5></th>
+                    <th><h5>出發地點</h5></th>
+                    <th><h5>旅遊天數</h5></th>
+                    <th><h5>價位</h5></th>
+                    <th><h5>出團日期</h5></th>
+                </tr>            
+                <tr class="text-center table-warning">
+                    <td><h5>{{ order.tour.tourname }}</h5></td>
+                    <td>{{ order.tour.company }}</td>
+                    <td>{{ order.tour.toursite }}</td>
+                    <td>{{ order.gosite }}</td>
+                    <td>{{ order.tour.tourday }}</td>
+                    <td>{{ order.order_sum }}</td>
+                    <td>{{ order.godate }}</td>
+                </tr>            
+            </table> 
+        </div>
+    </div>
+    
+    <div class="container">        
+        <div class="row"> 
+            <h2>STEP2.請訂購台鐵票>></h2>
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="btn btn-danger btn-lg py-2 px-4" href="{% url 'order_train' %}">訂購台鐵票</a>
+                <a class="btn btn-primary btn-lg py-2 px-4" href="{% url 'orders' %}">略過，不需訂購車票</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'footer.html' %}               
+{% endblock %}
+                    

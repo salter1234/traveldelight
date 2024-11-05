@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="about-page" style="background-color: transparent; padding: 40px 20px; font-family: 'Arial', sans-serif;">
+
+    <div class="container mt-5" style="max-width: 800px; background-color: white; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 30px;">
+        
+        <h2 style="font-size: 2rem; color: #444; margin-bottom: 25px;">開發動機</h2>
+        <hr style="border: 1px solid #555; margin: 20px 0;">
+        <p>我們這個旅遊網站的開發動機，源於我們對旅遊的熱愛以及當前市場上的缺陷。</p>
+        
+        <p>我們發現現有的許多平台雖然提供大量的旅遊資訊、部落格以及旅遊貼文，但它們通常過於複雜且充斥著廣告，這些平台不僅讓使用者在尋找資訊的過程中容易分心，還經常需要大量的時間整理和規劃行程，為了解決這些問題，我們決定打造一個界面簡單、乾淨整潔，且無廣告干擾的平台。</p>
+    
+        <p>通過這個平台，使用者能夠輕鬆瀏覽全台各地的旅遊行程，快速完成交通和住宿的安排。</p>
+
+        <p>這個網站特別適合那些不想花太多時間安排行程的“懶人”用戶。</p>
+        <hr style="border: 1px solid #555; margin: 20px 0;">
+        
+        <h2 style="font-size: 2rem; color: #444; margin-bottom: 15px;">網站的目的</h2>
+        <p>我們的平台致力於為使用者提供一個簡單直觀的旅遊規劃工具，省去他們繁瑣的操作過程，讓他們專注於享受旅程。</p>
+        <hr style="border: 1px solid #555; margin: 20px 0;">
+
+        <h2 style="font-size: 2rem; color: #444; margin-bottom: 15px;">目標用戶</h2>
+        <p>我們的網站專為那些想要快速安排旅遊行程的使用者設計，尤其是對於覺得規劃行程麻煩或繁瑣的使用者。</p>
+
+        <hr style="border: 1px solid #555; margin: 20px 0;">
+        <div>
+            <h3>團隊介紹</h3>
+            <div class="row" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+                <div class="col" style="flex: 1 1 30%; padding: 10px; text-align: center;">
+                    <img src="{% static 'member1.JPG' %}" alt="成員1" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                    <h4>盧奕誠</h4>
+                    <p>Email: <a href="mailto:a6020820914@gmail.com">a6020820914@gmail.com</a></p>
+                    <p>Line ID: <a href="line://ti/p/fff4406">fff4406</a></p>
+                    <p>個人介紹：專注於Django和機器學習，喜歡設計直觀的應用。熱愛旅遊，喜歡探索新地方。</p>
+                </div>
+                <div class="col" style="flex: 1 1 30%; padding: 10px; text-align: center;">
+                    <img src="{% static 'member2.jpg' %}" alt="成員2" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                    <h4>潘庚庭</h4>
+                    <p>Email: <a href="mailto:z135625@gmail.com">z135625@gmail.com</a></p>
+                    <p>Line ID: <a href="https://line.me/ti/p/9EoGEF5BN1">Pegasus30513</a></p>
+                    <p>個人介紹：正努力提升自己的程式設計技能，並計畫進一步學習技術能力。讓這些努力會為我開啟更多機會。</p>
+                </div>
+                <div class="col" style="flex: 1 1 30%; padding: 10px; text-align: center;">
+                    <img src="{% static 'member3.jpg' %}" alt="成員3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                    <h4>黃芷翎</h4>
+                    <p>Email: <a href="mailto:s7262370@gmail.com">s7262370@gmail.com</a></p>
+                    <p>Line ID: <a href="line://ti/p/@abc123rfv">zhiling123</a></p>
+                    <p>個人介紹：喜歡文化交流，樂於分享各地的特色。</p>
+                </div>
+                <div class="col" style="flex: 1 1 30%; padding: 10px; text-align: center;">
+                    <img src="{% static 'member4.jpg' %}" alt="成員4" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                    <h4>張齡文</h4>
+                    <p>Email: <a href="linwen6139@gmail.com">linwen6139@gmail.com</a></p>
+                    <p>Line ID: <a href="line://ti/p/@member4lineid">member4lineid</a></p>
+                    <p>個人介紹：對於美食旅遊情有獨鍾，喜歡嘗試各地美食。</p>
+                </div>
+                <div class="col" style="flex: 1 1 30%; padding: 10px; text-align: center;">
+                    <img src="{% static 'member5.jpg' %}" alt="成員5" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                    <h4>張家澤</h4>
+                    <p>Email: <a href="mailto:b0955373672@gmail.com">b0955373672@gmail.com</a></p>
+                    <p>Line ID: <a href="line://ti/p/@member5lineid">member5lineid</a></p>
+                    <p>個人介紹：喜愛登山健行，喜歡挑戰各種戶外活動。</p>
+                </div>
+                <div class="col" style="flex: 1 1 30%; padding: 10px; text-align: center;">
+                    <img src="{% static 'member6.jpg' %}" alt="成員6" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+                    <h4>王正融</h4>
+                    <p>Email: <a href="mailto:wangchengrung@gmail.com">wangchengrung@gmail.com</a></p>
+                    <p>Line ID: <a href="https://line.me/ti/p/fnzepNJLhV">x2431971</a></p>
+                    <p>個人介紹：喜歡海灘和水上運動，常常享受陽光和海浪。</p>
+                </div>
+            </div>
+            <h4>聯絡方式</h4>
+            <p>如有問題，歡迎聯絡我們！</p>
+            <p>Line ID: <a href="https://line.me/ti/p/@250vzxnr">@250vzxnr</a></p></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

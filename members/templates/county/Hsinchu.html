@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新竹市概覽</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">新竹概覽</h2>
+
+            <img src="{% static 'pictures/county/Hsinchu.jpg' %}" alt="新竹市城市風景" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>新竹市位於台灣西北部，是一座結合科技、文化與自然的城市。這裡被譽為「風城」，以其快速的風速和活力四射的創新環境聞名。</p>
+
+                <h3>1. 科技與創新</h3>
+                <p>新竹是台灣的科技重鎮，擁有亞洲著名的新竹科學工業園區。這裡匯聚了眾多高科技公司和研究機構，是台灣半導體產業的核心。園區內的企業如台積電和聯發科，對全球科技發展具有重要影響。</p>
+
+                <h3>2. 教育與研究</h3>
+                <p>新竹也是台灣的重要教育中心，擁有國立清華大學和國立交通大學等頂尖學府。這些大學不僅在學術研究上享有聲譽，還培養了大量優秀的科技人才，推動了城市的創新與發展。</p>
+
+                <h3>3. 自然與景點</h3>
+                <p>新竹擁有豐富的自然景觀和旅遊景點。十八尖山是市區內的綠肺，提供了絕佳的徒步旅行路線和城市全景。關西的六福村主題遊樂園則是家庭旅遊的熱門選擇，提供刺激的遊樂設施和動物園。</p>
+
+                <h3>4. 文化與傳統</h3>
+                <p>新竹擁有悠久的歷史和豐富的文化傳統。新竹城隍廟是當地的重要宗教場所，每年舉辦的城隍祭典吸引了大量信徒和遊客。這裡的傳統美食如米粉和貢丸，也深受當地居民和遊客的喜愛。</p>
+
+                <h3>5. 交通與便利</h3>
+                <p>新竹的交通十分便利，擁有完善的公路和鐵路系統。高鐵新竹站使得新竹與台灣其他主要城市的連接更為快速，吸引了許多商務和觀光旅客。</p>
+
+                <h3>結語</h3>
+                <p>新竹是一座充滿活力與創新的城市，無論是在科技發展、教育研究，還是自然景觀與文化傳統上，都展現出獨特的魅力。這裡不僅是科技人才的搖籃，也是探索台灣文化與自然的絕佳地點。新竹，作為台灣的科技心臟，持續吸引著全球的目光。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

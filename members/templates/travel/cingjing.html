@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清境農場 - 台灣的高山牧場天堂</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">清境農場：台灣的高山牧場天堂</h2>
+
+            <img src="https://image.cdn-eztravel.com.tw/1TB0_BgFtcPNRqkPkelkDtZii9W7OyyYb5IC5Btuqxo/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L3BvaS90dy9OQTAvQ2luZ2ppbmcgRmFybS9zaHV0dGVyc3RvY2tfMzU4NTQ4OTQ0LmpwZw.jpg" alt="清境農場" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>清境農場位於台灣南投縣仁愛鄉，是一個以高山景觀和牧場體驗聞名的旅遊勝地。這裡海拔約1,750公尺，氣候涼爽，擁有壯麗的山景和豐富的自然資源，是逃離城市喧囂的理想去處。</p>
+
+                <h3>景點特色</h3>
+                <ul>
+                    <li><strong>青青草原</strong>：廣闊的草原是清境農場的核心區域，遊客可以觀賞到放牧的綿羊和優美的山景，還可以參加牧羊秀，體驗牧場生活。</li>
+                    <li><strong>小瑞士花園</strong>：這是一個充滿歐洲風情的花園，種植著各式各樣的花卉，是拍照和散步的好地方。</li>
+                    <li><strong>步道健行</strong>：園區內有多條步道，適合健行愛好者探索，沿途可以欣賞到中央山脈的壯麗景觀。</li>
+                </ul>
+
+                <h3>必訪活動</h3>
+                <ul>
+                    <li><strong>牧羊秀</strong>：欣賞牧羊犬驅趕羊群的精彩表演，了解牧場運作的過程。</li>
+                    <li><strong>花園漫步</strong>：在小瑞士花園中漫步，享受花香和美麗的景色。</li>
+                    <li><strong>品嚐當地美食</strong>：嘗試清境農場的特色羊奶製品和其他當地美食，體驗獨特的風味。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘客運</strong>：從台中或埔里搭乘客運至清境農場，交通便利。</li>
+                    <li><strong>自行開車</strong>：從台中出發，沿國道6號和台14甲線行駛，約需2.5小時即可抵達。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#清境農場</span>
+                    <span class="spot-tag">#高山牧場</span>
+                    <span class="spot-tag">#自然景觀</span>
+                    <span class="spot-tag">#牧羊秀</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

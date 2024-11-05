@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>田寮月世界</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">田寮月世界</h2>
+
+            <img src="https://khh.travel/image/39317/1024x768" alt="田寮月世界" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>田寮月世界位於台灣高雄市田寮區，是一個以特殊地形聞名的自然景觀區。這裡因為其獨特的惡地地形，形成了如月球表面般的景象，故名“月世界”。</p>
+
+                <h3>景點特色</h3>
+                <ul>
+                    <li><strong>地形奇觀</strong>：月世界的惡地地形是由於長期侵蝕作用形成的，展現出一片荒涼且奇特的地貌。</li>
+                    <li><strong>自然步道</strong>：園區內設有多條步道，遊客可以沿著步道欣賞壯觀的地形和自然風光。</li>
+                    <li><strong>觀景平台</strong>：設有觀景平台，可以俯瞰整個月世界的全景，適合拍攝和觀賞日出或日落。</li>
+                </ul>
+
+                <h3>活動推薦</h3>
+                <ul>
+                    <li><strong>生態教育</strong>：了解惡地地形的形成過程及其生態系統。</li>
+                    <li><strong>攝影</strong>：由於其獨特的地貌，月世界是攝影愛好者的天堂。</li>
+                    <li><strong>健行</strong>：參加健行活動，感受大自然的壯麗與寧靜。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>自駕</strong>：從高雄市區出發，沿國道10號行駛，接台28線即可抵達。</li>
+                    <li><strong>公共交通</strong>：搭乘高雄客運至田寮，轉乘當地交通工具前往。</li>
+                </ul>
+
+                <p>田寮月世界以其獨特的自然景觀和地質特徵，吸引了眾多遊客前來探索和欣賞。希望您能在此享受大自然的奇妙魅力！</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

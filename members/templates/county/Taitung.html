@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台東旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">台東：自然與文化的交響曲</h2>
+
+            <img src="{% static 'pictures/county/Taitung.jpg' %}" alt="台東自然景觀" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>台東位於台灣的東南部，是一個擁有豐富自然資源和獨特文化風情的地方。這裡的景色壯麗且多樣，從海岸線到山脈，無不令人驚嘆。</p>
+
+                <h3>自然奇觀</h3>
+                <ul>
+                    <li><strong>三仙台</strong>：以其獨特的海蝕地形和壯觀的拱橋聞名，是欣賞日出的絕佳地點。</li>
+                    <li><strong>太麻里金針山</strong>：在花季時節，整片山坡被金黃色的金針花覆蓋，景色如詩如畫。</li>
+                </ul>
+
+                <h3>原住民文化</h3>
+                <ul>
+                    <li><strong>豐年祭</strong>：台東是台灣原住民文化的重鎮，每年舉辦豐年祭，展現傳統舞蹈、音樂和祭典儀式。</li>
+                </ul>
+
+                <h3>戶外冒險</h3>
+                <ul>
+                    <li><strong>都蘭海灘</strong>：衝浪愛好者的天堂，提供絕佳的海浪體驗。</li>
+                    <li><strong>鹿野高台</strong>：適合滑翔傘飛行，享受高空中的壯麗景色。</li>
+                </ul>
+
+                <h3>放鬆與療癒</h3>
+                <ul>
+                    <li><strong>知本溫泉</strong>：以優良的溫泉水質著稱，是舒緩疲勞的理想之地。</li>
+                </ul>
+
+                <h3>地方美食</h3>
+                <ul>
+                    <li><strong>池上便當</strong>：以美味和飽滿的配料聞名，是台東的代表性美食。</li>
+                    <li><strong>農產品</strong>：台東的釋迦和紅烏龍茶也是不容錯過的特色食品。</li>
+                </ul>
+
+                <p>台東是一個充滿自然美景和文化風情的地區，無論是熱愛大自然的冒險者，還是尋求放鬆和美食的旅人，都能在這裡找到屬於自己的樂趣。這裡是探索台灣東南部魅力的最佳地點。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

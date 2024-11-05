@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彰化市概覽</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">彰化概覽</h2>
+
+            <img src="{% static 'pictures/county/Changhua.jpg' %}" alt="彰化市城市風景" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>彰化位於台灣的中部，是一個充滿人情味和歷史文化的地方。這裡有著豐富的農業資源和許多值得探索的景點。</p>
+
+                <h3>農業資源</h3>
+                <p>首先，彰化以其肥沃的平原聞名，是台灣重要的農業地區之一。走在鄉間小路上，你可以看到一望無際的稻田和各式農作物，特別是當地盛產的西瓜和葡萄，甜美多汁，讓人垂涎欲滴。</p>
+
+                <h3>著名景點</h3>
+                <p>彰化市區有著名的八卦山大佛，是當地的地標之一。從山上俯瞰，可以欣賞到整個彰化市的美景，特別是在黃昏時分，景色格外迷人。八卦山也是個適合健行和騎自行車的好地方。</p>
+
+                <h3>歷史文化</h3>
+                <p>另外，鹿港是一個充滿歷史和文化的小鎮，以其保存完好的古蹟和傳統建築而聞名。走在鹿港老街上，你可以感受到濃厚的歷史氛圍，還有機會品嚐到許多傳統小吃，如蚵仔煎和肉圓。</p>
+
+                <h3>節慶活動</h3>
+                <p>彰化也是一個充滿節慶活動的地方，例如每年舉辦的媽祖遶境活動，吸引了大量的信徒和遊客，共同參與這場盛大的宗教盛事。</p>
+
+                <h3>結語</h3>
+                <p>彰化是一個適合慢慢品味的地方，無論是欣賞自然風光、探索歷史文化，還是享受當地美食，這裡都能帶給你不同的驚喜和感動。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

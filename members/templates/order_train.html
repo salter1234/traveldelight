@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .label-large {
+            font-size: 1.5rem; /* 調整字體大小 */
+            font-weight: bold; /* 設定字體為粗體 */
+        }
+        .info-message {
+            color: white; /* 設定字體顏色為白色 */
+        }
+        .result-container {
+            background-color: #f8f9fa; /* 設定淺灰色背景 */
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light"> <!-- 設定背景顏色為深色以突顯白色字體 -->
+    <div class="container mt-5">
+        <h2 class="text-center">台鐵訂票查詢</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="from_station" class="label-large">起始站:</label>
+                    <select type="text" class="form-control" id="from_station" name="from_station" required>
+                        <option value="" disabled selected>請輸入起始站名</option>
+                        <option value="基隆">基隆</option>
+                        <option value="七堵">七堵</option>
+                        <option value="南港">南港</option>
+                        <option value="松山">松山</option>
+                        <option value="臺北">臺北</option>
+                        <option value="萬華">萬華</option>
+                        <option value="板橋">板橋</option>
+                        <option value="樹林">樹林</option>
+                        <option value="桃園">桃園</option>
+                        <option value="中壢">中壢</option>
+                        <option value="新竹">新竹</option>
+                        <option value="竹南">竹南</option>
+                        <option value="苗栗">苗栗</option>
+                        <option value="豐原">豐原</option>
+                        <option value="臺中">臺中</option>
+                        <option value="彰化">彰化</option>
+                        <option value="員林">員林</option>
+                        <option value="斗六">斗六</option>
+                        <option value="嘉義">嘉義</option>
+                        <option value="新營">新營</option>
+                        <option value="臺南">臺南</option>
+                        <option value="岡山">岡山</option>
+                        <option value="新左營">新左營</option>
+                        <option value="高雄">高雄</option>
+                        <option value="屏東">屏東</option>
+                        <option value="潮州">潮州</option>
+                        <option value="臺東">臺東</option>
+                        <option value="玉里">玉里</option>
+                        <option value="花蓮">花蓮</option>
+                        <option value="蘇澳新">蘇澳新</option>
+                        <option value="宜蘭">宜蘭</option>
+                        <option value="瑞芳">瑞芳</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="to_station" class="label-large">到達站:</label>
+                    <select type="text" class="form-control" id="to_station" name="to_station" required>
+                        <option value="" disabled selected>請輸入到達站名</option>
+                        <option value="基隆">基隆</option>
+                        <option value="七堵">七堵</option>
+                        <option value="南港">南港</option>
+                        <option value="松山">松山</option>
+                        <option value="臺北">臺北</option>
+                        <option value="萬華">萬華</option>
+                        <option value="板橋">板橋</option>
+                        <option value="樹林">樹林</option>
+                        <option value="桃園">桃園</option>
+                        <option value="中壢">中壢</option>
+                        <option value="新竹">新竹</option>
+                        <option value="竹南">竹南</option>
+                        <option value="苗栗">苗栗</option>
+                        <option value="豐原">豐原</option>
+                        <option value="臺中">臺中</option>
+                        <option value="彰化">彰化</option>
+                        <option value="員林">員林</option>
+                        <option value="斗六">斗六</option>
+                        <option value="嘉義">嘉義</option>
+                        <option value="新營">新營</option>
+                        <option value="臺南">臺南</option>
+                        <option value="岡山">岡山</option>
+                        <option value="新左營">新左營</option>
+                        <option value="高雄">高雄</option>
+                        <option value="屏東">屏東</option>
+                        <option value="潮州">潮州</option>
+                        <option value="臺東">臺東</option>
+                        <option value="玉里">玉里</option>
+                        <option value="花蓮">花蓮</option>
+                        <option value="蘇澳新">蘇澳新</option>
+                        <option value="宜蘭">宜蘭</option>
+                        <option value="瑞芳">瑞芳</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="travel_date" class="label-large">出發日期:</label>
+                <input type="date" class="form-control" id="travel_date" name="travel_date" required min="{{ today }}">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">查詢</button>
+        </form>
+        <h4 class="mt-3 info-message">按下【查詢】後，請稍等約10秒，時刻表就出來囉!!!</h4>
+
+        {% if schedules is not None %}
+            {% if schedules %}
+                <div class="result-container">
+                    <h2 class="mt-5">查詢結果</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>車次</th>
+                                <th>出發站</th>
+                                <th>到達站</th>
+                                <th>出發時間</th>
+                                <th>抵達時間</th>
+                                <th>價位</th>
+                                <th>訂票</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for schedule in schedules %}
+                            <tr>
+                                <td>{{ schedule.train_number }}</td>
+                                <td>{{ schedule.from_station }}</td>
+                                <td>{{ schedule.to_station }}</td>
+                                <td>{{ ride_date }} {{ schedule.departure_time }}</td>
+                                <td>{{ ride_date }} {{ schedule.arrive_time }}</td>
+                                <td>${{ schedule.price }}</td>
+                                <td>
+                                    <a href="{% url 'order_ticket' %}" 
+                                       data-schedule="{{ schedule.train_number }},{{ start_station }},{{ end_station }},{{ ride_date }},{{ schedule.departure_time }},{{ schedule.arrive_time }},{{ schedule.price }}" 
+                                       class="btn btn-success">訂票</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <script>
+                    alert("查詢不到任何結果，請確認輸入的資料是否正確！");
+                </script>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <script>
+        // 限制出發日期為今天或未來日期
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('travel_date').setAttribute('min', today);
+        });
+
+        // JavaScript 用於處理訂票按鈕的點擊事件
+        document.querySelectorAll('a[data-schedule]').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const passengerName = prompt("請輸入乘客姓名:");
+                const idNumber = prompt("請輸入身分證字號:");
+
+                // 身份證號碼格式檢查
+                const idRegex = /^[A-Z]{1}[0-9]{9}$/; // 假設格式：一個字母+九個數字
+                if (!idRegex.test(idNumber)) {
+                    alert("身分證字號格式不正確！請檢查並重新輸入。");
+                    return; // 取消訂票流程
+                }
+
+                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = this.href;
+
+                // Add hidden inputs for CSRF token and user data
+                form.innerHTML += `<input type='hidden' name='csrfmiddlewaretoken' value='${csrfToken}'>`;
+                form.innerHTML += `<input type='hidden' name='passenger_name' value='${passengerName}'>`;
+                form.innerHTML += `<input type='hidden' name='id_number' value='${idNumber}'>`;
+                form.innerHTML += `<input type='hidden' name='schedule_data' value='${this.dataset.schedule}'>`;
+
+                document.body.appendChild(form);
+                form.submit();
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雲嶺之丘</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">雲嶺之丘：雲林的自然秘境</h2>
+
+            <img src="https://cc.tvbs.com.tw/img/program/upload/2023/05/11/20230511161220-09425eb8.jpg" alt="雲嶺之丘" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>雲嶺之丘位於台灣雲林縣，是一個結合自然景觀與人文風情的旅遊勝地。這裡以其絕美的山丘景色和寧靜的氛圍，成為遊客遠離城市喧囂、享受大自然的理想去處。</p>
+
+                <h3>景點特色</h3>
+                <ul>
+                    <li><strong>壯麗的山丘景觀</strong>：雲嶺之丘擁有連綿不斷的山丘，四季皆有不同的自然美景，特別是清晨與黃昏時分，景色尤為動人。</li>
+                    <li><strong>步道健行</strong>：園區內設有多條步道，適合喜愛健行的遊客前來探索，沿途可以欣賞到豐富的自然生態。</li>
+                    <li><strong>觀景平台</strong>：提供絕佳的視野，可以遠眺雲林縣的自然風光，是拍照與放鬆心情的好地方。</li>
+                    <li><strong>休憩設施</strong>：園區內設有休憩區和咖啡館，提供遊客一個舒適的休息環境。</li>
+                </ul>
+
+                <h3>活動與體驗</h3>
+                <p>雲嶺之丘不僅提供自然景觀，還有各種體驗活動，如自然觀察、攝影工作坊等，讓遊客能夠更深入地感受這片土地的美好。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>自駕</strong>：從國道1號下「斗南交流道」，沿著指標行駛即可抵達。</li>
+                    <li><strong>公車</strong>：搭乘當地公車至「雲嶺之丘站」，下車後步行即可到達。</li>
+                </ul>
+
+                <p>雲嶺之丘是一個讓人放鬆心靈、親近自然的好地方，不論是家庭出遊還是個人旅行，這裡都能提供一段難忘的旅程。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

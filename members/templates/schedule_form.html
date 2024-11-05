@@ -1,0 +1,180 @@
+<!DOCTYPE html>  
+<html lang="zh-Hant">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>台鐵訂票</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #f7f7f7;  
+            margin: 20px;  
+        }  
+        h1, h2, h3 {  
+            color: #333;  
+            text-align: center;  
+        }  
+        table {  
+            width: 100%;  
+            border-collapse: collapse;  
+            margin-bottom: 20px;  
+        }  
+        table, th, td {  
+            border: 1px solid #ccc;  
+        }  
+        th, td {  
+            padding: 10px;  
+            text-align: center;  
+        }  
+        th {  
+            background-color: #f0f0f0;  
+            font-weight: bold;  
+        }  
+        .btn {  
+            display: inline-block;  
+            padding: 10px 20px;  
+            font-size: 16px;  
+            cursor: pointer;  
+            background-color: #007bff;  
+            color: white;  
+            border: none;  
+            border-radius: 5px;  
+            margin: 10px auto;  
+            display: block;  
+        }  
+        .btn:hover {  
+            background-color: #0056b3;  
+        }  
+        .btn:disabled {  
+            background-color: #cccccc;  
+            cursor: not-allowed;  
+        }  
+        .form-group {  
+            margin-bottom: 20px;  
+        }  
+        .form-control {  
+            width: 100%;  
+            padding: 10px;  
+            font-size: 16px;  
+            border: 1px solid #ccc;  
+            border-radius: 5px;  
+            box-sizing: border-box;  
+        }  
+        .alert {  
+            color: white;  
+            background-color: #17a2b8;  
+            padding: 15px;  
+            border-radius: 5px;  
+            margin-top: 20px;  
+            text-align: center;  
+        }  
+        .info {  
+            color: #333;  
+            padding: 15px;  
+            border: 1px solid #ccc;  
+            border-radius: 5px;  
+            margin-top: 20px;  
+            text-align: center;  
+            background-color: #e7f3fe;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <h1>確認訂購資訊</h1>  
+    <table>  
+        <tr>  
+            <th>身分證字號</th>  
+            <th>姓名</th>  
+            <th>搭乘車次</th>  
+            <th>出發站</th>  
+            <th>到達站</th>  
+            <th>出發時間</th>  
+        </tr>  
+        <tr>  
+            <td>{{ ticket.passenger_ID }}</td>  
+            <td>{{ ticket.passenger_name }}</td>  
+            <td>{{ ticket.train_number }}</td>  
+            <td>{{ ticket.from_station }}</td>  
+            <td>{{ ticket.to_station }}</td>  
+            <td>{{ ticket.departure_time }}&nbsp;{{ ticket.go_time }}</td>  
+        </tr>  
+    </table>  
+    
+    <!-- 訂票表單 -->  
+    <form method="post">  
+        {% csrf_token %}  
+        <button type="submit" name="booking_submit" class="btn">確認訂購</button>  
+    </form>  
+    
+    <h3>按下【確認訂購】後，我們的訂票小幫手需要約 1~2 分鐘的時間處理，請您耐心等候，稍後您的訂票結果就會出來囉!!!</h3>  
+    <div id="booking-status">
+        <!-- 訂票狀態或確認訊息將顯示在這裡 -->
+    
+        
+<!-- 猜數字遊戲表單 -->  
+    <h2>等候期間，您可以玩猜數字遊戲！</h2>  
+    <form id="guess-form" method="POST">  
+        {% csrf_token %}  
+        <div class="form-group">  
+            <label for="guess">猜一個數字 (1-100):</label>  
+            <input type="number" class="form-control" id="guess" name="guess" required min="1" max="100">  
+        </div>  
+        <button type="submit" class="btn">提交猜測</button>  
+    </form>  
+
+    <div id="guess-result"></div>  
+    <div id="submission-status"></div>  <!-- 新增狀態顯示區域 -->  
+
+    <script>  
+        // 先定義票據 ID  
+        const ticket = {  
+            id: "{{ ticket.id }}",  // 確保 ticket.id 存在於模板上下文  
+        };  
+
+        document.getElementById('guess-form').addEventListener('submit', function(event) {  
+            event.preventDefault();  // 防止表單提交刷新頁面  
+
+            let guess = parseInt(document.getElementById('guess').value);  // 轉換為整數  
+            let csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;  
+
+            // 檢查用戶輸入是否有效  
+            if (isNaN(guess) || guess < 1 || guess > 100) {  
+                document.getElementById('guess-result').innerHTML = `<div class="alert">請輸入一個有效的數字 (1-100)。</div>`;  
+                return;  // 終止執行  
+            }  
+
+            // 顯示提交狀態  
+            document.getElementById('submission-status').innerHTML = `<div class="info">正在提交猜測...</div>`;  
+
+            // 發送 AJAX 請求  
+            fetch(`/order_view/${ticket.id}/`, {  
+                method: 'POST',  
+                headers: {  
+                    'Content-Type': 'application/json',  
+                    'X-CSRFToken': csrfToken  
+                },  
+                body: JSON.stringify({  
+                    guess: guess,  
+                    guess_submit: true  // 標識為猜數字提交  
+                })  
+            })  
+            .then(response => {  
+                if (!response.ok) {  
+                    throw new Error('Network response was not ok');  
+                }  
+                return response.json();  
+            })  
+            .then(data => {  
+                document.getElementById('guess-result').innerHTML = `<div class="alert">${data.message}</div>`;  
+                // 清除提交狀態消息  
+                document.getElementById('submission-status').innerHTML = `<div class="info">您的猜測已提交：${guess}</div>`;  
+            })  
+            .catch(error => {  
+                console.error('Error:', error);  
+                document.getElementById('guess-result').innerHTML = `<div class="alert">發生錯誤，請稍後再試。</div>`;  
+                // 清除提交狀態消息  
+                document.getElementById('submission-status').innerHTML = `<div class="info">發生錯誤，請稍後再試。</div>`;  
+            });  
+        });  
+    </script>
+</body>  
+</html>

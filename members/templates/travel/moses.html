@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奎壁山摩西分海</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">奎壁山摩西分海：澎湖的奇妙自然現象</h2>
+
+            <img src="https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_A12-00413.jpg" alt="奎壁山摩西分海" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>奎壁山摩西分海是澎湖的一個著名自然景觀，位於白沙鄉的奎壁山附近。這一奇觀因為潮汐變化而形成的海中步道，讓人彷彿可以在海上行走，因此被形象地稱為「摩西分海」。</p>
+
+                <h3>現象介紹</h3>
+                <p>
+                    <strong>潮汐現象</strong>：當退潮時，海水逐漸退去，露出一條長約1.5公里的沙石步道，連接主島與附近的小島，讓人可以步行穿越海面。<br>
+                    <strong>最佳觀賞時間</strong>：摩西分海的奇觀並非隨時可見，通常在退潮時才會出現。建議查詢當地的潮汐時間，以便安排參觀。
+                </p>
+
+                <h3>景觀特色</h3>
+                <ul>
+                    <li><strong>自然步道</strong>：步道由沙石構成，兩側是清澈的海水，步行其上如同漫步海中。</li>
+                    <li><strong>壯麗景色</strong>：在步道上行走時，可以欣賞到澎湖群島的美麗海景和周圍的自然風光。</li>
+                </ul>
+
+                <h3>旅遊資訊</h3>
+                <p>
+                    <strong>交通方式</strong>：從澎湖本島的馬公市可搭乘公共交通或租用機車前往奎壁山。<br>
+                    <strong>參觀建議</strong>：建議穿著輕便、防滑的鞋子，並攜帶防曬用品。
+                </p>
+
+                <h3>注意事項</h3>
+                <p>
+                    <strong>安全</strong>：由於步道在退潮時才會出現，請務必注意潮汐時間，避免在漲潮時被困。<br>
+                    <strong>環境保護</strong>：請勿攜帶垃圾進入步道區域，保持自然環境的清潔。
+                </p>
+
+                <p>奎壁山摩西分海是澎湖的一大自然奇觀，吸引了眾多遊客前來體驗這一獨特的地質現象。在這裡，不僅可以享受漫步海中的樂趣，還能感受大自然的神奇魅力。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小琉球美人洞 - 神秘與自然的結合</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">小琉球美人洞：神秘與自然的結合</h2>
+
+            <img src="https://www.dbnsa.gov.tw/att/pic/b_11005725.jpg" alt="小琉球美人洞" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>小琉球是台灣唯一的珊瑚礁島嶼，擁有豐富的自然景觀和獨特的地質地貌。其中，美人洞是小琉球最著名的景點之一，以其神秘的洞穴和迷人的傳說吸引了大量遊客。</p>
+
+                <h3>美人洞的特色</h3>
+                <ul>
+                    <li><strong>自然景觀</strong>：美人洞由海蝕作用形成，洞內景觀奇特，岩壁上有各種形狀的石灰岩，讓人驚嘆大自然的鬼斧神工。</li>
+                    <li><strong>神秘傳說</strong>：據說古時有一位美麗的女子為躲避海盜追捕，藏身於此洞，因而得名「美人洞」。</li>
+                    <li><strong>觀景平台</strong>：洞口設有觀景平台，遊客可以在此俯瞰壯麗的海景，欣賞日出或日落的美麗景色。</li>
+                </ul>
+
+                <h3>旅遊資訊</h3>
+                <p>交通方式：</p>
+                <ul>
+                    <li>從台灣本島搭乘渡輪至小琉球，抵達後可租借機車或自行車，沿著指標前往美人洞。</li>
+                </ul>
+                <p>開放時間：</p>
+                <ul>
+                    <li>一般為每日早上8點至下午5點，但建議確認當地公告以避免臨時變動。</li>
+                </ul>
+                <p>門票資訊：</p>
+                <ul>
+                    <li>需購買入園門票，票價通常包含小琉球其他景點的聯票。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#小琉球美人洞</span>
+                    <span class="spot-tag">#自然景觀</span>
+                    <span class="spot-tag">#神秘傳說</span>
+                    <span class="spot-tag">#觀景平台</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

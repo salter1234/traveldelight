@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桃園旅遊介紹</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">桃園：多元文化與自然景觀的交融</h2>
+
+            <img src="{% static 'pictures/county/Taoyuan.jpg' %}" alt="桃園自然景觀" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>桃園位於台灣的西北部，是台灣的一個重要城市，因為它擁有多元的文化、自然景觀和便利的交通設施。以下是一些桃園的特色：</p>
+
+                <h3>交通樞紐</h3>
+                <p>桃園國際機場是台灣最大的機場，連接了許多國際航線，使桃園成為台灣的空中門戶。此外，桃園也有高鐵站和便利的公路網絡，交通非常方便。</p>
+
+                <h3>多元文化</h3>
+                <p>桃園是個多元文化的城市，擁有許多不同族群和文化背景的居民。這種多樣性反映在當地的美食和文化活動中。</p>
+
+                <h3>自然景觀</h3>
+                <p>桃園有許多美麗的自然景點，如石門水庫、大溪老街和拉拉山等，適合進行戶外活動和旅遊。</p>
+
+                <h3>工業與經濟</h3>
+                <p>桃園是台灣的重要工業重鎮，擁有許多科技園區和工業區，對台灣的經濟發展貢獻良多。</p>
+
+                <h3>教育與科技</h3>
+                <p>桃園有多所大專院校和研究機構，推動了當地的教育和科技發展。</p>
+
+                <h3>文化活動</h3>
+                <p>桃園有許多文化活動和節慶，如桃園地景藝術節和各類傳統廟會，吸引了不少遊客和當地居民參與。</p>
+
+                <p>桃園是一個充滿活力和多樣性的城市，無論是文化、經濟還是自然景觀，都有許多值得探索和體驗的地方。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

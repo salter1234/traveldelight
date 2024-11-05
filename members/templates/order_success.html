@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% load custom_filters %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            color: rgb(0, 0, 0); /* 設定全局字體顏色為黑色 */
+        }
+        .result-container {
+            background-color: #f8f9fa; /* 設定淺灰色背景 */
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .total {
+            font-weight: bold; /* 強調總金額 */
+        }
+    </style>
+</head>
+<body class="bg-dark"> <!-- 背景顏色為深色 -->
+    <div class="container mt-5">
+        <h2 class="text-center text-light">訂票成功!</h2>
+        <h2 class="text-center text-light">謝謝您的訂票!</h2>
+
+        <div class="result-container">
+            <p>訂票代碼: <strong>{{ ticket_number }}</strong></p>
+            <p>搭乘列車: <strong>{{ train_number }}</strong></p>
+            {% if train_number|traintype %}
+                <p>座位號碼: <strong>{{ seat_number }}</strong></p>
+            {% endif %}
+            <p>搭乘時間: <strong>{{ trip_time }}</strong></p>
+            <p class="total">總金額: <strong>{{ order_sum }}元</strong></p>
+        </div>
+        <a href="{% url 'index' %}" class="btn btn-primary btn-block mt-4">返回查詢頁面</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}

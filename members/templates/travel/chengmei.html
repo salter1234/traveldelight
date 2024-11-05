@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成美文化園區</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">成美文化園區：藝術與自然的交融</h2>
+
+            <img src="https://tourism.chcg.gov.tw/upload/27/2023101713555162455.jpg" alt="成美文化園區" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>成美文化園區位於台灣彰化縣，是一個結合傳統與現代的文化園地，讓人每次造訪彰化時必定流連忘返的地方之一。今天，讓我們一同探索這個充滿創意與靈感的文化園區吧！</p>
+
+                <h3>歷史與發展</h3>
+                <p>成美文化園區成立於20世紀末，原址是一座歷史悠久的農村。經過多年發展，園區不斷進行設施更新與文化活動的引入，致力於提供更豐富的文化體驗，同時為當地社區創造更多的參與機會。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>藝術館</strong>：展示國內外藝術家的作品，讓人近距離欣賞多樣的藝術創作。</li>
+                    <li><strong>傳統工藝區</strong>：在這裡可以親自體驗台灣傳統工藝的製作過程。</li>
+                    <li><strong>生態園區</strong>：觀賞本地多樣的生態系統，享受大自然的清新。</li>
+                    <li><strong>兒童活動區</strong>：小朋友可以在這裡參加各種趣味互動活動。</li>
+                    <li><strong>文化廣場</strong>：舉辦各類文化表演和活動，體驗豐富的文化氛圍。</li>
+                </ul>
+
+                <h3>教育與保育</h3>
+                <p>成美文化園區不僅是一個欣賞藝術的地方，更是一個重要的教育和保育中心。園區內設有多個教育展區和活動，定期舉辦導覽與工作坊，讓遊客深入了解藝術創作和文化保育知識。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘捷運</strong>：搭乘捷運至彰化站下車，轉乘公車或計程車即可到達。</li>
+                    <li><strong>搭乘公車</strong>：可搭乘多條公車路線至園區附近下車，步行即可抵達。</li>
+                </ul>
+
+                <p>成美文化園區是藝術愛好者與家庭旅遊的理想選擇，讓您在都市中享受一片自然與文化的綠洲。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

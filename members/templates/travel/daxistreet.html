@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大溪老街：歷史與文化的交織</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">大溪老街：歷史與文化的交織</h2>
+
+            <img src="https://www.taiwan.net.tw/pic.ashx?qp=1/big_scenic_spots/pic_2488_25.jpg&sizetype=3" alt="大溪老街" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>大溪老街位於台灣桃園市大溪區，是一條充滿歷史風情的街道，以其保存完好的巴洛克式建築和濃厚的文化氛圍著稱。這裡不僅是欣賞傳統建築的好地方，也是品味地方美食和手工藝品的絕佳去處。</p>
+
+                <h3>街區特色</h3>
+                <ul>
+                    <li><strong>巴洛克式建築</strong>：大溪老街的建築融合了中西方設計元素，擁有精緻的雕刻和華麗的立面，是台灣保存最完整的巴洛克式街區之一。</li>
+                    <li><strong>地方美食</strong>：老街上有許多傳統小吃店和餐廳，提供如豆干、花生糖、大溪豆腐等當地特色美食。</li>
+                    <li><strong>手工藝品</strong>：街上有許多手工藝品店，販售各種精美的竹編、木雕等工藝品，是購買紀念品的好地方。</li>
+                </ul>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>大溪橋</strong>：橫跨大漢溪的大溪橋，是拍攝老街全景的絕佳位置。</li>
+                    <li><strong>李騰芳古宅</strong>：這座歷史悠久的宅邸展示了清代的建築風格和生活方式。</li>
+                    <li><strong>慈湖紀念雕塑公園</strong>：位於老街附近，可一併參觀，欣賞各種雕塑作品。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘公車</strong>：從台北或桃園市區搭乘客運直達大溪，步行即可到達老街。</li>
+                    <li><strong>自行開車</strong>：從台北出發，沿國道3號至大溪交流道下，依指示牌行駛即可抵達。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#大溪老街</span>
+                    <span class="spot-tag">#歷史建築</span>
+                    <span class="spot-tag">#地方美食</span>
+                    <span class="spot-tag">#文化旅遊</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

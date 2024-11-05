@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load custom_filters %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4">編輯個人資料</h2>
+  <div id="message"></div> <!-- 消息提示区 -->
+
+  <form id="profile-edit-form" method="POST" enctype="multipart/form-data" class="bg-light p-4 rounded shadow">
+    {% csrf_token %}
+    <div class="form-group row mb-4">
+      <label for="username" class="col-sm-2 col-form-label text-right">Username :</label>
+      <div class="col-sm-10">
+        {{ form.username|add_class:"form-control" }} <!-- 添加 Bootstrap 样式 -->
+      </div>
+    </div>
+    <div class="form-group row mb-4">
+      <label for="email" class="col-sm-2 col-form-label text-right">Email :</label>
+      <div class="col-sm-10">
+        {{ form.email|add_class:"form-control" }} <!-- 添加 Bootstrap 样式 -->
+      </div>
+    </div>
+    <div class="form-group row mb-4">
+      <label for="avatar" class="col-sm-2 col-form-label text-right">Avatar :</label>
+      <div class="col-sm-10">
+        {% if user_profile.avatar %}
+          <img src="{{ user_profile.avatar.url }}" alt="User Avatar" class="img-thumbnail mb-2" style="width: 100px; height: 100px;"/> <!-- 显示头像 -->
+        {% endif %}  
+        {{ form.avatar|add_class:"form-control" }} <!-- 上传新头像 -->
+      </div>
+    </div>
+    <div class="form-group row mb-4">
+      <label for="delete_avatar" class="col-sm-2 col-form-label text-right">刪除頭像 :</label>
+      <div class="col-sm-10">
+        <input type="checkbox" id="delete_avatar" name="delete_avatar">
+        <label for="delete_avatar">勾選已刪除當前頭像</label>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between mt-4"> <!-- 增加 margin-top -->
+      <button type="submit" class="btn btn-primary btn-lg">保存更改</button> <!-- 蓝色按钮 -->
+      <a href="{% url 'profile' %}" class="btn btn-secondary">返回個人資料</a> <!-- 灰色按钮 -->
+    </div>
+  </form>
+</div>
+
+<!-- 添加 JavaScript 代码 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('profile-edit-form');
+    const messageDiv = document.getElementById('message');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // 阻止默认提交
+
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}' // 添加 CSRF 令牌
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(data => { throw data; });
+            }
+            return response.json();
+        })
+        .then(data => {
+            messageDiv.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
+            setTimeout(() => {
+                window.location.href = '{% url "profile" %}'; // 成功后重定向
+            }, 2000); // 2秒后重定向
+        })
+        .catch(error => {
+            messageDiv.innerHTML = `<div class="alert alert-danger">${error.message || '发生错误'}</div>`;
+            if (error.errors) {
+                console.log(error.errors); // 打印详细错误
+                for (const [key, value] of Object.entries(error.errors)) {
+                    alert(`${key}: ${value.join(', ')}`);
+                }
+            }
+        });
+    });
+});
+</script>
+
+<!-- 添加 CSS 样式 -->
+<style>
+  /* 表单背景和边距 */
+  #profile-edit-form {
+    background-color: #f1f3f5 !important; /* 更深的灰色背景 */
+    padding: 20px; /* 内边距 */
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 阴影 */
+  }
+
+  /* 调整标题和表单元素的间距 */
+  h2 {
+    margin-bottom: 20px; /* 下边距 */
+  }
+
+  .mb-3, .mb-4 {
+    margin-bottom: 15px; /* 增加间距 */
+  }
+
+  /* 设置表单标签和输入框的宽度和对齐 */
+  .form-group label {
+    font-weight: bold;
+    padding-right: 5px; /* 减少标签与输入框的间距 */
+  }
+
+  .form-group input, .form-group select {
+    width: 100%; /* 设置输入框的宽度为全宽 */
+  }
+
+  /* 调整列的宽度，使标签和输入框对齐 */
+  .col-sm-2 {
+    flex: 0 0 150px; /* 标签宽度 */
+    max-width: 150px;
+    text-align: right; /* 使冒号与标签右对齐 */
+  }
+
+  .col-sm-10 {
+    flex: 0 0 calc(100% - 150px); /* 输入框宽度 */
+    max-width: calc(100% - 150px);
+  }
+
+  /* 按钮的间距和样式 */
+  .d-flex {
+    margin-top: 30px; /* 增加按钮的上边距 */
+  }
+
+  /* 按钮颜色设置 */
+  .btn-primary {
+    background-color: #007bff; /* 蓝色背景 */
+    border-color: #007bff; /* 边框颜色 */
+    color: white; /* 文字颜色为白色 */
+  }
+
+  .btn-secondary {
+    background-color: #6c757d; /* 灰色背景 */
+    border-color: #6c757d; /* 边框颜色 */
+    color: white; /* 文字颜色为白色 */
+  }
+
+  /* 消息提示区域 */
+  #message {
+    margin-bottom: 20px; /* 消息区与表单之间的间距 */
+    color: #d9534f; /* 提示消息颜色 */
+  }
+</style>
+{% endblock %}

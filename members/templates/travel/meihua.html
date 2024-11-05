@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梅花湖 - 宜蘭的湖光山色</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">梅花湖：宜蘭的湖光山色</h2>
+
+            <img src="https://lh3.googleusercontent.com/places/ANJU3DtxD5rW9YuXsGIO5GHDvurhULfPFLOHx2x2SzzeIx0ndhwbzynkNUQf5WhUWxNF23OuMDFpT55dOVQcD8-h2oWOCYRbDVQ2r9w=s1600-w960" alt="梅花湖" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>梅花湖位於宜蘭縣冬山鄉，是一個以其如詩如畫的湖泊風光而聞名的旅遊景點。這裡四季如春，風景優美，是家庭旅遊和戶外活動的理想去處。</p>
+
+                <h3>歷史與發展</h3>
+                <p>梅花湖得名於湖泊形狀如同一朵盛開的梅花。經過多年的發展，這裡已成為宜蘭地區重要的休閒旅遊勝地，提供各種戶外活動設施。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>環湖步道</strong>：全長約4公里，適合步行或騎自行車，沿途可欣賞湖光山色。</li>
+                    <li><strong>湖心島</strong>：搭乘小船前往，享受湖中靜謐的自然氛圍。</li>
+                    <li><strong>觀景台</strong>：俯瞰整個梅花湖的壯麗景色，是攝影愛好者的天堂。</li>
+                    <li><strong>遊樂設施</strong>：提供划船、釣魚等多種水上活動。</li>
+                </ul>
+
+                <h3>教育與保育</h3>
+                <p>梅花湖不僅是觀光的好去處，還是一個重要的生態教育基地。湖區設有多個教育看板，介紹當地的生態系統和保育措施，讓遊客在享受自然的同時也能學習到環保知識。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>搭乘公車</strong>：從宜蘭市區搭乘公車至冬山，再轉乘在地交通工具前往。</li>
+                    <li><strong>自行開車</strong>：沿著台7線行駛，依指示牌前往梅花湖。</li>
+                </ul>
+
+                <div class="spot-blog-post-tags">
+                    <span class="spot-tag">#梅花湖</span>
+                    <span class="spot-tag">#湖光山色</span>
+                    <span class="spot-tag">#宜蘭旅遊</span>
+                    <span class="spot-tag">#生態教育</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

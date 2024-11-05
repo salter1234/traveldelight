@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彰化穀堡園區</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">彰化穀堡園區</h2>
+
+            <img src="https://baofamily.tw/wp-content/uploads/pixnet/1578068506-1082902096.jpg" alt="彰化穀堡園區" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>彰化穀堡園區是一個結合農業、教育與觀光的多功能園區，位於台灣彰化縣。這裡以稻米文化為主題，提供遊客多樣的體驗活動和學習機會。</p>
+
+                <h3>園區特色</h3>
+                <ul>
+                    <li><strong>稻米文化</strong>：園區展示了稻米的種植過程和相關文化，讓遊客深入了解台灣的農業歷史。</li>
+                    <li><strong>互動體驗</strong>：提供稻田插秧、收割等農事體驗活動，適合全家大小一起參與。</li>
+                    <li><strong>教育活動</strong>：設有農業教育課程，讓孩子們透過實際操作學習農業知識。</li>
+                </ul>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>稻田迷宮</strong>：在稻田中設計的迷宮，讓遊客體驗尋寶的樂趣。</li>
+                    <li><strong>穀倉博物館</strong>：展示各種農具和稻米加工的歷史文物。</li>
+                    <li><strong>有機市集</strong>：提供當地出產的有機農產品，讓遊客購買新鮮健康的食材。</li>
+                </ul>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>自駕</strong>：從彰化市區出發，沿著主要道路行駛，約30分鐘即可抵達。</li>
+                    <li><strong>大眾交通</strong>：可搭乘公車至鄰近站點，再步行或搭計程車前往。</li>
+                </ul>
+
+                <p>彰化穀堡園區不僅提供了豐富的農業體驗，還是學習台灣農業文化的好地方。無論是家庭旅遊還是學校戶外教學，這裡都能讓人留下深刻的印象。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

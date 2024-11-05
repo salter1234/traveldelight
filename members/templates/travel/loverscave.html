@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蘭嶼情人洞</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">蘭嶼情人洞：自然的浪漫秘境</h2>
+
+            <img src="https://tour.taitung.gov.tw/image/35952/1024x768" alt="蘭嶼情人洞" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>蘭嶼情人洞，這座位於蘭嶼海岸的天然奇觀，是每位造訪蘭嶼時必去的地方之一。今天，讓我帶您一同探索這個充滿浪漫與自然魅力的洞穴吧！</p>
+
+                <h3>歷史與形成</h3>
+                <p>蘭嶼情人洞是由海浪長期侵蝕岩石形成的天然洞穴，展現了大自然的鬼斧神工。這個洞穴不僅是地質學的奇觀，也是一個充滿神秘與浪漫色彩的地方。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>浪漫氛圍</strong>：情人洞因其名字和美麗的自然環境，成為情侶們喜愛的拍照和約會地點。</li>
+                    <li><strong>自然美景</strong>：洞穴周圍的海岸線風光旖旎，海水清澈見底，讓人流連忘返。</li>
+                    <li><strong>日落觀賞</strong>：傍晚時分，這裡是欣賞壯麗日落的絕佳地點。</li>
+                </ul>
+
+                <h3>旅遊資訊</h3>
+                <p>
+                    <strong>交通方式</strong>：從台灣本島搭船或搭機前往蘭嶼，然後可以租用機車或自行車前往情人洞。<br>
+                    <strong>參觀建議</strong>：建議在天氣晴朗時參觀，以便更好地欣賞到洞穴和周圍的景色。
+                </p>
+
+                <h3>注意事項</h3>
+                <p>
+                    <strong>安全</strong>：在洞穴附近活動時，請注意腳下的路面和潮汐變化，以確保安全。<br>
+                    <strong>環境保護</strong>：請保持環境整潔，不留下垃圾，尊重自然景觀。
+                </p>
+
+                <p>蘭嶼情人洞以其獨特的自然美景和浪漫的氛圍，成為蘭嶼旅遊的一大亮點，是遊客不可錯過的美麗秘境。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

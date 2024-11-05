@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>綠島燈塔</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">綠島燈塔：海上指引的歷史地標</h2>
+
+            <img src="https://tour.taitung.gov.tw/image/35865/1024x768" alt="綠島燈塔" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>綠島燈塔位於台灣綠島北部，是一座具有歷史意義的航海燈塔。這座燈塔不僅是海上航行的重要指引，還是綠島著名的觀光景點之一。</p>
+
+                <h3>歷史背景</h3>
+                <p>綠島燈塔建於1939年，最初由日本人建造，旨在提高海上交通的安全性。燈塔歷經多次修繕，如今依然屹立不搖，繼續為來往船隻提供導航服務。</p>
+
+                <h3>建築特色</h3>
+                <ul>
+                    <li><strong>高聳的塔身</strong>：燈塔高約33公尺，白色的塔身在藍天碧海的襯托下格外顯眼。</li>
+                    <li><strong>周邊景觀</strong>：燈塔周圍有開闊的視野，遊客可以在此俯瞰綠島的美麗海岸線。</li>
+                    <li><strong>歷史意義</strong>：燈塔不僅是導航的工具，也是見證綠島歷史變遷的重要地標。</li>
+                </ul>
+
+                <h3>參觀資訊</h3>
+                <p>
+                    <strong>開放時間</strong>：燈塔周圍區域通常對外開放，但塔內不對外開放，建議參觀前確認開放時間。<br>
+                    <strong>交通方式</strong>：可以從綠島各主要地點租用機車或自行車前往燈塔，沿途景色宜人。
+                </p>
+
+                <h3>注意事項</h3>
+                <p>
+                    <strong>安全</strong>：參觀時請注意安全，不要攀爬燈塔。<br>
+                    <strong>環境保護</strong>：請保持環境整潔，勿留下垃圾。
+                </p>
+
+                <p>綠島燈塔是欣賞海景和了解當地歷史的絕佳地點。無論是白天的壯麗景色還是夜晚的燈光閃耀，這座燈塔都為綠島增添了獨特的魅力。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>

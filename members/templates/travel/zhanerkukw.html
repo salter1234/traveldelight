@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>棧貳庫KW</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+{% include 'travel/base3.html' %}
+<body style="padding-top: 140px;">
+
+    <main class="spot-container">
+        <article class="spot-blog-post">
+            <h2 class="spot-blog-post-title">棧貳庫KW：都市中的文創天堂</h2>
+
+            <img src="https://khh.travel/image/37470/1024x768" alt="棧貳庫KW" class="spot-blog-post-image">
+
+            <div class="spot-blog-post-content">
+                <p>棧貳庫KW，這座位於高雄市鹽埕區的創意空間，是我每次造訪高雄必去的地方之一。今天，讓我帶您一同探索這個充滿創意與活力的文創園區吧！</p>
+
+                <h3>歷史與發展</h3>
+                <p>棧貳庫KW原本是高雄港的舊倉庫，經過重新規劃與改造，成為一個結合歷史與現代的文化地標。這裡保留了倉庫的工業風格，並融入了現代藝術和設計元素，成為創意人士的聚集地。</p>
+
+                <h3>必訪景點</h3>
+                <ul>
+                    <li><strong>藝術展覽</strong>：定期舉辦各類藝術展覽，吸引藝術愛好者前來參觀。</li>
+                    <li><strong>文創市集</strong>：聚集了許多本地設計師和手作品牌，提供獨特的商品和手工藝品。</li>
+                    <li><strong>特色餐廳</strong>：多家餐廳和咖啡館提供多樣化的美食選擇。</li>
+                    <li><strong>音樂表演</strong>：不定期舉辦現場音樂演出，增添園區的活力與氛圍。</li>
+                </ul>
+
+                <h3>教育與保育</h3>
+                <p>棧貳庫KW不僅是一個藝術與創意的展示平台，更是一個重要的教育與文化交流中心。園區內有多個展覽空間，定期舉辦講座和工作坊，讓參觀者深入了解創意產業的多樣性。</p>
+
+                <h3>交通資訊</h3>
+                <ul>
+                    <li><strong>捷運</strong>：搭乘高雄捷運橘線至鹽埕埔站，步行即可到達。</li>
+                    <li><strong>公車</strong>：多條公車路線可抵達附近，方便遊客前往。</li>
+                </ul>
+
+                <p>棧貳庫KW以其獨特的氛圍和多元的活動，成為高雄市一個不可錯過的文化地標。無論是參加展覽、購物還是享受美食，這裡都能帶給您豐富的體驗。</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="spot-blog-footer">
+        <p><a href="{% url 'index' %}">返回首頁</a></p>
+    </footer>
+</body>
+</html>
