@@ -17,32 +17,47 @@
   h4 {
     margin-bottom: 10px; 
   }
+  footer p {
+    line-height: 2; /*調整行高*/
+    margin-top: 0;  /*縮小上下邊距*/
+    margin-bottom: 0;
+  }
 </style>
-<footer id="footer">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-4 text-left d-flex flex-column mb-3">
-              <img src="{% static 'pictures/footer.jpg' %}" width="100%">
-          </div>
-          <div class="col-md-4 text-left mb-3">
-              <h4>最新消息</h4>
-              <ul>
-                  <li><a href="{% url 'index' %}">首頁</a></li>
-                  <li><a href="{% url 'about' %}">關於我們</a></li>
-              </ul>
-              <ul>
-                  <li><a href="{% url 'introduce' %}">景點介紹</a></li>
-                  <li><a href="{% url 'tours' %}">旅遊行程</a></li>
-              </ul>
-          </div>
-          <div class="col-md-4 text-left mb-3">
-              <h4>聯絡方式</h4>
-              <p>組別：第7組專題報告</p>
-              <p>題目：旅遊網站</p>
-          </div>
-      </div>
+<footer class="footer bg-light text-center py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-left d-flex flex-column mb-3">
+                <img src="{% static 'pictures/footer.jpg' %}" width="100%">
+            </div>
+            <div class="col-md-3 text-left mb-3">
+                <h4>最新消息</h4>
+                <ul>
+                    <li><a href="{% url 'index' %}">首頁</a></li>
+                    <li><a href="{% url 'about' %}">關於我們</a></li>
+                </ul>
+                <ul>
+                    <li><a href="{% url 'introduce' %}">景點介紹</a></li>
+                    <li><a href="{% url 'tours' %}">旅遊行程</a></li>
+                    <li><a href="{% url 'order_train' %}">台鐵訂票</a></li>
+                </ul>
+            </div>
+            <div class="col-md-5 text-left mb-2">
+                  <h4>聯絡方式</h4>
+                      <p>盧奕誠  <a href="mailto:a6020820914@gmail.com">a6020820914@gmail.com</a></p>
+                      <p>潘庚庭  <a href="mailto:z135625@gmail.com">z135625@gmail.com</a></p>
+                      <p>黃芷翎  <a href="mailto:s7262370@gmail.com">s7262370@gmail.com</a></p>
+                      <p>張齡文  <a href="linwen6139@gmail.com">linwen6139@gmail.com</a></p>
+                      <p>張家澤  <a href="mailto:b0955373672@gmail.com">b0955373672@gmail.com</a></p>
+                      <p>王正融  <a href="mailto:wangchengrung@gmail.com">wangchengrung@gmail.com</a></p>
+            </div>
+            <div class="col-md-12 text-center mb-3">
+              <p>&copy; 2024 Travel Delight Team | All Rights Reserved</p>
+              <p>Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
 
-      <div class="row mt-4">
+
+      {% comment %} <div class="row mt-4">
           <div class="col-6 d-flex justify-content-center mb-1">
               <div class="social-icon">
                   <a href="https://page.line.me/680xuunt?openQrModal=true" target="_blank">
@@ -71,7 +86,7 @@
                   </a>
               </div>
           </div>
-      </div>
+      </div> {% endcomment %}
   </div>
 </footer>
 
