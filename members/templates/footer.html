@@ -22,6 +22,23 @@
     margin-top: 0;  /*縮小上下邊距*/
     margin-bottom: 0;
   }
+  body>footer {
+    position: sticky;
+    margin-top: 150px;
+    }
+    footer .col-end {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .col-end ul {
+        display: inline-block;
+        margin: 0 10px; /* 可選，為每個列表增加一些水平間距 */
+    }
+    footer h4 {
+        display: flex;
+        text: center;
+    }
 </style>
 <footer class="footer bg-light text-center py-3">
     <div class="container">
@@ -29,19 +46,21 @@
             <div class="col-md-4 text-left d-flex flex-column mb-3">
                 <img src="{% static 'pictures/footer.jpg' %}" width="100%">
             </div>
-            <div class="col-md-3 text-left mb-3">
+            <div class="col-md-4 text-left mb-12">
                 <h4>最新消息</h4>
-                <ul>
-                    <li><a href="{% url 'index' %}">首頁</a></li>
-                    <li><a href="{% url 'about' %}">關於我們</a></li>
-                </ul>
-                <ul>
-                    <li><a href="{% url 'introduce' %}">景點介紹</a></li>
-                    <li><a href="{% url 'tours' %}">旅遊行程</a></li>
-                    <li><a href="{% url 'order_train' %}">台鐵訂票</a></li>
-                </ul>
+                <div class="col-md-12 col-end">
+                    <ul>
+                        <li><a href="{% url 'index' %}">首頁</a></li>
+                        <li><a href="{% url 'about' %}">關於我們</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="{% url 'introduce' %}">景點介紹</a></li>
+                        <li><a href="{% url 'tours' %}">旅遊行程</a></li>
+                        <li><a href="{% url 'order_train' %}">台鐵訂票</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-md-5 text-left mb-2">
+            <div class="col-md-4 text-left mb-2">
                   <h4>聯絡方式</h4>
                       <p>盧奕誠  <a href="mailto:a6020820914@gmail.com">a6020820914@gmail.com</a></p>
                       <p>潘庚庭  <a href="mailto:z135625@gmail.com">z135625@gmail.com</a></p>

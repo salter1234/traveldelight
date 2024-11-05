@@ -14,7 +14,7 @@
         <div class="row">              
             <table class="table table-bordered caption-top" border="1">
                 <caption><h2>STEP1.旅遊行程訂單</h2></caption>
-                <tr class="text-center">
+                <tr class="text-center table-light"  border="1">
                     <th><h5>您選擇的旅遊行程</h5></th>
                     <th><h5>旅遊公司</h5></th>
                     <th><h5>行程目的地</h5></th>
@@ -38,9 +38,9 @@
     
     <div class="container">        
         <div class="row"> 
-            <h2>STEP2.請訂購台鐵票>></h2>
-            <div class="d-flex justify-content-between align-items-center">
-                <a class="btn btn-danger btn-lg py-2 px-4" href="{% url 'order_train' %}">訂購台鐵票</a>
+            <h2>STEP2.請訂購台鐵票</h2>
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-danger btn-lg py-2 px-4" href="{% url 'order_train' %}">訂購台鐵票</a>&nbsp;&nbsp;&nbsp;&nbsp;
                 <a class="btn btn-primary btn-lg py-2 px-4" href="{% url 'orders' %}">略過，不需訂購車票</a>
             </div>
         </div>
