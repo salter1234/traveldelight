@@ -96,43 +96,43 @@ from urllib.parse import urlparse
 #         },
 #     }
 # }
-# DATABASES = { 
-#     'default': { 
-#         'ENGINE': 'django.db.backends.mysql', 
-#         'NAME': 'ago1pr7rz3xqayep', 
-#         'USER': 'pk7qtymqeu5i9xvf', 
-#         'PASSWORD': 'i43ytqlcyleidpsu', 
-#         'HOST': 'sulnwdk5uwjw1r2k.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 
-#         'PORT': '3306',
-#         'OPTIONS': {
-#             'charset': 'utf8mb4',
-#             'use_unicode': True,
-#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-#             'collation': 'utf8mb4_unicode_ci',
-#         },
-#         # 'OPTIONS': {
-#         #     'ssl': False,
-#         #     # 'ssl': {'ca': '/path/to/ca-cert.pem'},
-#         # }, 
-#     } 
-# } 
-# if os.environ.get('DEVELOPMENT'):
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'travel',
-        'USER': 'root',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
+DATABASES = { 
+    'default': { 
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'ago1pr7rz3xqayep', 
+        'USER': 'pk7qtymqeu5i9xvf', 
+        'PASSWORD': 'i43ytqlcyleidpsu', 
+        'HOST': 'sulnwdk5uwjw1r2k.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 
         'PORT': '3306',
         'OPTIONS': {
-                'charset': 'utf8mb4',
-                'use_unicode': True,
-                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-                'collation': 'utf8mb4_unicode_ci',
-            },
-    }
-}
+            'charset': 'utf8mb4',
+            'use_unicode': True,
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'collation': 'utf8mb4_unicode_ci',
+        },
+        # 'OPTIONS': {
+        #     'ssl': False,
+        #     # 'ssl': {'ca': '/path/to/ca-cert.pem'},
+        # }, 
+    } 
+} 
+# if os.environ.get('DEVELOPMENT'):
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'travel',
+#         'USER': 'root',
+#         'PASSWORD': '1234',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#                 'charset': 'utf8mb4',
+#                 'use_unicode': True,
+#                 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#                 'collation': 'utf8mb4_unicode_ci',
+#             },
+#     }
+# }
 
 # 筆記：要用local的MySQL處理編碼問題-- 需在 MySQL 中執行
 # DROP DATABASE your_database_name;
