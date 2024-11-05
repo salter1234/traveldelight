@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', "django-insecure-18p*)w2q+_7p*o8@@8+14y1erm__6+@a#$@c8%h1@j93z#06@8")
 
 # 注意：生產環境中不要啟用 debug 模式
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -73,38 +73,60 @@ WSGI_APPLICATION = 'projectname.wsgi.application'
 import os
 import dj_database_url
 import django_heroku 
-  
-# DATABASES = { 
-#     'default': { 
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
-#         'NAME': 'zwv9ytrtncbjasbh', 
-#         'USER': 'gar561q31hy9t0rm', 
-#         'PASSWORD': 'cpd6v1qqmsewovvh', 
-#         'HOST': 'c584md9egjnm02sk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 
-#         'PORT': '3306',
-#         'OPTIONS': {
-#             'ssl': False,
-#             # 'ssl': {'ca': '/path/to/ca-cert.pem'},
-#         }, 
-#     } 
-# } 
+from urllib.parse import urlparse  
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'travel',
-        'USER': 'root',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
+# # 獲取 JawsDB MySQL 環境變數
+# DATABASE_URL = os.environ.get('mysql://cqirr0s0uki2q9pk:v5jnro60ihstypom@jsk3f4rbvp8ayd7w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/ntheuetksr1tyb9l')#, 'mysql://root:1234@127.0.0.1:3306/travel'
+# # 解析資料庫 URL
+# db_info = urlparse(DATABASE_URL)
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': db_info.path.strip('/'),
+#         'USER': db_info.username,
+#         'PASSWORD': db_info.password,
+#         'HOST': db_info.hostname,
+#         'PORT': db_info.port or '3306',
+#         'OPTIONS': {
+#             'charset': 'utf8mb4',
+#             'use_unicode': True,
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#             'collation': 'utf8mb4_unicode_ci',
+#         },
+#     }
+# }
+DATABASES = { 
+    'default': { 
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'ntheuetksr1tyb9l', 
+        'USER': 'cqirr0s0uki2q9pk', 
+        'PASSWORD': 'v5jnro60ihstypom', 
+        'HOST': '	jsk3f4rbvp8ayd7w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 
         'PORT': '3306',
-        'OPTIONS': {
-                'charset': 'utf8mb4',
-                'use_unicode': True,
-                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-                'collation': 'utf8mb4_unicode_ci',
-            },
-    }
-}
+        # 'OPTIONS': {
+        #     'ssl': False,
+        #     # 'ssl': {'ca': '/path/to/ca-cert.pem'},
+        # }, 
+    } 
+} 
+# if os.environ.get('DEVELOPMENT'):
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': 'travel',
+#             'USER': 'root',
+#             'PASSWORD': '1234',
+#             'HOST': '127.0.0.1',
+#             'PORT': '3306',
+#             'OPTIONS': {
+#                     'charset': 'utf8mb4',
+#                     'use_unicode': True,
+#                     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#                     'collation': 'utf8mb4_unicode_ci',
+#                 },
+#         }
+#     }
 
 # 筆記：要用local的MySQL處理編碼問題-- 需在 MySQL 中執行
 # DROP DATABASE your_database_name;
