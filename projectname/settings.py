@@ -96,43 +96,43 @@ from urllib.parse import urlparse
 #         },
 #     }
 # }
-DATABASES = { 
-    'default': { 
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'ntheuetksr1tyb9l', 
-        'USER': 'cqirr0s0uki2q9pk', 
-        'PASSWORD': 'v5jnro60ihstypom', 
-        'HOST': 'jsk3f4rbvp8ayd7w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 
-        'PORT': '3306',
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-            'use_unicode': True,
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            'collation': 'utf8mb4_unicode_ci',
-        },
-        # 'OPTIONS': {
-        #     'ssl': False,
-        #     # 'ssl': {'ca': '/path/to/ca-cert.pem'},
-        # }, 
-    } 
-} 
+# DATABASES = { 
+#     'default': { 
+#         'ENGINE': 'django.db.backends.mysql', 
+#         'NAME': 'ntheuetksr1tyb9l', 
+#         'USER': 'cqirr0s0uki2q9pk', 
+#         'PASSWORD': 'v5jnro60ihstypom', 
+#         'HOST': 'jsk3f4rbvp8ayd7w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 
+#         'PORT': '3306',
+#         'OPTIONS': {
+#             'charset': 'utf8mb4',
+#             'use_unicode': True,
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#             'collation': 'utf8mb4_unicode_ci',
+#         },
+#         # 'OPTIONS': {
+#         #     'ssl': False,
+#         #     # 'ssl': {'ca': '/path/to/ca-cert.pem'},
+#         # }, 
+#     } 
+# } 
 # if os.environ.get('DEVELOPMENT'):
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'NAME': 'travel',
-#             'USER': 'root',
-#             'PASSWORD': '1234',
-#             'HOST': '127.0.0.1',
-#             'PORT': '3306',
-#             'OPTIONS': {
-#                     'charset': 'utf8mb4',
-#                     'use_unicode': True,
-#                     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-#                     'collation': 'utf8mb4_unicode_ci',
-#                 },
-#         }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'travel',
+#         'USER': 'root',
+#         'PASSWORD': '1234',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#                 'charset': 'utf8mb4',
+#                 'use_unicode': True,
+#                 'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#                 'collation': 'utf8mb4_unicode_ci',
+#             },
 #     }
+# }
 
 # 筆記：要用local的MySQL處理編碼問題-- 需在 MySQL 中執行
 # DROP DATABASE your_database_name;
@@ -140,18 +140,19 @@ DATABASES = {
 
 # django_heroku.settings(locals()) 
 # # # 默认情况下使用 SQLite 数据库
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # # 如果 DATABASE_URL 存在且不是 SQLite，则使用 dj_database_url 配置 PostgreSQL
 # if 'DATABASE_URL' in os.environ:
 #     DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=False)
 
-
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # 密碼驗證
