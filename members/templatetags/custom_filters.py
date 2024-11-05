@@ -54,6 +54,14 @@ def rating1(valu):
     rating = Rating.objects.filter(Q(tour=valu)&Q(value=1)).count()
     return rating
 
+@register.filter(name='rating') #1星評分
+def rating(valu):
+    num = Rating.objects.filter(Q(tour=valu)).count()
+    if num==0:
+        return True
+    else:
+        return False
+
 #辨別車種
 @register.filter(name='traintype')
 def traintype(value):
