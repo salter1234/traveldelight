@@ -58,3 +58,4 @@ mariadb
 openai
 python-dotenv
 aiohttp>=3.10.9
+pymysql
