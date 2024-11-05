@@ -102,7 +102,7 @@ DATABASES = {
         'NAME': 'ntheuetksr1tyb9l', 
         'USER': 'cqirr0s0uki2q9pk', 
         'PASSWORD': 'v5jnro60ihstypom', 
-        'HOST': '	jsk3f4rbvp8ayd7w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 
+        'HOST': 'jsk3f4rbvp8ayd7w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 
         'PORT': '3306',
         # 'OPTIONS': {
         #     'ssl': False,
