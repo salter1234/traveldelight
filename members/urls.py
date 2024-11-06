@@ -101,3 +101,7 @@ urlpatterns = [
 
 # from members.models import Tour, Site, Company, Region
 # Tour.objects.filter(company=4).delete()
+
+#批次載入資料
+#heroku run python manage.py loaddata fixture_batch_15.json
+#heroku run python manage.py loaddata --exclude contenttypes fixture_batch_15.json

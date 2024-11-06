@@ -115,7 +115,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ tour.tourname }}</h5>
 
-                                <p class="card-text">{{ tour.tourSpecial|truncatechars:20 }}</p>
+                                <p class="card-text">{% if tour.tourSpecial == 'nan' %}{% else %}{{ tour.tourSpecial|truncatechars:20 }}{% endif %}</p>
 
                                 <a href="{% url 'tourDetail' tour.id %}" class="btn btn-primary">查看行程</a>
                             </div>
