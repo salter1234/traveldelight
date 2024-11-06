@@ -66,31 +66,6 @@ class MemberProfile(models.Model):
             self.avatar.delete(save=False)  # 只删除文件，不保存模型
         super().delete(*args, **kwargs)  # 删除模型实例
 
-# 如果您需要 CustomUser ，可以将其定义如下：
-class CustomUser(AbstractUser):
-    avatar = models.ImageField(upload_to='avatars/', default='avatars/image.png')
-
-    # 同样使用related_name区分
-    groups = models.ManyToManyField(
-        'auth.Group', 
-        related_name='customuser_set',  # 改变related_name
-        blank=True
-    )
-    user_permissions = models.ManyToManyField(
-        'auth.Permission', 
-        related_name='customuser_set',  # 改变related_name
-        blank=True
-    )
-
-from django.db import models
-
-class Author(models.Model):
-    name = models.CharField(max_length=100)
-    bio = models.TextField(blank=True)
-
-    def __str__(self):
-        return self.name
-
 
 from social_core.exceptions import SocialAuthBaseException
 from .models import Member

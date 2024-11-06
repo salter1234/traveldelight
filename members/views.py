@@ -39,10 +39,6 @@ def index(request):
     })
     return render(request,"index.html",{'form':form})
 
-# 示例的 ListView
-class AuthorListView(ListView):
-    model = Member
-    template_name = 'member_list.html'  # 你需要创建这个模板
 
 # 邮件发送函数
 def send_activation_email(user, request):
