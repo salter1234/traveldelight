@@ -69,7 +69,7 @@ class MemberProfile(models.Model):
 
 from social_core.exceptions import SocialAuthBaseException
 from .models import Member
-from social_core.exceptions import SocialAuthBaseException
+
 
 def create_user(backend, uid, user=None, response=None, *args, **kwargs):
     email = response.get('email')
