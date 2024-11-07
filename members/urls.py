@@ -59,8 +59,8 @@ urlpatterns = [
     path('tourDetail/<int:tour_id>', views.tourDetail, name='tourDetail'),
 
     #旅遊資訊
-    path('index/mor/', views.travel_more, name='travel_more'),  # 熱門景點介紹
-    path('index/mor/<str:more_name>', views.more_list, name='more_list'), #熱門景點介紹網頁內容
+    path('index/more/', views.travel_more, name='travel_more'),  # 熱門景點介紹
+    path('index/more/<str:more_name>', views.more_list, name='more_list'), #熱門景點介紹網頁內容
     path("introduce/", views.travel_introduce, name='introduce'), # 景點介紹網頁
     path('introduce/<str:spot_name>/', views.spot_list, name='spot_list'), #景點介紹網頁內容
     path("fetch_weather/", views.fetch_weather, name='fetch_weather'), #抓取天氣
