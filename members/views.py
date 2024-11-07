@@ -60,7 +60,7 @@ def send_activation_email(user, request):
     text_content = f"Hi {user.username},\n\nPlease activate your account by clicking the link below:\n{full_url}"
 
     subject = 'Activate Your Account - Welcome!'
-    from_email = 'a6020820914@gmail.com'  # 请更改为有效的发件人邮箱
+    from_email = 'dusum1129@gmail.com'  # 请更改为有效的发件人邮箱
     recipient_list = [user.email]
 
     email = EmailMultiAlternatives(subject, text_content, from_email, recipient_list)
@@ -905,7 +905,7 @@ def order(request, tour_id):
                     f'出發地點：{order.gosite}\n'
                     f'出團日期：{order.godate}\n'
                     f'費用：{order.order_sum}元\n',
-            from_email='a6020820914@gmail.com',
+            from_email='dusum1129@gmail.com',
             recipient_list=[request.user.email],
         )
         return redirect('order_confirmation', order_id=order.id)  # 定向到旅遊行程訂購完成頁面
@@ -1356,7 +1356,7 @@ def order_view(request, ticket_id):
                         f'出發日期：{ticket.departure_time}\n'
                         f'乘車時間：{ticket.from_station} {ticket.go_time} - {ticket.to_station} {ticket.arrive_time}\n'
                         f'總金額：{ticket.order_sum} 元\n',
-                from_email='a6020820914@gmail.com',
+                from_email='dusum1129@gmail.com',
                 recipient_list=[request.user.email],
             )
             
@@ -1420,7 +1420,7 @@ def order_view(request, ticket_id):
 #                     f'出發日期：{ticket.departure_time}\n'
 #                     f'出發時間：{ticket.go_time}\n'
 #                     f'總金額：{ticket.order_sum}\n',
-#             from_email='a6020820914@gmail.com',
+#             from_email='dusum1129@gmail.com',
 #             recipient_list=[request.user.email],
 #         )
 

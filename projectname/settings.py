@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', "django-insecure-18p*)w2q+_7p*o8@@8+14y1erm__6+@a#$@c8%h1@j93z#06@8")
 
 # 注意：生產環境中不要啟用 debug 模式
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -192,12 +192,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 郵件設置
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'a6020820914@gmail.com')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'myef kcph eyil qppk')
+#SMTP Configuration
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com" #SMTP伺服器
+EMAIL_PORT = 587  #TLS通訊埠號
+EMAIL_USE_TLS = True #開啟TLS(傳輸層安全性)
+EMAIL_HOST_USER = "dusum1129@gmail.com" #寄件者電子郵件
+EMAIL_HOST_PASSWORD = "riau ddso vhtb ckgu" #Gmail應用程式的密碼
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Jazzmin 设置
