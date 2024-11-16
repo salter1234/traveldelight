@@ -250,20 +250,6 @@ class Favorite(models.Model):
 """
 by 齡文(車票&訂單)
 """
-#車票訂單
-# class TicketOrder(models.Model):
-
-#     train_number = models.CharField(max_length=100, default='Unknown')#搭乘車次
-#     from_station = models.CharField(max_length=100)#出發地
-#     to_station = models.CharField(max_length=100)#抵達地
-#     departure_time = models.DateField()#出發日期
-#     passenger_name = models.CharField(max_length=100)#旅客姓名(會許可以foriegnKey會員資料)
-#     passenger_ID = models.CharField(max_length=30,default=False)#旅客身分證字號
-#     go_time = models.CharField(max_length=30,default=False)#出發時間
-#     order_time = models.DateTimeField(auto_now_add=True)
-
-#     def __str__(self):
-#         return f"Order for {self.passenger_name} on {self.from_station} to {self.to_station} at {self.departure_time}"
 
 #旅遊行程訂單
 class TourOrder(models.Model):
