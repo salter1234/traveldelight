@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', "django-insecure-18p*)w2q+_7p*o8@@8+14y1erm__6+@a#$@c8%h1@j93z#06@8")
 
 # 注意：生產環境中不要啟用 debug 模式
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
