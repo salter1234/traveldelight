@@ -91,9 +91,6 @@ def compare(go, earligodate):
     else:
         return False
     
-
-datetime.today().date()
-
 #order不顯示過期日 
 @register.filter(name='now')
 def now(value):

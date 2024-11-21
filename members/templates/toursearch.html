@@ -114,7 +114,7 @@
           </form>
           <br>
     </div>  
-  </header>
+ 
   <section>
     <div class="container">
     <!-- 依照 '旅遊行程' 搜尋結果呈現(缺天數呈現&外連到詳細頁面) -->
@@ -242,7 +242,7 @@
               {% endif %}  
           {% endif %}
       {% endif %}
-    <!-- 第一頁/上一頁 -->
+    <!-- 下一頁/最末頁 -->
       {% if page_obj.has_next %}
           <li class="page-item">
               <a class="page-link" href="?firstDate={{ startDate }}&lastDate={{ endDate }}&seleSite={{ tour_toursite }}&day={{ tour_tourday|join:',' }}&comp={{ tour_company_ids|join:',' }}&option={{ options }}&page={{ page_obj.next_page_number }}">下一頁</a>

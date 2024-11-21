@@ -14,15 +14,19 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import JsonResponse
 from .forms import MemberSignUpForm, MemberProfileForm, MemberForm
 from django.views.generic import ListView
-from .models import Member, MemberProfile  # 确保模型导入正确
+from .models import Member, MemberProfile  
 from django.urls import reverse
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
+# 日誌記錄設置
+logger = logging.getLogger(__name__)
 User = get_user_model()
+
 #首頁index.html
 def index(request):
-    tour_toursite = None
+    # 初始設定
+    tour_toursite = None 
     tour_tourday = [1, 2, 3, 4]
     tour_company_ids = [1, 2, 3, 4]
     options = None
@@ -133,8 +137,8 @@ def delete_profile_view(request):
     if user_profile.avatar and os.path.isfile(user_profile.avatar.path):
         os.remove(user_profile.avatar.path)
 
-    user_profile.delete()  # 删除用户资料
-    messages.success(request, '资料删除成功！')
+    user_profile.delete()  # 刪除用戶資料
+    messages.success(request, '資料刪除成功！')
     return redirect('profile')  # 或者重定向到其他页面
 
 # 注册成功视图
@@ -145,8 +149,7 @@ def signup_success_view(request):
 def activation_invalid_view(request):
     return render(request, 'activation_invalid.html')
 
-# 日志记录设置
-logger = logging.getLogger(__name__)
+
 
 # 账户激活视图
 def activate_account(request, uidb64, token):
@@ -332,13 +335,12 @@ def add_to_favorites(request, tour_id):
         FavoriteTrip.objects.get_or_create(user=request.user, tour=tour)
         return redirect('my_favorites')  # 或者重定向到其他页面
     return redirect('login')  # 未登录用户重定向到登录页面
+
+
 from .models import FavoriteTrip, Tour, Favorite
-
-
-
 from .recommendation import hybrid_recommendation
 #機器學習回傳推薦
-from .models import Tour  # 確保引入你的 Tour 模型
+from .models import Tour 
 from decimal import Decimal
 
 
@@ -347,9 +349,6 @@ def remove_favorite(request, tour_id):
         tour = get_object_or_404(Tour, id=tour_id)
         FavoriteTrip.objects.filter(user=request.user, tour=tour).delete()
         return redirect('my_favorites')  # 重定向到收藏页面
-
-
-
 
 def recommend_view(request, user_id):
     recommendations = hybrid_recommendation(user_id)
@@ -367,6 +366,7 @@ def favorite_tours(request):
         'favorites': favorites,
         'recommendations': recommendations
     })
+
 """
 by 芷翎(旅遊行程) 正融(使用者評論)
 """
@@ -381,7 +381,7 @@ import calendar
 
 #Tours旅遊行程呈現
 def tours(request, n=1):
-    #旅遊行程初始化條件
+    #旅遊行程搜尋初始化條件
     tours = Tour.objects.all()
     tour_toursite = None
     tour_tourday = [1, 2, 3, 4]
@@ -529,28 +529,6 @@ by 正融(使用者評論)
 from .models import Rating
 from .forms import RatingForm
 
-# # 下評分
-# def rating(request):
-#     if request.method == 'POST':
-#         form = RatingForm(request.POST)
-#         if form.is_valid():
-#             # Save the rating to the database (optional)
-#             user_name = request.user
-#             rating_value = form.cleaned_data['value']
-#             comment = form.cleaned_data['comment']
-#             Rating.objects.create(user_name=user_name, value=rating_value, comment=comment)  # Optional
-#             # messages.success(request, 'Form submitted successfully!')
-#             return redirect('show_rating')
-#     else:
-#         form = RatingForm()
-#     return render(request, 'rating.html', {'form': form, 'userName':request.user})
-
-# # 獲取評分與評語
-# def show_rating(request):
-#     username = request.user
-#     ratings = Rating.objects.filter(user_name_id=request.user.id).values()
-    
-#     return render(request, 'showRating.html', {'user':username, 'ratings': ratings})
 
 """
 by 庚庭、家澤(旅遊資訊+首頁)
@@ -794,25 +772,8 @@ def about(request):
     return render(request, 'about.html')
 
 from .models import TourOrder
-#order
-#@login_required
-#def order(request, tour_id):
-#    tour = get_object_or_404(Tour, id=tour_id)
-#    godates=tour.goDate.lstrip('[').rstrip(']').replace("'", "").replace("/", "-").replace(" ", "").split(',')
-#   if request.method == 'POST':
-#        user = request.user
-#       gosite = request.POST.get("gosite")
-#        godate = request.POST.get("godate")
-#       order=TourOrder.objects.create(user=user, tour=tour, gosite=gosite, godate=godate)
-#        order.save()
-#        return redirect('order_confirmation', order_id=order.id)
-#    return render(request, 'order.html', {'tour':tour, 'godates': godates})
-
-
-
-
 from django.views.decorators.csrf import csrf_exempt
-#奕誠
+
 #評論編輯
 @login_required
 def edit_rating(request, rating_id):
@@ -954,36 +915,6 @@ from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import TourOrder
-
-# @login_required
-# def create_order(request):
-#     if request.method == 'POST':
-#         # 假設這裡有一個表單來創建訂單
-#         order = TourOrder.objects.create(
-#             user=request.user,
-#             tour=some_tour,
-#             gosite='台北',
-#             godate=some_date
-#         )
-        
-#         # 發送郵件
-#         send_mail(
-#             subject='您的旅遊訂單已確認',
-#             message=f'感謝您的訂購！以下是您的訂單資訊：\n\n'
-#                     f'旅遊行程：{order.tour.tourname}\n'
-#                     f'旅遊公司：{order.tour.company}\n'
-#                     f'行程目的地：{order.tour.toursite}\n'
-#                     f'出發地點：{order.gosite}\n'
-#                     f'出團日期：{order.godate}\n',
-#             from_email='your_email@example.com',
-#             recipient_list=[request.user.email],
-#         )
-        
-#         return redirect('orders')  # 跳轉到訂單頁面
-
-#     return render(request, 'create_order.html')  # 或者渲染訂單創建頁面
-
-
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse

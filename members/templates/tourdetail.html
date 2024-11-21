@@ -7,10 +7,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="html, css, 網頁, JS, javascript"> 
+    {% comment %} <meta http-equiv="X-UA-Compatible" content="IE=edge"> {% endcomment %}
+    <meta name="keywords" content="國內旅遊行程, 台灣旅遊行程, 旅遊比價"> 
     
-    <title>{% block title %}詳細旅遊行程{% endblock %}</title>
+    {% block title %}詳細旅遊行程{% endblock %}
     
     <!-- 引入 Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -62,12 +62,14 @@
               <div class="col-12 col-lg-6">
                 <div class="header-content w-100 pt-6 pe-6 pb-6">
                   <div class="col-xl-11 wow fadeInUp" data-wow-delay="0.1s"> 
+                     {% comment %}旅遊圖片{% endcomment %}
                     <div class="bg-light p-3" style="border-radius: 68% 32% 100% 0% / 0% 75% 25% 100%;">
                       <img src="{{ tour.tourimage }}" class="img-fluid" style="border-radius: 68% 32% 100% 0% / 0% 75% 25% 100%;" alt="{{ tour.tourname }}">
                     </div>
                   </div>
                 </div>
               </div>
+              {% comment %} 基本資訊 {% endcomment %}
               <div class="col-12 col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
                   <h1 class="mb-4 text-light">{{ tour.tourname }}</h1>
                     <h5 class="text-warning">{% if tour.tourSpecial == 'nan' %}{% else %}{{ tour.tourSpecial }}{% endif %}</h5>
