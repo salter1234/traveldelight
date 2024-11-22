@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 import dj_database_url
 
-# 奕誠
+
 AUTH_USER_MODEL = 'members.Member'
 
 # 設置專案的根目錄路徑
